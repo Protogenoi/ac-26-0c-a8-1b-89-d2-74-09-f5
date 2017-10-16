@@ -81,7 +81,7 @@
                             if(strpos($UNIT,"Dire Avengers") !== false) {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Avengers Shuriken Catapult'<?php if($UNIT_WEAPON=='Shuriken Catapult') { echo "selected"; } ?> >Shuriken Catapult</option>
+                        <option value='Avenger Shuriken Catapult'<?php if($UNIT_WEAPON=='Shuriken Catapult') { echo "selected"; } ?> >Shuriken Catapult</option>
                         <option value='Shuriken Pistol' <?php if($UNIT_WEAPON=='Shuriken Pistol') { echo "selected"; } ?> >Shuriken Pistol</option>
                         <option disabled>─────Grenades─────</option>
                         <option value='Sunburst Grenade' <?php if($UNIT_WEAPON=='Sunburst Grenade') { echo "selected"; } ?> >Sunburst Grenade</option>
@@ -109,9 +109,9 @@ $(document).ready(function () {
         } else if (val === "Rangers") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option value='Ranger Long Rifle'>Ranger Long Rifle</option>");
         } else if (val === "Dire Avengers") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option> <option value='Avengers Shuriken Catapult'>Shuriken Catapult</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option><option disabled>─────Melee─────</option><option value='Diresword'>Diresword</option><option value='Power Glaive'>Power Glaive</option>");
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option> <option value='Avenger Shuriken Catapult'>Avenger Shuriken Catapult</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option><option disabled>─────Melee─────</option><option value='Diresword'>Diresword</option><option value='Power Glaive'>Power Glaive</option>");
         } else if (val === "Dire Avengers Exarch") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option> <option value='Avengers Shuriken Catapult'>Shuriken Catapult</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option><option disabled>─────Melee─────</option><option value='Diresword'>Diresword</option><option value='Power Glaive'>Power Glaive</option>");
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option> <option value='Avenger Shuriken Catapult'>Avenger Shuriken Catapult</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option><option disabled>─────Melee─────</option><option value='Diresword'>Diresword</option><option value='Power Glaive'>Power Glaive</option>");
         }
     });
 });        
