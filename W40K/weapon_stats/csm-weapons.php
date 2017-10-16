@@ -611,4 +611,13 @@
         $WEAPON_ABILITY="Each time the bearer fights, it may make one additional attack with this weapon.";     
             
             
-        }        
+        }  
+        
+        if($UNIT_WEAPON=='Havoc Launcher') {
+            $WEAPON_RANGE=48;
+            $WEAPON_TYPE='Heavy 1D6';
+            $WEAPON_STR=5;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";      
+            
+        }         
