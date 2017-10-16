@@ -53,4 +53,35 @@
         $WEAPON_ABILITY="This weapon always wounds on a 2+.";    
             
                     
+    }  
+    
+        if($UNIT_WEAPON=='Shuriken Cannon') {
+            $WEAPON_RANGE=24;
+            $WEAPON_TYPE='Assualt 3';
+            $WEAPON_STR=6;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";
+            
+        $WEAPON_ABILITY="Each time you make a wound roll 6+ for this weapon, that hit is resolved with an AP of -3 instead of 0.";    
+        
+    }     
+    
+        if($UNIT_WEAPON=='Shuriken Catapult') {
+            $WEAPON_RANGE=12;
+            $WEAPON_TYPE='Assualt 2';
+            $WEAPON_STR=4;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";
+            
+        $WEAPON_ABILITY="Each time you make a wound roll 6+ for this weapon, that hit is resolved with an AP of -3 instead of 0.";    
+        
+    }    
+    
+        if($UNIT_WEAPON=='Sunburst Grenade') {
+            $WEAPON_RANGE=6;
+            $WEAPON_TYPE='Grenade 1D6';
+            $WEAPON_STR=4;
+            $WEAPON_AP=1;
+            $WEAPON_DAMAGE="1";
+                    
     }     
