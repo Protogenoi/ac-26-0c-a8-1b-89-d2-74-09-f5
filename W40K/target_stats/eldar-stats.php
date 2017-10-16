@@ -28,6 +28,10 @@
         $T_LD=8;
         $T_SAVE=6; 
         $T_INVUL =4;
+      
+        $T_ABILITIES=array("Ancient Doom","Battle Focus","Destructor","Rune Armour");
+        $T_FACTION_KW=array("Aeldari","Asuryani","Warhost","CRAFTWORLD");
+        $T_KEYWORDS=array("Character","Infantry","Psyker","Warlock");         
         
     }     
         
