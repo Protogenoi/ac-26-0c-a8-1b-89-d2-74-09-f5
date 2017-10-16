@@ -693,7 +693,17 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
     
     
 
-    } elseif(is_numeric ($WEAPON_DAMAGE)) {
+    } 
+    
+    elseif(strpos($UNIT_WEAPON,"Shuriken") !== false) {
+
+    $SAVE_ROLLS=$TOTAL_WOUNDS-1;
+    $combat_cal = new combat_cal();
+    $combat_cal->ap_modifier($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES,$DIE_SIX);        
+        
+    }
+    
+    elseif(is_numeric ($WEAPON_DAMAGE)) {
     $SAVE_ROLLS=$TOTAL_WOUNDS-1;
     $combat_cal = new combat_cal();
     $combat_cal->save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES);
@@ -921,11 +931,197 @@ $DIE_SIX_MOD=0;
 	</tr>
 	</table>";        
                     
+    } 
+    
+}
+
+function ap_modifier($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES,$DIE_SIX_MOD) {
+    
+    if(strpos($UNIT_WEAPON,"Shuriken") !== false) {
+        $WEAPON_AP_MOD=$WEAPON_AP+3;
+    }
+    
+    $T_SAVE_MOD=$T_SAVE;
+    
+    if($WEAPON_AP_MOD>=1) {
+        if($WEAPON_AP_MOD=='1') {
+            $T_SAVE_MOD++;
+        }
+        elseif($WEAPON_AP_MOD=='2') {
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+        }     
+        elseif($WEAPON_AP_MOD=='3') {
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+        }        
+        elseif($WEAPON_AP_MOD=='4') {
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+        }      
+        elseif($WEAPON_AP_MOD=='5') {
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+        }       
+        elseif($WEAPON_AP_MOD=='6') {
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+            $T_SAVE_MOD++;
+        }
+        
     }    
     
-    $SAVE_ROLLS=$TOTAL_WOUNDS-1;
+    $DIE_ONE = 0;
+    $DIE_TWO = 0;
+    $DIE_THREE = 0;
+    $DIE_FOUR = 0;
+    $DIE_FIVE = 0;
+    $DIE_SIX = 0;    
+    
+    for ($x = 0; $x <= $DIE_SIX_MOD-1; $x++) {
+
+        $DIE = mt_rand(1, 6);
+
+        if ($DIE == 1) {
+            $DIE_ONE++;
+        }
+        if ($DIE == 2) {
+            $DIE_TWO++;
+        }
+        if ($DIE == 3) {
+            $DIE_THREE++;
+        }
+        if ($DIE == 4) {
+            $DIE_FOUR++;
+        }
+        if ($DIE == 5) {
+            $DIE_FIVE++;
+        }
+        if ($DIE == 6) {
+            $DIE_SIX++;
+        }
+    }
+    
+    if($T_SAVE_MOD>6) {
+        $TOTAL_SAVES=0;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;    
+    }
+    
+    elseif($T_SAVE_MOD==6) {
+        $TOTAL_SAVES=$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
+    }      
+    
+    elseif($T_SAVE_MOD==5) {
+        $TOTAL_SAVES=$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
+    }     
+
+    elseif($T_SAVE_MOD==4) {
+        $TOTAL_SAVES=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
+    } 
+    
+    elseif($T_SAVE_MOD==3) {
+        $TOTAL_SAVES=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO;
+    }
+    
+    elseif($T_SAVE_MOD==2) {
+        $TOTAL_SAVES=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE;
+    }    
+    
+    if(isset($T_INVUL)) {    
+
+    if($T_INVUL>6) {
+        $TOTAL_INVUL=0;
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;    
+    }
+    
+    elseif($T_INVUL==6) {
+        $TOTAL_INVUL=$DIE_SIX;
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
+    }      
+    
+    elseif($T_INVUL==5) {
+        $TOTAL_INVUL=$DIE_FIVE+$DIE_SIX;
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
+    }     
+
+    elseif($T_INVUL==4) {
+        $TOTAL_INVUL=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
+    }    
+    
+    elseif($T_INVUL==3) {
+        $TOTAL_INVUL=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO;
+    }
+    
+    elseif($T_INVUL==2) {
+        $TOTAL_INVUL=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_INVUL_FAILS=$DIE_ONE;
+    }
+    
+    else {
+        $TOTAL_INVUL="-";
+        $TOTAL_INVUL_FAILS="-";
+    }
+    
+    }
+
+    $SAVE_ROLL_DISPLAY_MOD=$DIE_SIX_MOD;
+    
+    if(empty($MORTAL_WOUNDS)) {
+        $MORTAL_WOUNDS=0;
+    }
+
+    echo "<table class='table table-condensed'>
+        <tr>
+        <th colspan='9'>$SAVE_ROLL_DISPLAY_MOD Save(s) | AP $WEAPON_AP_MOD (modified -3) | $T_SAVE_MOD+ to Save | $T_INVUL+ Invul</th>
+        </tr>
+	<tr>
+	<th>1</th>
+	<th>2</th>
+	<th>3</th>
+	<th>4</th>
+	<th>5</th>
+	<th>6</th>
+        <th>Saves</th>
+        <th>Invul</th>
+        <th>Mortal</th>
+	</tr>
+	<tr>
+	<th>$DIE_ONE</th>
+	<th>$DIE_TWO</th>
+	<th>$DIE_THREE</th>
+	<th>$DIE_FOUR</th>
+	<th>$DIE_FIVE</th>
+	<th>$DIE_SIX</th>
+        <th>$TOTAL_SAVES ($TOTAL_FAILS)</th>
+        <th>$TOTAL_INVUL ($TOTAL_INVUL_FAILS)</th>   
+        <th>$MORTAL_WOUNDS</th>    
+	</tr>
+	</table>";      
+    
+    $SAVE_ROLLS=$SAVE_ROLLS-$DIE_SIX_MOD;
+    
     $combat_cal = new combat_cal();
-    $combat_cal->save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES);
+    $combat_cal->save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES);    
+    
+}
+
+function saves_after_ap_mod($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES) {
     
 }
 
