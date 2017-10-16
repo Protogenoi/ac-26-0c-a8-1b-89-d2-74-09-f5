@@ -620,4 +620,13 @@
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";      
             
+        } 
+
+        if($UNIT_WEAPON=='Predator Autocannon') {
+            $WEAPON_RANGE=48;
+            $WEAPON_TYPE='Heavy 2D3';
+            $WEAPON_STR=7;
+            $WEAPON_AP=1;
+            $WEAPON_DAMAGE="3";      
+            
         }         
