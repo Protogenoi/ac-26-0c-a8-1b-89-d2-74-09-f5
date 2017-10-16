@@ -594,7 +594,7 @@
         
         if($UNIT_WEAPON=='Shotgun') {
             $WEAPON_RANGE=12;
-            $WEAPON_TYPE='Assault 2';
+            $WEAPON_TYPE='Assualt 2';
             $WEAPON_STR=3;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";      
