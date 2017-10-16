@@ -19,6 +19,7 @@
     } 
     
     if($UNIT=='Warlock') {
+        $U_MOVE=7;
         $U_WS=3;
         $U_BS=3;
         $U_STR=3;
@@ -28,6 +29,10 @@
         $U_LD=8;
         $U_SAVE=6; 
         $U_INVUL =4;
+        
+        $U_ABILITIES=array("Ancient Doom","Battle Focus","Destructor","Rune Armour");
+        $U_FACTION_KW=array("Aeldari","Asuryani","Warhost","CRAFTWORLD");
+        $U_KEYWORDS=array("Character","Infantry","Psyker","Warlock");          
         
     }     
         
