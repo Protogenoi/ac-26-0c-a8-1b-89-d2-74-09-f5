@@ -55,7 +55,7 @@
                         <option value='Staff of Ulthamar'<?php if($UNIT_WEAPON=='Staff of Ulthamar') { echo "selected"; } ?> >Staff of Ulthamar</option>
                         <option value='Witchblade'<?php if($UNIT_WEAPON=='Witchblade') { echo "selected"; } ?> >Witchblade</option>
                             <?php } 
-                            if(strpos($UNIT,"Warlock") !== false) {
+                            if($UNIT=="Warlock") {
                             ?>
                         <option disabled>─────Wargear─────</option>
                         <option value='Singing Spear'<?php if($UNIT_WEAPON=='Singing Spear') { echo "selected"; } ?> >Singing Spear</option>
@@ -77,6 +77,17 @@
                         <option disabled>─────Wargear─────</option>
                         <option value='Shuriken Pistol'<?php if($UNIT_WEAPON=='Shuriken Pistol') { echo "selected"; } ?> >Shuriken Pistol</option>
                         <option value='Ranger Long Rifle'<?php if($UNIT_WEAPON=='Ranger Long Rifle') { echo "selected"; } ?> >Ranger Long Rifle</option>
+                            <?php } 
+                            if(strpos($UNIT,"Dire Avengers") !== false) {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Avengers Shuriken Catapult'<?php if($UNIT_WEAPON=='Shuriken Catapult') { echo "selected"; } ?> >Shuriken Catapult</option>
+                        <option value='Shuriken Pistol' <?php if($UNIT_WEAPON=='Shuriken Pistol') { echo "selected"; } ?> >Shuriken Pistol</option>
+                        <option disabled>─────Grenades─────</option>
+                        <option value='Sunburst Grenade' <?php if($UNIT_WEAPON=='Sunburst Grenade') { echo "selected"; } ?> >Sunburst Grenade</option>
+                        <option disabled>─────Melee─────</option>
+                        <option value='Diresword' <?php if($UNIT_WEAPON=='Diresword') { echo "selected"; } ?> >Diresword</option>
+                        <option value='Power Glaive' <?php if($UNIT_WEAPON=='Power Glaive') { echo "selected"; } ?> >Power Glaive</option>                        
                             <?php }                              
                         } else { ?>
                         <option value=''>Select...</option>
@@ -84,8 +95,8 @@
                     </select>
                 </div>     
             </div>
-     
-        <script>
+
+    <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
         var val = $(this).val();  
@@ -97,7 +108,11 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Shuriken Catapult'>Shuriken Catapult</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option>");
         } else if (val === "Rangers") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option value='Ranger Long Rifle'>Ranger Long Rifle</option>");
-        } 
+        } else if (val === "Dire Avengers") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option> <option value='Avengers Shuriken Catapult'>Shuriken Catapult</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option><option disabled>─────Melee─────</option><option value='Diresword'>Diresword</option><option value='Power Glaive'>Power Glaive</option>");
+        } else if (val === "Dire Avengers Exarch") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option> <option value='Avengers Shuriken Catapult'>Shuriken Catapult</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option><option disabled>─────Melee─────</option><option value='Diresword'>Diresword</option><option value='Power Glaive'>Power Glaive</option>");
+        }
     });
 });        
 </script>
