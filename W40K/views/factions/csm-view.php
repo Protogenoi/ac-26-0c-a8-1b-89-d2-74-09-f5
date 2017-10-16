@@ -275,7 +275,18 @@
                         <option value='Flamer'<?php if($UNIT_WEAPON=='Flamer') { echo "selected"; } ?> >Flamer</option> 
                         <option disabled>─────Melee─────</option>
                         <option value='Brutal Assault Weapon' <?php if($UNIT_WEAPON=='Brutal Assault Weapon') { echo "selected"; } ?> >Brutal Assault Weapon</option> 
-                            <?php }                             
+                            <?php }
+                             if($UNIT=='Cultist Champion') {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Autogun'<?php if($UNIT_WEAPON=='Autogun') { echo "selected"; } ?> >Autogun</option>
+                        <option value='Heavy Stubber'<?php if($UNIT_WEAPON=='Heavy Stubber') { echo "selected"; } ?> >Heavy Stubber</option>
+                        <option value='Autopistol'<?php if($UNIT_WEAPON=='Autopistol') { echo "selected"; } ?> >Autopistol</option>
+                        <option value='Shotgun'<?php if($UNIT_WEAPON=='Shotgun') { echo "selected"; } ?> >Shotgun</option> 
+                        <option value='Flamer'<?php if($UNIT_WEAPON=='Flamer') { echo "selected"; } ?> >Flamer</option> 
+                        <option disabled>─────Melee─────</option>
+                        <option value='Brutal Assault Weapon' <?php if($UNIT_WEAPON=='Brutal Assault Weapon') { echo "selected"; } ?> >Brutal Assault Weapon</option> 
+                            <?php }                               
                         } else { ?>
                         <option value=''>Select...</option>
                             <?php } ?>
@@ -330,6 +341,8 @@ $(document).ready(function () {
         } else if (val === "Aspiring Champion") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Boltgun'>Boltgun</option><option disabled>─────Champion Equipment─────</option><option value='Plasma Pistol'>Plasma Pistol</option><option value='Supercharged Plasma Pistol'>Supercharged Plasma Pistol</option><option value='Combi-bolter'>Combi-bolter</option><option value='Combi-flamer'>Combi-flamer</option><option value='Combi-melta'>Combi-melta</option><option value='Combi-plasma'>Combi-plasma</option><option value='Supercharged Combi-plasma'>Supercharged Combi-plasma</option><option disabled>─────Champion Melee─────</option><option value='Chainaxe'>Chainaxe</option><option value='Lighting Claw'>Lighting Claw</option><option value='Power Axe'>Power Axe</option><option value='Power Fist'>Power Fist</option><option value='Power Maul'>Power Maul</option><option value='Power Sword'>Power Sword</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Chain Sword'>Chain Sword</option>");
         } else if (val === "Chaos Cultists") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Autogun'>Autogun</option><option value='Heavy Stubber'>Heavy Stubber</option><option value='Autopistol'>Autopistol</option><option value='Shotgun'>Shotgun</option><option value='Flamer'>Flamer</option><option disabled>─────Melee─────</option><option value='Brutal Assault Weapon'>Brutal Assault Weapon</option>");
+        } else if (val === "Cultist Champion") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Autogun'>Autogun</option><option value='Heavy Stubber'>Heavy Stubber</option><option value='Autopistol'>Autopistol</option><option value='Shotgun'>Shotgun</option><option value='Flamer'>Flamer</option><option disabled>─────Melee─────</option><option value='Brutal Assault Weapon'>Brutal Assault Weapon</option>");
         } 
     });
