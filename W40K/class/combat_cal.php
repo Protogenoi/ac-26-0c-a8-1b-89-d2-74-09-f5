@@ -715,7 +715,7 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
     elseif(is_numeric ($WEAPON_DAMAGE)) {
     $SAVE_ROLLS=$TOTAL_WOUNDS-1;
     $combat_cal = new combat_cal();
-    $combat_cal->save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES);
+    $combat_cal->save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES,$DIE_SIX);
     
     }
     
@@ -1280,7 +1280,7 @@ function saves_after_ap_mod($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL
     
 }
 
-function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES) {
+function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES,$DIE_SIX_MOD) {
     
     if($WEAPON_AP>=1) {
         if($WEAPON_AP=='1') {
@@ -1422,7 +1422,7 @@ function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABIL
     $SAVE_ROLL_DISPLAY=$SAVE_ROLLS+1;
     
     if($UNIT_WEAPON=='Sniper Rifle' || $UNIT_WEAPON=='Ranger Long Rifle') {
-    $MORTAL_WOUNDS=$DIE_SIX;
+    $MORTAL_WOUNDS=$DIE_SIX_MOD;
     }
     
     if(empty($MORTAL_WOUNDS)) {
