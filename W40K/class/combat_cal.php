@@ -624,7 +624,7 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
     if($ENEMY_FACTION=='Chaos Space Marines') {
         require(__DIR__ . '/../target_stats/csm-stats.php');  
 
-    }     
+    }    
     
     if($WEAPON_STR + $T_TOUGHNESS >= $WEAPON_STR) {
     //DOUBLE 2+
@@ -632,28 +632,28 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
         $WOUNDS_ON=2;
     }
 
-    if($WEAPON_STR>$T_TOUGHNESS) {
+    elseif($WEAPON_STR>$T_TOUGHNESS) {
         //3+
         $TOTAL_WOUNDS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=3;
     }
-    if($WEAPON_STR==$T_TOUGHNESS) {
+    elseif($WEAPON_STR==$T_TOUGHNESS) {
         //TO WOUND = 4+
         $TOTAL_WOUNDS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=4;
     }
-    if($WEAPON_STR<$T_TOUGHNESS) {
+    elseif($WEAPON_STR<$T_TOUGHNESS) {
         // 5+
         $TOTAL_WOUNDS=$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=5;
     }    
-    if($WEAPON_STR + $T_TOUGHNESS <= $WEAPON_STR) {
+    elseif($WEAPON_STR + $T_TOUGHNESS <= $WEAPON_STR) {
     //STR HALF OR LESS THAN T
         $TOTAL_WOUNDS=$DIE_SIX;
         $WOUNDS_ON=6;
     }
     
-    if($WEAPON_DAMAGE==2) {
+    elseif($WEAPON_DAMAGE==2) {
         $TOTAL_WOUNDS=$TOTAL_WOUNDS*2;
     }
     
