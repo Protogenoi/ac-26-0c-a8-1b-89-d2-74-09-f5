@@ -10,7 +10,7 @@
                         <option disabled>─────HQ─────</option>
                         <option value="Kharn the Betrayer" <?php if($TARGET_UNIT=='Kharn the Betrayer') { echo "selected"; } ?> >Kharn the Betrayer</option>
                         <option value="Abaddon the Despoiler" <?php if($TARGET_UNIT=='Abaddon the Despoiler') { echo "selected"; } ?> >Abaddon the Despoiler</option>
-                        <option value="Khrone Daemon Prince" <?php if($TARGET_UNIT=='Khrone Daemon Prince') { echo "selected"; } ?> >Khrone Daemon Prince</option>
+                        <option value="Khorne Daemon Prince" <?php if($TARGET_UNIT=='Khorne Daemon Prince') { echo "selected"; } ?> >Khorne Daemon Prince</option>
                         <option value="Nurgle Daemon Prince" <?php if($TARGET_UNIT=='Nurgle Daemon Prince') { echo "selected"; } ?> >Nurgle Daemon Prince</option>                        
                         <option value="Slaanesh Daemon Prince" <?php if($TARGET_UNIT=='Slaanesh Daemon Prince') { echo "selected"; } ?> >Slaanesh Daemon Prince</option>                        
                         <option value="Tzeentch Daemon Prince" <?php if($TARGET_UNIT=='Tzeentch Daemon Prince') { echo "selected"; } ?> >Tzeentch Daemon Prince</option>
