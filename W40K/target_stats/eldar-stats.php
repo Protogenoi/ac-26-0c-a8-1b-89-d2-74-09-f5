@@ -73,6 +73,7 @@
     }  
     
     if($TARGET_UNIT=='Dire Avengers') {
+        $T_MOVE=7;
         $T_WS=3;
         $T_BS=3;
         $T_STR=3;
@@ -83,9 +84,14 @@
         $T_SAVE=4; 
         $T_INVUL =0;
         
+        $T_ABILITIES=array("Ancient Doom","Battle Focus","Defence Tactics","Battle of Fortune","Shimmmershield");
+        $T_FACTION_KW=array("Aeldari","Asuryani","Aspect Warrior","CRAFTWORLD");
+        $T_KEYWORDS=array("Infantry","Dire Avengers");         
+        
     } 
 
     if($TARGET_UNIT=='Dire Avengers Exarch') {
+        $T_MOVE=7;
         $T_WS=3;
         $T_BS=3;
         $T_STR=3;
@@ -94,7 +100,11 @@
         $T_ATTACKS=2;
         $T_LD=8;
         $T_SAVE=4; 
-        $T_INVUL =0;
+        $T_INVUL =4;
+        
+        $T_ABILITIES=array("Ancient Doom","Battle Focus","Defence Tactics","Battle of Fortune","Shimmmershield");
+        $T_FACTION_KW=array("Aeldari","Asuryani","Aspect Warrior","CRAFTWORLD");
+        $T_KEYWORDS=array("Infantry","Dire Avengers");         
         
     }    
     
