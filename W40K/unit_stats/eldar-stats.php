@@ -109,6 +109,7 @@
     }    
     
     if($UNIT=='Dark Reapers') {
+        $U_MOVE=6;
         $U_WS=3;
         $U_BS=3;
         $U_STR=3;
@@ -119,9 +120,14 @@
         $U_SAVE=3; 
         $U_INVUL =0;
         
+        $U_ABILITIES=array("Ancient Doom","Inescapable Accuracy","Crack Shot");
+        $U_FACTION_KW=array("Aeldari","Asuryani","Aspect Warrior","CRAFTWORLD");
+        $U_KEYWORDS=array("Infantry","Dark Reapers");         
+        
     }    
     
     if($UNIT=='Dark Reapers Exarch') {
+        $U_MOVE=6;
         $U_WS=3;
         $U_BS=3;
         $U_STR=3;
@@ -131,6 +137,10 @@
         $U_LD=8;
         $U_SAVE=3; 
         $U_INVUL =0;
+        
+        $U_ABILITIES=array("Ancient Doom","Inescapable Accuracy","Crack Shot");
+        $U_FACTION_KW=array("Aeldari","Asuryani","Aspect Warrior","CRAFTWORLD");
+        $U_KEYWORDS=array("Infantry","Dark Reapers");           
         
     }    
 
