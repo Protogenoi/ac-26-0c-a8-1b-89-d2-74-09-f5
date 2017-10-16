@@ -55,6 +55,7 @@
     }   
     
     if($TARGET_UNIT=='Rangers') {
+        $T_MOVE=7;
         $T_WS=3;
         $T_BS=3;
         $T_STR=3;
@@ -64,6 +65,10 @@
         $T_LD=7;
         $T_SAVE=5; 
         $T_INVUL =0;
+        
+        $T_ABILITIES=array("Ancient Doom","Battle Focus","Crewed Weapons");
+        $T_FACTION_KW=array("Aeldari","Asuryani","Warhost","CRAFTWORLD");
+        $T_KEYWORDS=array("Infantry","Rangers");         
         
     }  
     
