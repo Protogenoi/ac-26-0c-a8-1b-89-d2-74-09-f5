@@ -336,6 +336,21 @@
                         <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo "selected"; } ?> >Combi-melta</option>
                         <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo "selected"; } ?> >Combi-plasma</option>
                         <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo "selected"; } ?> >Supercharged Combi-plasma</option>
+                            <?php }  
+                             if($UNIT=='Chaos Predator') {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Havoc Launcher'<?php if($UNIT_WEAPON=='Havoc Launcher') { echo "selected"; } ?> >Havoc Launcher</option>
+                        <option value='Predator Autocannon'<?php if($UNIT_WEAPON=='Predator Autocannon') { echo "selected"; } ?> >Predator Autocannon</option>
+                        <option value='Heavy Bolter'<?php if($UNIT_WEAPON=='Heavy Bolter') { echo "selected"; } ?> >Heavy Bolter</option>
+                        <option value='Twin Lascannon'<?php if($UNIT_WEAPON=='Twin Lascannon') { echo "selected"; } ?> >Twin Lascannon</option> 
+                        <option value='Lascannon'<?php if($UNIT_WEAPON=='Lascannon') { echo "selected"; } ?> >Lascannon</option> 
+                        <option disabled>─────Combi Weapons─────</option>
+                        <option value='Combi-bolter'<?php if($UNIT_WEAPON=='Combi-bolter') { echo "selected"; } ?> >Combi-bolter</option> 
+                        <option value='Combi-flamer'<?php if($UNIT_WEAPON=='Combi-flamer') { echo "selected"; } ?> >Combi-flamer</option>                       
+                        <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo "selected"; } ?> >Combi-melta</option>
+                        <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo "selected"; } ?> >Combi-plasma</option>
+                        <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo "selected"; } ?> >Supercharged Combi-plasma</option>
                             <?php }                             
                         } else { ?>
                         <option value=''>Select...</option>
@@ -343,7 +358,7 @@
                     </select>
                 </div>     
             </div>
-                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                               
         <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
@@ -398,6 +413,8 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Boltgun'>Boltgun</option><option disabled>─────Special Weapons─────</option><option value='Flamer'>Flamer</option><option value='Meltagun'>Meltagun</option><option value='Plasma Gun'>Plasma Gun</option><option value='Supercharged Plasma Gun'>Supercharged Plasma Gun</option><option disabled>─────Heavy Weapons─────</option><option value='Autocannon'>Autocannon</option><option value='Heavy Bolter'>Heavy Bolter</option><option value='Lascannon'>Lascannon</option><option value='Frag Missile Launcher'>Frag Missile Launcher</option><option value='Krak Missile Launcher'>Krak Missile Launcher</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Chain Sword'>Chain Sword</option><option disabled>─────Champion Equipment─────</option><option value='Plasma Pistol'>Plasma Pistol</option><option value='Supercharged Plasma Pistol'>Supercharged Plasma Pistol</option><option value='Combi-bolter'>Combi-bolter</option><option value='Combi-flamer'>Combi-flamer</option><option value='Combi-melta'>Combi-melta</option><option value='Combi-plasma'>Combi-plasma</option><option value='Supercharged Combi-plasma'>Supercharged Combi-plasma</option><option disabled>─────Champion Melee─────</option><option value='Chainaxe'>Chainaxe</option><option value='Lighting Claw'>Lighting Claw</option><option value='Power Axe'>Power Axe</option><option value='Power Fist'>Power Fist</option><option value='Power Maul'>Power Maul</option><option value='Power Sword'>Power Sword</option>");
         } else if (val === "Chaos Land Raider") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Havoc Launcher'>Havoc Launcher</option><option value='Twin Lascannon'>Twin Lascannon</option><option value='Twin Heavy Bolter'>Twin Heavy Bolter</option><option disabled>─────Combi Weapons─────</option><option value='Combi-bolter'>Combi-bolter</option><option value='Combi-flamer'>Combi-flamer</option><option value='Combi-melta'>Combi-melta</option><option value='Combi-plasma'>Combi-plasma</option><option value='Supercharged Combi-plasma'>Supercharged Combi-plasma</option>");
+        } else if (val === "Chaos Predator") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Havoc Launcher'>Havoc Launcher</option><option value='Predator Autocannon'>Predator Autocannon</option><option value='Heavy Bolter'>Heavy Bolter</option><option value='Twin Lascannon'>Twin Lascannon</option><option value='Lascannon'>Lascannon</option><option disabled>─────Combi Weapons─────</option><option value='Combi-bolter'>Combi-bolter</option><option value='Combi-flamer'>Combi-flamer</option><option value='Combi-melta'>Combi-melta</option><option value='Combi-plasma'>Combi-plasma</option><option value='Supercharged Combi-plasma'>Supercharged Combi-plasma</option>");
         } 
     });
 });        
