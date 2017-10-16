@@ -30,4 +30,27 @@
         $WEAPON_ABILITY="This weapon always wounds on a 2+.";    
             
                     
+    }  
+    
+        if($UNIT_WEAPON=='Singing Spear') {
+            $WEAPON_RANGE=12;
+            $WEAPON_TYPE='Assault 1';
+            $WEAPON_STR=9;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1D3";
+            
+        $WEAPON_ABILITY="This weapon always wounds on a 2+.";    
+        
     }    
+    
+            if($UNIT_WEAPON=='Singing Spear (Melee)') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR="User";
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1D3";
+            
+        $WEAPON_ABILITY="This weapon always wounds on a 2+.";    
+            
+                    
+    }     
