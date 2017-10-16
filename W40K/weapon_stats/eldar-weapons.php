@@ -20,7 +20,7 @@
                     
     }
     
-            if($UNIT_WEAPON=='Witch Blade') {
+            if($UNIT_WEAPON=='Witchblade') {
             $WEAPON_RANGE='Melee';
             $WEAPON_TYPE='Melee';
             $WEAPON_STR="User";
