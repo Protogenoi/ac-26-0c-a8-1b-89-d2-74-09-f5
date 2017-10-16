@@ -286,14 +286,51 @@
                         <option value='Flamer'<?php if($UNIT_WEAPON=='Flamer') { echo "selected"; } ?> >Flamer</option> 
                         <option disabled>─────Melee─────</option>
                         <option value='Brutal Assault Weapon' <?php if($UNIT_WEAPON=='Brutal Assault Weapon') { echo "selected"; } ?> >Brutal Assault Weapon</option> 
-                            <?php }                               
+                            <?php }   
+                             if($UNIT=='Havocs') {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Bolt Pistol'<?php if($UNIT_WEAPON=='Bolt Pistol') { echo "selected"; } ?> >Bolt Pistol</option>
+                        <option value='Boltgun'<?php if($UNIT_WEAPON=='Boltgun') { echo "selected"; } ?> >Boltgun</option>
+                        <option disabled>─────Special Weapons─────</option>
+                        <option value='Flamer'<?php if($UNIT_WEAPON=='Flamer') { echo "selected"; } ?> >Flamer</option>
+                        <option value='Meltagun'<?php if($UNIT_WEAPON=='Meltagun') { echo "selected"; } ?> >Meltagun</option>                        
+                        <option value='Plasma Gun'<?php if($UNIT_WEAPON=='Plasma Gun') { echo "selected"; } ?> >Plasma Gun</option>
+                        <option value='Supercharged Plasma Gun'<?php if($UNIT_WEAPON=='Supercharged Plasma Gun') { echo "selected"; } ?> >Supercharged Plasma Gun</option> 
+                        <option disabled>─────Heavy Weapons─────</option>
+                        <option value='Autocannon'<?php if($UNIT_WEAPON=='Autocannon') { echo "selected"; } ?> >Autocannon</option>
+                        <option value='Heavy Bolter'<?php if($UNIT_WEAPON=='Heavy Bolter') { echo "selected"; } ?> >Heavy Bolter</option>
+                        <option value='Lascannon'<?php if($UNIT_WEAPON=='Lascannon') { echo "selected"; } ?> >Lascannon</option>
+                        <option value='Frag Missile Launcher'<?php if($UNIT_WEAPON=='Frag Missile Launcher') { echo "selected"; } ?> >Frag Missile Launcher</option>
+                        <option value='Krak Missile Launcher'<?php if($UNIT_WEAPON=='Krak Missile Launcher') { echo "selected"; } ?> >Krak Missile Launcher</option>                        
+                        <option disabled>─────Grenades─────</option>
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option>                            
+                        <option disabled>─────Melee─────</option>
+                        <option value='Chain Sword' <?php if($UNIT_WEAPON=='Chain Sword') { echo "selected"; } ?> >Chain Sword</option>
+                        <option disabled>─────Champion Equipment─────</option>
+                        <option value='Plasma Pistol'<?php if($UNIT_WEAPON=='Plasma Pistol') { echo "selected"; } ?> >Plasma Pistol</option>
+                        <option value='Supercharged Plasma Pistol'<?php if($UNIT_WEAPON=='Supercharged Plasma Pistol') { echo "selected"; } ?> >Supercharged Plasma Pistol</option> 
+                        <option value='Combi-bolter'<?php if($UNIT_WEAPON=='Combi-bolter') { echo "selected"; } ?> >Combi-bolter</option> 
+                        <option value='Combi-flamer'<?php if($UNIT_WEAPON=='Combi-flamer') { echo "selected"; } ?> >Combi-flamer</option>                       
+                        <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo "selected"; } ?> >Combi-melta</option>
+                        <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo "selected"; } ?> >Combi-plasma</option>
+                        <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo "selected"; } ?> >Supercharged Combi-plasma</option>
+                        <option disabled>─────Champion Melee─────</option>
+                        <option value='Chainaxe' <?php if($UNIT_WEAPON=='Chainaxe') { echo "selected"; } ?> >Chainaxe</option>
+                        <option value='Lighting Claw' <?php if($UNIT_WEAPON=='Lighting Claw') { echo "selected"; } ?> >Lighting Claw</option>
+                        <option value='Power Axe' <?php if($UNIT_WEAPON=='Power Axe') { echo "selected"; } ?> >Power Axe</option>
+                        <option value='Power Fist' <?php if($UNIT_WEAPON=='Power Fist') { echo "selected"; } ?> >Power Fist</option>
+                        <option value='Power Maul' <?php if($UNIT_WEAPON=='Power Maul') { echo "selected"; } ?> >Power Maul</option>
+                        <option value='Power Sword' <?php if($UNIT_WEAPON=='Power Sword') { echo "selected"; } ?> >Power Sword</option>                          
+                            <?php }                             
                         } else { ?>
                         <option value=''>Select...</option>
                             <?php } ?>
                     </select>
                 </div>     
             </div>
-                                                                                                                                                                                                       
+                                                                                                                                                                                                                               
         <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
@@ -344,6 +381,8 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Autogun'>Autogun</option><option value='Heavy Stubber'>Heavy Stubber</option><option value='Autopistol'>Autopistol</option><option value='Shotgun'>Shotgun</option><option value='Flamer'>Flamer</option><option disabled>─────Melee─────</option><option value='Brutal Assault Weapon'>Brutal Assault Weapon</option>");
         } else if (val === "Cultist Champion") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Autogun'>Autogun</option><option value='Heavy Stubber'>Heavy Stubber</option><option value='Autopistol'>Autopistol</option><option value='Shotgun'>Shotgun</option><option value='Flamer'>Flamer</option><option disabled>─────Melee─────</option><option value='Brutal Assault Weapon'>Brutal Assault Weapon</option>");
+        } else if (val === "Havocs") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Boltgun'>Boltgun</option><option disabled>─────Special Weapons─────</option><option value='Flamer'>Flamer</option><option value='Meltagun'>Meltagun</option><option value='Plasma Gun'>Plasma Gun</option><option value='Supercharged Plasma Gun'>Supercharged Plasma Gun</option><option disabled>─────Heavy Weapons─────</option><option value='Autocannon'>Autocannon</option><option value='Heavy Bolter'>Heavy Bolter</option><option value='Lascannon'>Lascannon</option><option value='Frag Missile Launcher'>Frag Missile Launcher</option><option value='Krak Missile Launcher'>Krak Missile Launcher</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Chain Sword'>Chain Sword</option><option disabled>─────Champion Equipment─────</option><option value='Plasma Pistol'>Plasma Pistol</option><option value='Supercharged Plasma Pistol'>Supercharged Plasma Pistol</option><option value='Combi-bolter'>Combi-bolter</option><option value='Combi-flamer'>Combi-flamer</option><option value='Combi-melta'>Combi-melta</option><option value='Combi-plasma'>Combi-plasma</option><option value='Supercharged Combi-plasma'>Supercharged Combi-plasma</option><option disabled>─────Champion Melee─────</option><option value='Chainaxe'>Chainaxe</option><option value='Lighting Claw'>Lighting Claw</option><option value='Power Axe'>Power Axe</option><option value='Power Fist'>Power Fist</option><option value='Power Maul'>Power Maul</option><option value='Power Sword'>Power Sword</option>");
         } 
     });
 });        
