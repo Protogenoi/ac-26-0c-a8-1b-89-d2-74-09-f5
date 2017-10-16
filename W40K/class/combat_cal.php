@@ -355,7 +355,14 @@ $DIE_THREE_MOD=0;
     
     if($WEAPON_TYPE=='Heavy 1D3') {
         $number=$DIE = (mt_rand(1, 3))-1;
-    }     
+    }
+    
+    if($WEAPON_TYPE=='Heavy 2D3') {
+        $ROLL_ONE=$DIE = (mt_rand(1, 3))-1;
+        $ROLL_TWO=$DIE = (mt_rand(1, 3))-1;
+        
+        $number=$ROLL_ONE+$ROLL_TWO;
+    }    
     
     if($WEAPON_TYPE=='Heavy 1D6') {
         $number=$DIE = (mt_rand(1, 6))-1;
