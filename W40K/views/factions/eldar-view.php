@@ -64,7 +64,7 @@
                         <option value='Singing Spear (Melee)' <?php if($UNIT_WEAPON=='Singing Spear (Melee)') { echo "selected"; } ?> >Singing Spear (Melee)</option>
                         <option value='Witchblade'<?php if($UNIT_WEAPON=='Witchblade') { echo "selected"; } ?> >Witchblade</option>
                             <?php }   
-                            if(strpos($UNIT=="Guardian Defenders")) {
+                            if($UNIT=="Guardian Defenders") {
                             ?>
                         <option disabled>─────Wargear─────</option>
                         <option value='Shuriken Cannon'<?php if($UNIT_WEAPON=='Shuriken Cannon') { echo "selected"; } ?> >Shuriken Cannon</option>
