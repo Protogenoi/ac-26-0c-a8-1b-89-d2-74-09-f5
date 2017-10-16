@@ -96,3 +96,34 @@
         $WEAPON_ABILITY="This weapon may target a CHARACTER even if it is not the closest enemy unit. Each time you roll a wound roll of 6+ for this weapon, it inflicts a mortal wound in addition to any other damage.";    
         
     }      
+
+        if($UNIT_WEAPON=='Avenger Shuriken Catapult') {
+            $WEAPON_RANGE=18;
+            $WEAPON_TYPE='Assualt 2';
+            $WEAPON_STR=4;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";
+            
+        $WEAPON_ABILITY="Each time you roll a wound roll of 6+ for this weapon, it inflicts a mortal wound in addition to any other damage.";    
+        
+    }   
+    
+        if($UNIT_WEAPON=='Diresword') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='User';
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="1";
+                    
+    }      
+    
+        if($UNIT_WEAPON=='Power Glaive') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='+1';
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="1";
+            
+        $WEAPON_ABILITY="This weapon always wounds on a 2+.";    
+        
+    }      
