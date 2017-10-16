@@ -63,14 +63,22 @@
                         <option disabled>─────Melee─────</option>
                         <option value='Singing Spear (Melee)' <?php if($UNIT_WEAPON=='Singing Spear (Melee)') { echo "selected"; } ?> >Singing Spear (Melee)</option>
                         <option value='Witchblade'<?php if($UNIT_WEAPON=='Witchblade') { echo "selected"; } ?> >Witchblade</option>
-                            <?php }                              
+                            <?php }   
+                            if(strpos($UNIT=="Guardian Defenders")) {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Shuriken Cannon'<?php if($UNIT_WEAPON=='Shuriken Cannon') { echo "selected"; } ?> >Shuriken Cannon</option>
+                        <option value='Shuriken Catapult'<?php if($UNIT_WEAPON=='Shuriken Catapult') { echo "selected"; } ?> >Shuriken Catapult</option>
+                        <option disabled>─────Grenades─────</option>
+                        <option value='Sunburst Grenade' <?php if($UNIT_WEAPON=='Sunburst Grenade') { echo "selected"; } ?> >Sunburst Grenade</option>
+                            <?php }                             
                         } else { ?>
                         <option value=''>Select...</option>
                             <?php } ?>
                     </select>
                 </div>     
             </div>
-                                                                                                                                                                                                                                                                                                                               
+                           <option disabled>─────Wargear─────</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Shuriken Catapult'>Shuriken Catapult</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option>                                                                                                                                                                                                                                                                                                                            
         <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
@@ -79,6 +87,8 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Melee─────</option><option value='Staff of Ulthamar'>Staff of Ulthamar</option><option value='Witchblade'>Witchblade</option>");
         } else if (val === "Warlock") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Singing Spear'>Singing Spear</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Melee─────</option><option value='Singing Spear (Melee)'>Singing Spear (Melee)</option><option value='Witchblade'>Witchblade</option>");
+        } else if (val === "Guardian Defenders") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Shuriken Catapult'>Shuriken Catapult</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option>");
         } 
     });
 });        
