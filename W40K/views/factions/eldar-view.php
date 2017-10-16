@@ -75,13 +75,13 @@
                             if($UNIT=="Rangers") {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Shuriken Pistol'<?php if($UNIT_WEAPON=='Shuriken Pistol') { echo "selected"; } ?> >Shuriken Pistol</option>
+                        <option value='Avenger Shuriken Pistol'<?php if($UNIT_WEAPON=='Avenger Shuriken Pistol') { echo "selected"; } ?> >Avenger Shuriken Pistol</option>
                         <option value='Ranger Long Rifle'<?php if($UNIT_WEAPON=='Ranger Long Rifle') { echo "selected"; } ?> >Ranger Long Rifle</option>
                             <?php } 
                             if(strpos($UNIT,"Dire Avengers") !== false) {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Avenger Shuriken Catapult'<?php if($UNIT_WEAPON=='Shuriken Catapult') { echo "selected"; } ?> >Shuriken Catapult</option>
+                        <option value='Avenger Shuriken Catapult'<?php if($UNIT_WEAPON=='Avenger Shuriken Catapult') { echo "selected"; } ?> >Avenger Shuriken Catapult</option>
                         <option value='Shuriken Pistol' <?php if($UNIT_WEAPON=='Shuriken Pistol') { echo "selected"; } ?> >Shuriken Pistol</option>
                         <option disabled>─────Grenades─────</option>
                         <option value='Sunburst Grenade' <?php if($UNIT_WEAPON=='Sunburst Grenade') { echo "selected"; } ?> >Sunburst Grenade</option>
