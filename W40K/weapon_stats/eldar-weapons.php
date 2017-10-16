@@ -85,3 +85,14 @@
             $WEAPON_DAMAGE="1";
                     
     }     
+    
+        if($UNIT_WEAPON=='Ranger Long Rifle') {
+            $WEAPON_RANGE=36;
+            $WEAPON_TYPE='Heavy 1';
+            $WEAPON_STR=4;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";
+            
+        $WEAPON_ABILITY="This weapon may target a CHARACTER even if it is not the closest enemy unit. Each time you roll a wound roll of 6+ for this weapon, it inflicts a mortal wound in addition to any other damage.";    
+        
+    }      
