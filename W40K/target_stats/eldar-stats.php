@@ -19,6 +19,7 @@
     } 
     
     if($TARGET_UNIT=='Warlock') {
+        $T_MOVE=7;
         $T_WS=3;
         $T_BS=3;
         $T_STR=3;
