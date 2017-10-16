@@ -563,4 +563,52 @@
             $WEAPON_AP=3;
             $WEAPON_DAMAGE="1D6";      
             
+        }  
+        
+        if($UNIT_WEAPON=='Autogun') {
+            $WEAPON_RANGE=24;
+            $WEAPON_TYPE='Rapid Fire 1';
+            $WEAPON_STR=3;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";      
+            
+        }     
+        
+        if($UNIT_WEAPON=='Heavy Stubber') {
+            $WEAPON_RANGE=36;
+            $WEAPON_TYPE='Heavy 3';
+            $WEAPON_STR=4;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";      
+            
+        }   
+        
+        if($UNIT_WEAPON=='Autopistol') {
+            $WEAPON_RANGE=12;
+            $WEAPON_TYPE='Pistol 1';
+            $WEAPON_STR=3;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";      
+            
+        }    
+        
+        if($UNIT_WEAPON=='Shotgun') {
+            $WEAPON_RANGE=12;
+            $WEAPON_TYPE='Assault 2';
+            $WEAPON_STR=3;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";      
+            
+        }     
+        
+        if($UNIT_WEAPON=='Brutal Assault Weapon') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='User';
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";
+            
+        $WEAPON_ABILITY="Each time the bearer fights, it may make one additional attack with this weapon.";     
+            
+            
         }        
