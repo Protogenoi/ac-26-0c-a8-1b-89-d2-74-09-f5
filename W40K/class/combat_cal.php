@@ -1272,7 +1272,7 @@ function ap_modifier($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABI
     $SAVE_ROLLS=$SAVE_ROLLS-$DIE_SIX_MOD;
     
     $combat_cal = new combat_cal();
-    $combat_cal->save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES);    
+    $combat_cal->save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES,$DIE_SIX_MOD);    
     
 }
 
