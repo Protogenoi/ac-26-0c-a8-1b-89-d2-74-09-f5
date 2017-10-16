@@ -1,6 +1,7 @@
 <?php
 
     if($TARGET_UNIT=='Eldrad Ulthran') {
+        $T_MOVE=7;
         $T_WS=2;
         $T_BS=2;
         $T_STR=3;
@@ -10,6 +11,10 @@
         $T_LD=9;
         $T_SAVE=6; 
         $T_INVUL =3;
+        
+        $T_ABILITIES=array("Ancient Doom","Battle Focus","Runes of the Farseer","Ghosthelm","Armour of the Last Runes","Spirit Link");
+        $T_FACTION_KW=array("Aeldari","Asuryani","Warhost","Ulthwe");
+        $T_KEYWORDS=array("Character","Infantry","Psyker","Eldrad Ulthran");            
         
     } 
     
