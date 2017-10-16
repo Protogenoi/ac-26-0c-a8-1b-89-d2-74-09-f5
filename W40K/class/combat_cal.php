@@ -1421,7 +1421,7 @@ function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABIL
 
     $SAVE_ROLL_DISPLAY=$SAVE_ROLLS+1;
     
-    if($UNIT_WEAPON=='Sniper Rifle') {
+    if($UNIT_WEAPON=='Sniper Rifle' || $UNIT_WEAPON=='Ranger Long Rifle') {
     $MORTAL_WOUNDS=$DIE_SIX;
     }
     
