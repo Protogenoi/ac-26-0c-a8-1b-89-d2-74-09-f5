@@ -37,6 +37,7 @@
     }     
         
     if($UNIT=='Guardian Defenders') {
+        $U_MOVE=7;
         $U_WS=3;
         $U_BS=3;
         $U_STR=3;
@@ -46,6 +47,10 @@
         $U_LD=7;
         $U_SAVE=5; 
         $U_INVUL =0;
+        
+        $U_ABILITIES=array("Ancient Doom","Battle Focus","Crewed Weapons");
+        $U_FACTION_KW=array("Aeldari","Asuryani","Warhost","CRAFTWORLD");
+        $U_KEYWORDS=array("Infantry","Guardian Defenders");         
         
     }   
     
