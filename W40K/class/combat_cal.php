@@ -456,15 +456,24 @@ $DIE_THREE_MOD=0;
 	</tr>
 	</table>";
     
+  $FLAG_ROLL_CHK=0;  
   $RE_ROLLL_ONES=array("Rites of Battle");
+  $AUTO_WOUND=array("Singing Spear");
  
  if (array_intersect($RE_ROLLL_ONES, $U_ABILITIES)) {
-     
+    $FLAG_ROLL_CHK=1;
     $PASS_HITS=$TOTAL_HITS-1;
     $combat_cal = new combat_cal();
     $combat_cal->reroll_ones(6,$PASS_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS,$U_ABILITIES,$RE_ROLLL_ONES,$DIE_ONE,$U_BS);     
      
- } else {      
+ } elseif (in_array($UNIT_WEAPON, $AUTO_WOUND)) {
+        $FLAG_ROLL_CHK=1;
+    $PASS_HITS=$TOTAL_HITS-1;
+    $combat_cal = new combat_cal();
+    $combat_cal->auto_wound(6,$PASS_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS);        
+
+        
+    } elseif($FLAG_ROLL_CHK==0) {      
     
     $PASS_HITS=$TOTAL_HITS-1;
     $combat_cal = new combat_cal();
@@ -624,36 +633,36 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
     if($ENEMY_FACTION=='Chaos Space Marines') {
         require(__DIR__ . '/../target_stats/csm-stats.php');  
 
-    }    
-    
+    }       
+      
     if($WEAPON_STR + $T_TOUGHNESS >= $WEAPON_STR) {
     //DOUBLE 2+
         $TOTAL_WOUNDS=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=2;
     }
 
-    elseif($WEAPON_STR>$T_TOUGHNESS) {
+    if($WEAPON_STR>$T_TOUGHNESS) {
         //3+
         $TOTAL_WOUNDS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=3;
     }
-    elseif($WEAPON_STR==$T_TOUGHNESS) {
+    if($WEAPON_STR==$T_TOUGHNESS) {
         //TO WOUND = 4+
         $TOTAL_WOUNDS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=4;
     }
-    elseif($WEAPON_STR<$T_TOUGHNESS) {
+    if($WEAPON_STR<$T_TOUGHNESS) {
         // 5+
         $TOTAL_WOUNDS=$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=5;
     }    
-    elseif($WEAPON_STR + $T_TOUGHNESS <= $WEAPON_STR) {
+    if($WEAPON_STR + $T_TOUGHNESS <= $WEAPON_STR) {
     //STR HALF OR LESS THAN T
         $TOTAL_WOUNDS=$DIE_SIX;
         $WOUNDS_ON=6;
     }
     
-    elseif($WEAPON_DAMAGE==2) {
+    if($WEAPON_DAMAGE==2) {
         $TOTAL_WOUNDS=$TOTAL_WOUNDS*2;
     }
     
@@ -664,6 +673,148 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
     echo "<table class='table table-condensed'>
         <tr>
         <th colspan='7'>$TOTAL_WOUNDS Wounds | T $T_TOUGHNESS | STR $WEAPON_STR | DMG $WEAPON_DAMAGE | $WOUNDS_ON+ to wound </th>
+        </tr>
+	<tr>
+	<th>1</th>
+	<th>2</th>
+	<th>3</th>
+	<th>4</th>
+	<th>5</th>
+	<th>6</th>
+        <th>Wounds</th>
+	</tr>
+	<tr>
+	<th>$DIE_ONE</th>
+	<th>$DIE_TWO</th>
+	<th>$DIE_THREE</th>
+	<th>$DIE_FOUR</th>
+	<th>$DIE_FIVE</th>
+	<th>$DIE_SIX</th>
+        <th>$TOTAL_WOUNDS</th>  
+	</tr>
+	</table>";  
+    
+    if(!is_numeric ($WEAPON_DAMAGE) || $UNIT_WEAPON=='Grav-cannon and grav-amp' || $UNIT_WEAPON=='Grav-gun' && $T_SAVE=='3'|| $UNIT_WEAPON=='Meltagun' && $RANGE_BONUS>=1 || $UNIT_WEAPON=='Multi-melta' && $RANGE_BONUS>=1 || $UNIT_WEAPON=='Supercharged Plasma Exterminator') {
+
+    $SAVE_ROLLS=$TOTAL_WOUNDS-1;
+    $combat_cal = new combat_cal();
+    $combat_cal->damage_modifier($TOTAL_WOUNDS,$WEAPON_DAMAGE,$T_SAVE,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS,$T_INVUL,$T_ABILITIES); 
+    
+    
+
+    } 
+    
+    elseif(strpos($UNIT_WEAPON,"Shuriken") !== false) {
+
+    $SAVE_ROLLS=$TOTAL_WOUNDS-1;
+    $combat_cal = new combat_cal();
+    $combat_cal->ap_modifier($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES,$DIE_SIX);        
+        
+    }
+    
+    elseif(is_numeric ($WEAPON_DAMAGE)) {
+    $SAVE_ROLLS=$TOTAL_WOUNDS-1;
+    $combat_cal = new combat_cal();
+    $combat_cal->save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES);
+    
+    }
+    
+}
+
+
+function auto_wound($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS) {
+    
+    $TWO_TO_WOUND=array("Singing Spear");
+
+    $DIE_ONE = 0;
+    $DIE_TWO = 0;
+    $DIE_THREE = 0;
+    $DIE_FOUR = 0;
+    $DIE_FIVE = 0;
+    $DIE_SIX = 0;
+
+    for ($x = 0; $x <= $TOTAL_HITS; $x++) {
+
+        $DIE = mt_rand(1, $sides);
+
+        if ($DIE == 1) {
+            $DIE_ONE++;
+        }
+        if ($DIE == 2) {
+            $DIE_TWO++;
+        }
+        if ($DIE == 3) {
+            $DIE_THREE++;
+        }
+        if ($DIE == 4) {
+            $DIE_FOUR++;
+        }
+        if ($DIE == 5) {
+            $DIE_FIVE++;
+        }
+        if ($DIE == 6) {
+            $DIE_SIX++;
+        }
+    }
+    
+    if($ENEMY_FACTION=='Ultramarines') {
+        require(__DIR__ . '/../target_stats/ultramarines-stats.php');  
+
+    }
+
+    if($ENEMY_FACTION=='Eldar') {
+        require(__DIR__ . '/../target_stats/eldar-stats.php');  
+
+    }    
+
+    if($ENEMY_FACTION=='Deathguard') {
+        require(__DIR__ . '/../target_stats/deathguard-stats.php');  
+
+    } 
+    
+    if($ENEMY_FACTION=='Chaos Space Marines') {
+        require(__DIR__ . '/../target_stats/csm-stats.php');  
+
+    }       
+      
+    if(in_array($UNIT_WEAPON, $TWO_TO_WOUND)) {
+    //DOUBLE 2+
+        $TOTAL_WOUNDS=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $WOUNDS_ON=2;
+    }
+
+    elseif(in_array($UNIT_WEAPON, $THREE_TO_WOUND)) {
+        //3+
+        $TOTAL_WOUNDS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $WOUNDS_ON=3;
+    }
+    elseif(in_array($UNIT_WEAPON, $FOUR_TO_WOUND)) {
+        //TO WOUND = 4+
+        $TOTAL_WOUNDS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $WOUNDS_ON=4;
+    }
+    elseif(in_array($UNIT_WEAPON, $FIVE_TO_WOUND)) {
+        // 5+
+        $TOTAL_WOUNDS=$DIE_FIVE+$DIE_SIX;
+        $WOUNDS_ON=5;
+    }    
+    elseif(in_array($UNIT_WEAPON, $SIX_TO_WOUND)) {
+    //STR HALF OR LESS THAN T
+        $TOTAL_WOUNDS=$DIE_SIX;
+        $WOUNDS_ON=6;
+    }
+    
+    if($WEAPON_DAMAGE==2) {
+        $TOTAL_WOUNDS=$TOTAL_WOUNDS*2;
+    }
+    
+
+    
+    
+    
+    echo "<table class='table table-condensed'>
+        <tr>
+        <th colspan='7'>$TOTAL_WOUNDS Wounds | T $T_TOUGHNESS | STR $WEAPON_STR | DMG $WEAPON_DAMAGE | $WOUNDS_ON+ auto wound </th>
         </tr>
 	<tr>
 	<th>1</th>
