@@ -85,7 +85,7 @@ elseif(isset($FACTION) && $FACTION=='Eldar') {
 }
 
 elseif(isset($FACTION) && $FACTION=='Necrons') {
-    require_once(__DIR__ . '/views/factions/necron-view.php');
+    require_once(__DIR__ . '/views/factions/necrons-view.php');
 }
 
 ?>
@@ -118,7 +118,7 @@ if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Ultramarines') {
 }
 
 if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Necrons') {
-    require_once(__DIR__ . '/views/enemy_factions/necron-view.php');
+    require_once(__DIR__ . '/views/enemy_factions/necrons-view.php');
 }
 ?>          
         
