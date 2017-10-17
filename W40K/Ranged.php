@@ -88,6 +88,10 @@ elseif(isset($FACTION) && $FACTION=='Necrons') {
     require_once(__DIR__ . '/views/factions/necrons-view.php');
 }
 
+elseif(isset($FACTION) && $FACTION=='Deathguard') {
+    require_once(__DIR__ . '/views/factions/deathguard-view.php');
+}
+
 ?>
    <div class="col-xs-4">
 <?php 
@@ -119,6 +123,10 @@ if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Ultramarines') {
 
 if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Necrons') {
     require_once(__DIR__ . '/views/enemy_factions/necrons-view.php');
+}
+
+if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Deathguard') {
+    require_once(__DIR__ . '/views/enemy_factions/deathguard-view.php');
 }
 ?>          
         
