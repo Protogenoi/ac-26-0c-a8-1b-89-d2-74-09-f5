@@ -39,7 +39,7 @@ class combat_cal {
        
        }        
         
- if(strpos($WEAPON_TYPE,"Assualt") !== false && $MOVEMENT=='Advanced') {
+ if(strpos($WEAPON_TYPE,"Assault") !== false && $MOVEMENT=='Advanced') {
      
      $U_BS++;
      
@@ -51,7 +51,7 @@ class combat_cal {
      
  }
        
-    $AUTO_HIT_WEAPONS=array("Flamer","Warp Flame Pistol","Warpflamer","Plague Belcher","Plague Spewer","Heavy Flamer");
+    $AUTO_HIT_WEAPONS=array("Flamer","Warp Flame Pistol","Warpflamer","Plague Belcher","Plague Spewer","Heavy Flamer","Gauntlet of Fire");
     $TWO_D_SIX_WEAPONS=array("Tempest Launcher");
     $ONE_D_SIX_WEAPONS=array("Aeldari Sunburst Missile Launcher","Frag Missile Launcher","Havoc Launcher");
  
@@ -578,19 +578,19 @@ $DIE_THREE_MOD=0;
         $number=$SHOW_ROLL_HITS-1;
     }     
     
-    if($WEAPON_TYPE=='Assualt 2') {
+    if($WEAPON_TYPE=='Assault 2') {
         $SHOW_ROLL_HITS=($number+1)*2;
         $number=$number+$MODELS_TO_FIRE;
 
     } 
     
-    if($WEAPON_TYPE=='Assualt 3') {
+    if($WEAPON_TYPE=='Assault 3') {
         $SHOW_ROLL_HITS=($number+1)*3;
         $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
 
     }  
 
-    if($WEAPON_TYPE=='Assualt 1D3') {
+    if($WEAPON_TYPE=='Assault 1D3') {
         if($UNIT_WEAPON=='Plasma Exterminator' || $UNIT_WEAPON=='Supercharged Plasma Exterminator') {
             
         } else{
