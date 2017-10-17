@@ -11,10 +11,10 @@
                         <option value="">Select...</option>
                         <option disabled>─────HQ─────</option>
                         <option value="Imotekh the Stormlord" <?php if($UNIT=='Imotekh the Stormlord') { echo "selected"; } ?> >Imotekh the Stormlord</option>
-                        <option value="Warlock" <?php if($UNIT=='Warlock') { echo "selected"; } ?> >Warlock</option>
+                        <option value="Cryptec" <?php if($UNIT=='Cryptec') { echo "selected"; } ?> >Cryptec</option>
                         <option disabled>─────ELITES─────</option>
                         <option disabled>─────TROOPS─────</option>
-                        <option value="Guardian Defenders" <?php if($UNIT=='Guardian Defenders') { echo "selected"; } ?> >Guardian Defenders</option>
+                        <option value="Necron Warriors" <?php if($UNIT=='Necron Warriors') { echo "selected"; } ?> >Necron Warriors</option>
                         <option value="Rangers" <?php if($UNIT=='Rangers') { echo "selected"; } ?> >Rangers</option>
                         <option value="Dire Avengers" <?php if($UNIT=='Dire Avengers') { echo "selected"; } ?> >Dire Avengers</option>
                         <option value="Dire Avengers Exarch" <?php if($UNIT=='Dire Avengers Exarch') { echo "selected"; } ?> >Dire Avengers Exarch</option>
@@ -55,22 +55,17 @@
                         <option disabled>─────Melee─────</option>
                         <option value='Staff of the Destroyer (Melee)'<?php if($UNIT_WEAPON=='Staff of the Destroyer (Melee)') { echo "selected"; } ?> >Staff of the Destroyer (Melee)</option>
                             <?php } 
-                            if($UNIT=="Warlock") {
+                            if($UNIT=="Cryptec") {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Singing Spear'<?php if($UNIT_WEAPON=='Singing Spear') { echo "selected"; } ?> >Singing Spear</option>
-                        <option value='Shuriken Pistol' <?php if($UNIT_WEAPON=='Shuriken Pistol') { echo "selected"; } ?> >Shuriken Pistol</option>
+                        <option value='Staff of Light'<?php if($UNIT_WEAPON=='Staff of Light') { echo "selected"; } ?> >Staff of Light</option>
                         <option disabled>─────Melee─────</option>
-                        <option value='Singing Spear (Melee)' <?php if($UNIT_WEAPON=='Singing Spear (Melee)') { echo "selected"; } ?> >Singing Spear (Melee)</option>
-                        <option value='Witchblade'<?php if($UNIT_WEAPON=='Witchblade') { echo "selected"; } ?> >Witchblade</option>
+                        <option value='Staff of Light (Melee)' <?php if($UNIT_WEAPON=='Staff of Light (Melee)') { echo "selected"; } ?> >Staff of Light (Melee)</option>
                             <?php }   
-                            if($UNIT=="Guardian Defenders") {
+                            if($UNIT=="Necron Warriors") {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Shuriken Cannon'<?php if($UNIT_WEAPON=='Shuriken Cannon') { echo "selected"; } ?> >Shuriken Cannon</option>
-                        <option value='Shuriken Catapult'<?php if($UNIT_WEAPON=='Shuriken Catapult') { echo "selected"; } ?> >Shuriken Catapult</option>
-                        <option disabled>─────Grenades─────</option>
-                        <option value='Sunburst Grenade' <?php if($UNIT_WEAPON=='Sunburst Grenade') { echo "selected"; } ?> >Sunburst Grenade</option>
+                        <option value='Gauss flayer'<?php if($UNIT_WEAPON=='Gauss flayer') { echo "selected"; } ?> >Gauss flayer</option>
                             <?php }  
                             if($UNIT=="Rangers") {
                             ?>
@@ -105,17 +100,17 @@
                     </select>
                 </div>     
             </div>
-                                                 
+                                                                                                 
     <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
         var val = $(this).val();  
         if (val === "Imotekh the Stormlord") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauntlet of Fire'>Gauntlet of Fire</option><option value='Staff of the Destroyer'>Staff of the Destroyer</option><option disabled>─────Melee─────</option><option value='Staff of the Destroyer (Melee)'>Staff of the Destroyer (Melee)</option>");
-        } else if (val === "Warlock") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Singing Spear'>Singing Spear</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Melee─────</option><option value='Singing Spear (Melee)'>Singing Spear (Melee)</option><option value='Witchblade'>Witchblade</option>");
-        } else if (val === "Guardian Defenders") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Shuriken Catapult'>Shuriken Catapult</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option>");
+        } else if (val === "Cryptec") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Staff of Light'>Staff of Light</option><option disabled>─────Melee─────</option><option value='Staff of Light (Melee)'>Staff of Light (Melee)</option>");
+        } else if (val === "Necron Warriors") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss flayer'>Gauss flayer</option>");
         } else if (val === "Rangers") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option value='Ranger Long Rifle'>Ranger Long Rifle</option>");
         } else if (val === "Dire Avengers") {
@@ -175,7 +170,7 @@ $(document).ready(function () {
 
         if($FACTION=='Necrons') {
            
-           require(__DIR__ . '/../../unit_stats/necrons-stats.php');
+           require(__DIR__ . '/../../unit_stats/necron-stats.php');
 
        }
        
