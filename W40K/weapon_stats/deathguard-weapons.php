@@ -202,4 +202,22 @@
             
        $WEAPON_ABILITY="When attacking with this weapon subtract 1 from the hit roll.";     
                     
-    }          
+    }  
+    
+        if($UNIT_WEAPON=='Plasma Gun') {
+            $WEAPON_RANGE='24';
+            $WEAPON_TYPE='Rapid Fire 1';
+            $WEAPON_STR="7";
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="1";           
+        
+    } 
+    
+        if($UNIT_WEAPON=='Supercharged Plasma Gun') {
+            $WEAPON_RANGE='24';
+            $WEAPON_TYPE='Rapid Fire 1';
+            $WEAPON_STR="8";
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="2";           
+        
+    }     
