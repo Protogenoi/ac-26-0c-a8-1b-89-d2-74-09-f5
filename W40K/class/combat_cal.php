@@ -34,8 +34,8 @@ class combat_cal {
        
        elseif($FACTION=='Necrons') {
 
-           require(__DIR__ . '/../unit_stats/necrons-stats.php');
-           require(__DIR__ . '/../weapon_stats/necrons-weapons.php');  
+           require(__DIR__ . '/../unit_stats/necron-stats.php');
+           require(__DIR__ . '/../weapon_stats/necron-weapons.php');  
        
        }        
         
@@ -1020,7 +1020,7 @@ function auto_wound($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,
     } 
 
     elseif($ENEMY_FACTION=='Necrons') {
-        require(__DIR__ . '/../target_stats/necrons-stats.php');  
+        require(__DIR__ . '/../target_stats/necron-stats.php');  
 
     }     
       
