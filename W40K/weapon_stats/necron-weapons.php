@@ -55,3 +55,23 @@
             $WEAPON_DAMAGE="1";
                     
     }    
+    
+        if($UNIT_WEAPON=='Gauss Blaster') {
+            $WEAPON_RANGE=24;
+            $WEAPON_TYPE='Rapid Fire 1';
+            $WEAPON_STR=5;
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="1";
+                    
+    }    
+
+        if($UNIT_WEAPON=='Gauss Flayer') {
+            $WEAPON_RANGE=24;
+            $WEAPON_TYPE='Assault 2';
+            $WEAPON_STR=5;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";
+            
+            $WEAPON_ABILITY="Each hit roll of 6+ with this weapon causes 3 hits instead of 1.";
+                    
+    }        
