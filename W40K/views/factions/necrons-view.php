@@ -15,7 +15,7 @@
                         <option disabled>─────ELITES─────</option>
                         <option disabled>─────TROOPS─────</option>
                         <option value="Necron Warriors" <?php if($UNIT=='Necron Warriors') { echo "selected"; } ?> >Necron Warriors</option>
-                        <option value="Rangers" <?php if($UNIT=='Rangers') { echo "selected"; } ?> >Rangers</option>
+                        <option value="Immortals" <?php if($UNIT=='Immortals') { echo "selected"; } ?> >Immortals</option>
                         <option value="Dire Avengers" <?php if($UNIT=='Dire Avengers') { echo "selected"; } ?> >Dire Avengers</option>
                         <option value="Dire Avengers Exarch" <?php if($UNIT=='Dire Avengers Exarch') { echo "selected"; } ?> >Dire Avengers Exarch</option>
                         <option disabled>─────FAST ATTACK─────</option>
@@ -67,11 +67,11 @@
                         <option disabled>─────Wargear─────</option>
                         <option value='Gauss Flayer'<?php if($UNIT_WEAPON=='Gauss Flayer') { echo "selected"; } ?> >Gauss Flayer</option>
                             <?php }  
-                            if($UNIT=="Rangers") {
+                            if($UNIT=="Immortals") {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Avenger Shuriken Pistol'<?php if($UNIT_WEAPON=='Avenger Shuriken Pistol') { echo "selected"; } ?> >Avenger Shuriken Pistol</option>
-                        <option value='Ranger Long Rifle'<?php if($UNIT_WEAPON=='Ranger Long Rifle') { echo "selected"; } ?> >Ranger Long Rifle</option>
+                        <option value='Gauss Blaster'<?php if($UNIT_WEAPON=='Gauss Blaster') { echo "selected"; } ?> >Gauss Blaster</option>
+                        <option value='Tesla Carbine'<?php if($UNIT_WEAPON=='Tesla Carbine') { echo "selected"; } ?> >Tesla Carbine</option>
                             <?php } 
                             if(strpos($UNIT,"Dire Avengers") !== false) {
                             ?>
@@ -100,7 +100,7 @@
                     </select>
                 </div>     
             </div>
-                                                                                                 
+                                                                                                                        
     <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
@@ -111,8 +111,8 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Staff of Light'>Staff of Light</option><option disabled>─────Melee─────</option><option value='Staff of Light (Melee)'>Staff of Light (Melee)</option>");
         } else if (val === "Necron Warriors") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss Flayer'>Gauss Flayer</option>");
-        } else if (val === "Rangers") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option value='Ranger Long Rifle'>Ranger Long Rifle</option>");
+        } else if (val === "Immortals") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss Blaster'>Gauss Blaster</option><option value='Tesla Carbine'>Tesla Carbine</option>");
         } else if (val === "Dire Avengers") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option> <option value='Avenger Shuriken Catapult'>Avenger Shuriken Catapult</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option><option disabled>─────Melee─────</option><option value='Diresword'>Diresword</option><option value='Power Glaive'>Power Glaive</option>");
         } else if (val === "Dire Avengers Exarch") {
