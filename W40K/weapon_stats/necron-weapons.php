@@ -65,7 +65,7 @@
                     
     }    
 
-        if($UNIT_WEAPON=='Gauss Flayer') {
+        if($UNIT_WEAPON=='Tesla Carbine') {
             $WEAPON_RANGE=24;
             $WEAPON_TYPE='Assault 2';
             $WEAPON_STR=5;
