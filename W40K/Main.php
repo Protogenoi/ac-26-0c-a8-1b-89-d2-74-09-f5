@@ -48,6 +48,7 @@ $ENEMY_FACTION = filter_input(INPUT_GET, 'ENEMY_FACTION', FILTER_SANITIZE_SPECIA
                         <option value="Ultramarines" <?php if(isset($FACTION) && $FACTION=='Ultramarines') { echo "selected"; } ?> >Ultramarines</option>
                         <option value="Chaos Space Marines" <?php if(isset($FACTION) && $FACTION=='Chaos Space Marines') { echo "selected"; } ?> >Chaos Space Marines</option>
                         <option value="Eldar" <?php if(isset($FACTION) && $FACTION=='Eldar') { echo "selected"; } ?> >Eldar</option>
+                        <option value="Necrons" <?php if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Necrons') { echo "selected"; } ?> >Necrons</option>
 
                     </select>
                 </div>     
@@ -61,6 +62,7 @@ $ENEMY_FACTION = filter_input(INPUT_GET, 'ENEMY_FACTION', FILTER_SANITIZE_SPECIA
                         <option value="Chaos Space Marines" <?php if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Chaos Space Marines') { echo "selected"; } ?> >Chaos Space Marines</option>
                         <option value="Eldar" <?php if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Eldar') { echo "selected"; } ?> >Eldar</option>
                         <option value="Ultramarines" <?php if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Ultramarines') { echo "selected"; } ?> >Ultramarines</option>
+                        <option value="Necrons" <?php if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Necrons') { echo "selected"; } ?> >Necrons</option>
 
                     </select>
                 </div>     
