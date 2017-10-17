@@ -1434,6 +1434,10 @@ $DIE_SIX_MOD=0;
                     
     }
     
+    if(empty($DIE_SIX_MOD)) {
+        $DIE_SIX_MOD=0;
+    }
+    
     $SAVE_ROLLS=$TOTAL_WOUNDS-1;
     $combat_cal = new combat_cal();
     $combat_cal->save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES,$DIE_SIX_MOD);    
