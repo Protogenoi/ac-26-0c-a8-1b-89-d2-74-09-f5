@@ -47,3 +47,11 @@
                     
     }    
 
+        if($UNIT_WEAPON=='Gauss Flayer') {
+            $WEAPON_RANGE=24;
+            $WEAPON_TYPE='Rapid Fire 1';
+            $WEAPON_STR=4;
+            $WEAPON_AP=1;
+            $WEAPON_DAMAGE="1";
+                    
+    }    
