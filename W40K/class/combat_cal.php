@@ -45,6 +45,7 @@ class combat_cal {
  }
        
     $AUTO_HIT_WEAPONS=array("Flamer","Warp Flame Pistol","Warpflamer","Plague Belcher","Plague Spewer","Heavy Flamer");
+    $TWO_D_SIX_WEAPONS=array("Tempest Launcher");
  
     if (in_array($UNIT_WEAPON,$AUTO_HIT_WEAPONS,true)) {
         
@@ -52,7 +53,15 @@ class combat_cal {
     $combat_cal->d_six_roll($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE);        
             
         
-    }    
+    }
+    
+    elseif(in_array($UNIT_WEAPON,$TWO_D_SIX_WEAPONS,true)) {
+        
+    $combat_cal = new combat_cal();
+    $combat_cal->two_d_six_roll($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE,$U_ABILITIES);        
+                
+        
+    }   
     
     elseif($UNIT_WEAPON=='Plasma Exterminator' || $UNIT_WEAPON=='Supercharged Plasma Exterminator') {
         
@@ -122,6 +131,52 @@ $DIE_THREE_MOD=0;
     $combat_cal->roll($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE,$U_ABILITIES);        
         
     }   
+    
+    function two_d_six_roll($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE,$U_ABILITIES) {
+    
+        if($MODELS_TO_FIRE==1) {
+
+        $DIE = mt_rand(1, 6);
+        $DIE_TWO = mt_rand(1, 6);
+        
+        $SHOW_ROLL_HITS=$DIE+$DIE_TWO;
+        
+        } 
+        
+        elseif($MODELS_TO_FIRE==2) {
+
+        $DIE = mt_rand(1, 6);
+        $DIE_TWO = mt_rand(1, 6);
+        $DIE_THREE = mt_rand(1, 6);
+        $DIE_FOUR = mt_rand(1, 6);
+
+	$SHOW_ROLL_HITS=$DIE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
+        
+		    }                         
+
+        
+    echo "<table class='table table-condensed'>
+        <tr>
+        <th colspan='7'>$SHOW_ROLL_HITS (2D6 shots) | $UNIT_WEAPON ($WEAPON_TYPE)</th>
+        </tr>
+	<tr>
+	<th>Die 1</th>
+	<th>Die 2</th>
+        <th>Hits</th>
+	</tr>
+	<tr>
+        <th>$DIE</th>
+        <th>$DIE_TWO</th>            
+        <th>$SHOW_ROLL_HITS</th>  
+	</tr>
+	</table>";   
+    
+    $number=$SHOW_ROLL_HITS-1;
+    $combat_cal = new combat_cal();
+    $combat_cal->roll($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE,$U_ABILITIES);        
+
+}
+    
     
     function d_six_roll($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE) {
 
