@@ -1,6 +1,6 @@
 <?php
 
-    if($TARGET_UNIT=='Imotekh the Stormlord') {
+    if($UNIT=='Imotekh the Stormlord') {
         $U_MOVE=5;
         $U_WS=2;
         $U_BS=2;
@@ -17,3 +17,21 @@
         $U_KEYWORDS=array("Character","Infantry","Overlord","Imotekh the Stormlord");            
         
     } 
+
+    if($UNIT=='Cryptec') {
+        $U_MOVE=5;
+        $U_WS=3;
+        $U_BS=3;
+        $U_STR=4;
+        $U_TOUGHNESS=4;
+        $U_WOUNDS=4;
+        $U_ATTACKS=1;
+        $U_LD=10;
+        $U_SAVE=4; 
+        $U_INVUL =5;
+        
+        $U_ABILITIES=array("Living Metal","Technomancer","Chronometron");
+        $U_FACTION_KW=array("Necrons","DYNASTY");
+        $U_KEYWORDS=array("Character","Infantry","Cryptec");            
+        
+    }     
