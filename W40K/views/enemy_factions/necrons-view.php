@@ -13,7 +13,7 @@
                         <option disabled>─────ELITES─────</option>
                         <option disabled>─────TROOPS─────</option>
                         <option value="Necron Warriors" <?php if($TARGET_UNIT=='Necron Warriors') { echo "selected"; } ?> >Necron Warriors</option>
-                        <option value="Rangers" <?php if($TARGET_UNIT=='Rangers') { echo "selected"; } ?> >Rangers</option>
+                        <option value="Immortals" <?php if($TARGET_UNIT=='Immortals') { echo "selected"; } ?> >Immortals</option>
                         <option value="Dire Avengers" <?php if($TARGET_UNIT=='Dire Avengers') { echo "selected"; } ?> >Dire Avengers</option>
                         <option value="Dire Avengers Exarch" <?php if($TARGET_UNIT=='Dire Avengers Exarch') { echo "selected"; } ?> >Dire Avengers Exarch</option>
                         <option disabled>─────FAST ATTACK─────</option>
