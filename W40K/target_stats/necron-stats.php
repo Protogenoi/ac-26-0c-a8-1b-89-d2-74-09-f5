@@ -52,4 +52,22 @@
         $T_FACTION_KW=array("Necrons","DYNASTY");
         $T_KEYWORDS=array("Infantry","Warriors");            
         
-    }       
+    }   
+
+    if($TARGET_UNIT=='Immortals') {
+        $T_MOVE=5;
+        $T_WS=3;
+        $T_BS=3;
+        $T_STR=4;
+        $T_TOUGHNESS=4;
+        $T_WOUNDS=1;
+        $T_ATTACKS=1;
+        $T_LD=10;
+        $T_SAVE=3; 
+        $T_INVUL =0;
+        
+        $T_ABILITIES=array("Reanimation Protocols");
+        $T_FACTION_KW=array("Necrons","DYNASTY");
+        $T_KEYWORDS=array("Infantry","Immortals");            
+        
+    }     
