@@ -9,10 +9,10 @@
                         <option value="">Select...</option>
                         <option disabled>─────HQ─────</option>
                         <option value="Imotekh the Stormlord" <?php if($TARGET_UNIT=='Imotekh the Stormlord') { echo "selected"; } ?> >Imotekh the Stormlord</option>
-                        <option value="Warlock" <?php if($TARGET_UNIT=='Warlock') { echo "selected"; } ?> >Warlock</option>
+                        <option value="Cryptec" <?php if($TARGET_UNIT=='Cryptec') { echo "selected"; } ?> >Cryptec</option>
                         <option disabled>─────ELITES─────</option>
                         <option disabled>─────TROOPS─────</option>
-                        <option value="Guardian Defenders" <?php if($TARGET_UNIT=='Guardian Defenders') { echo "selected"; } ?> >Guardian Defenders</option>
+                        <option value="Necron Warriors" <?php if($TARGET_UNIT=='Necron Warriors') { echo "selected"; } ?> >Necron Warriors</option>
                         <option value="Rangers" <?php if($TARGET_UNIT=='Rangers') { echo "selected"; } ?> >Rangers</option>
                         <option value="Dire Avengers" <?php if($TARGET_UNIT=='Dire Avengers') { echo "selected"; } ?> >Dire Avengers</option>
                         <option value="Dire Avengers Exarch" <?php if($TARGET_UNIT=='Dire Avengers Exarch') { echo "selected"; } ?> >Dire Avengers Exarch</option>
