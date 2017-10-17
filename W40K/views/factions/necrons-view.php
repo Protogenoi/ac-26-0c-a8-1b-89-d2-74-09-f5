@@ -65,7 +65,7 @@
                             if($UNIT=="Necron Warriors") {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Gauss flayer'<?php if($UNIT_WEAPON=='Gauss flayer') { echo "selected"; } ?> >Gauss flayer</option>
+                        <option value='Gauss Flayer'<?php if($UNIT_WEAPON=='Gauss Flayer') { echo "selected"; } ?> >Gauss Flayer</option>
                             <?php }  
                             if($UNIT=="Rangers") {
                             ?>
@@ -110,7 +110,7 @@ $(document).ready(function () {
         } else if (val === "Cryptec") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Staff of Light'>Staff of Light</option><option disabled>─────Melee─────</option><option value='Staff of Light (Melee)'>Staff of Light (Melee)</option>");
         } else if (val === "Necron Warriors") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss flayer'>Gauss flayer</option>");
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss Flayer'>Gauss Flayer</option>");
         } else if (val === "Rangers") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option value='Ranger Long Rifle'>Ranger Long Rifle</option>");
         } else if (val === "Dire Avengers") {
