@@ -46,7 +46,7 @@ class combat_cal {
        
     $AUTO_HIT_WEAPONS=array("Flamer","Warp Flame Pistol","Warpflamer","Plague Belcher","Plague Spewer","Heavy Flamer");
     $TWO_D_SIX_WEAPONS=array("Tempest Launcher");
-    $ONE_D_SIX_WEAPONS=array("Aeldari Sunburst Missile Launcher","Frag Missile Launcher");
+    $ONE_D_SIX_WEAPONS=array("Aeldari Sunburst Missile Launcher","Frag Missile Launcher","Havoc Launcher");
  
     if (in_array($UNIT_WEAPON,$AUTO_HIT_WEAPONS,true)) {
         
