@@ -10,7 +10,7 @@
         $U_ATTACKS=4;
         $U_LD=9;
         $U_SAVE=2; 
-        $U_INVUL=0;
+        $U_INVUL=4;
         
         $U_ABILITIES=array("Disgustingly Resilient","Nurgle's Gift","Cataphractii Armour","Teleport Strike");
         $U_FACTION_KW=array("Chaos","Nurgle","Heretic Astartes","Death Guard");
