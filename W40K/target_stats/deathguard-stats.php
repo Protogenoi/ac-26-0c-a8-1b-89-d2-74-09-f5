@@ -1,6 +1,7 @@
 <?php
         
     if($TARGET_UNIT=='Lord of Contagion') {
+        $T_MOVE=4;
         $T_WS=2;
         $T_BS=2;
         $T_STR=4;
@@ -18,6 +19,7 @@
     }
     
     if($TARGET_UNIT=='Malignant Plaguecaster') {
+        $T_MOVE=5;
         $T_WS=3;
         $T_BS=3;
         $T_STR=4;
@@ -35,6 +37,7 @@
     } 
 
     if($TARGET_UNIT=='Noxious Blightbringer') {
+        $T_MOVE=5;
         $T_WS=3;
         $T_BS=3;
         $T_STR=4;
@@ -52,6 +55,7 @@
     }     
         
     if($TARGET_UNIT=='Plague Marines') {
+        $T_MOVE=5;
         $T_WS=3;
         $T_BS=3;
         $T_STR=4;
@@ -69,6 +73,7 @@
     } 
     
     if($TARGET_UNIT=='Plague Champion') {
+        $T_MOVE=5;
         $T_WS=3;
         $T_BS=3;
         $T_STR=4;
@@ -86,6 +91,7 @@
     }     
     
     if($TARGET_UNIT=='Pox walkers') {
+        $T_MOVE=4;
         $T_WS=5;
         $T_BS=6;
         $T_STR=3;
@@ -103,6 +109,7 @@
     }
     
     if($TARGET_UNIT=='Foetid Bloat-Drone') {
+        $T_MOVE=10;
         $T_WS=4;
         $T_BS=4;
         $T_STR=6;
