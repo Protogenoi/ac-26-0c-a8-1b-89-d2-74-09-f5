@@ -220,4 +220,12 @@
             $WEAPON_AP=3;
             $WEAPON_DAMAGE="2";           
         
-    }     
+    } 
+
+        if($UNIT_WEAPON=='Frag Grenade') {
+            $WEAPON_RANGE=6;
+            $WEAPON_TYPE='Grenade D6';
+            $WEAPON_STR=3;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";          
+        }     
