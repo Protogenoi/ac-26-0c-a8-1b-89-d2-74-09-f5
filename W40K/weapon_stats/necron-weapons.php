@@ -27,5 +27,23 @@
             $WEAPON_AP=3;
             $WEAPON_DAMAGE="2";
                     
+    }   
+    
+        if($UNIT_WEAPON=='Staff of Light') {
+            $WEAPON_RANGE=12;
+            $WEAPON_TYPE='Assault 3';
+            $WEAPON_STR=5;
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="1";
+                    
+    }   
+ 
+        if($UNIT_WEAPON=='Staff of Light (Melee)') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='User';
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="1";
+                    
     }    
 
