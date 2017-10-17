@@ -171,7 +171,7 @@ class combat_cal {
 
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='7'>$SHOW_ROLL_HITS shots | $UNIT_WEAPON ($WEAPON_TYPE) | $U_BS+ to hit</th>
+        <th colspan='8'>$SHOW_ROLL_HITS shots | $UNIT_WEAPON ($WEAPON_TYPE) | $U_BS+ to hit</th>
         </tr>
 	<tr>
 	<th>1</th>
@@ -194,31 +194,11 @@ class combat_cal {
         <th>$TOTAL_HITS</th>    
 	</tr>
 	</table>";
-    
-  $FLAG_ROLL_CHK=0;  
-  $RE_ROLLL_ONES=array("Rites of Battle");
-  $AUTO_WOUND=array("Singing Spear");
- 
- if (array_intersect($RE_ROLLL_ONES, $U_ABILITIES)) {
-    $FLAG_ROLL_CHK=1;
-    $PASS_HITS=$TOTAL_HITS-1;
-    $combat_cal = new combat_cal();
-    $combat_cal->reroll_ones(6,$PASS_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS,$U_ABILITIES,$RE_ROLLL_ONES,$DIE_ONE,$U_BS);     
-     
- } elseif (in_array($UNIT_WEAPON, $AUTO_WOUND)) {
-        $FLAG_ROLL_CHK=1;
-    $PASS_HITS=$TOTAL_HITS-1;
-    $combat_cal = new combat_cal();
-    $combat_cal->auto_wound(6,$PASS_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS);        
 
-        
-    } elseif($FLAG_ROLL_CHK==0) {      
-    
     $PASS_HITS=$TOTAL_HITS-1;
     $combat_cal = new combat_cal();
     $combat_cal->results(6,$PASS_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS);
-    
- }
+
 }
 
     
