@@ -54,6 +54,7 @@ class combat_cal {
     $AUTO_HIT_WEAPONS=array("Flamer","Warp Flame Pistol","Warpflamer","Plague Belcher","Plague Spewer","Heavy Flamer","Gauntlet of Fire");
     $TWO_D_SIX_WEAPONS=array("Tempest Launcher");
     $ONE_D_SIX_WEAPONS=array("Aeldari Sunburst Missile Launcher","Frag Missile Launcher","Havoc Launcher");
+    $EXTRA_HIT_ROLLS=array("Tesla Carbine");
  
     if (in_array($UNIT_WEAPON,$AUTO_HIT_WEAPONS,true)) {
         
@@ -62,6 +63,13 @@ class combat_cal {
             
         
     }
+    
+    elseif(in_array($UNIT_WEAPON,$EXTRA_HIT_ROLLS,true)) {
+    
+    $combat_cal = new combat_cal();
+    $combat_cal->extra_hit_rolls($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE,$U_ABILITIES);        
+    
+    }    
     
     elseif(in_array($UNIT_WEAPON,$ONE_D_SIX_WEAPONS,true)) {
         
@@ -95,6 +103,124 @@ class combat_cal {
     }
     
     }
+    
+    function extra_hit_rolls($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE,$U_ABILITIES) {
+    
+    $DIE_ONE = 0;
+    $DIE_TWO = 0;
+    $DIE_THREE = 0;
+    $DIE_FOUR = 0;
+    $DIE_FIVE = 0;
+    $DIE_SIX = 0;
+    $EXTRA_HITS=0;
+    $EXTRA_TWO=0;
+
+    if($WEAPON_TYPE=='Assault 3') {
+        $SHOW_ROLL_HITS=($number+1)*3;
+        $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
+
+    }  
+      
+    if(empty($SHOW_ROLL_HITS)) {
+               $SHOW_ROLL_HITS=$number+1;
+    }
+
+    for ($x = 0; $x <= $number; $x++) {
+
+        $DIE = mt_rand(1, $sides);
+
+        if ($DIE == 1) {
+            $DIE_ONE++;
+        }
+        if ($DIE == 2) {
+            $DIE_TWO++;
+        }
+        if ($DIE == 3) {
+            $DIE_THREE++;
+        }
+        if ($DIE == 4) {
+            $DIE_FOUR++;
+        }
+        if ($DIE == 5) {
+            $DIE_FIVE++;
+        }
+        if ($DIE == 6) {
+            $DIE_SIX++;
+            $EXTRA_HITS++;
+            $EXTRA_HITS++;
+            $EXTRA_HITS++;
+
+        }
+    }       
+ 
+    if($U_BS=='6') {
+        $TOTAL_HITS=$DIE_SIX+$EXTRA_HITS;
+    }       
+    if($U_BS=='5') {
+        $TOTAL_HITS=$DIE_FIVE+$DIE_SIX+$EXTRA_HITS;
+    }      
+    if($U_BS=='4') {
+        $TOTAL_HITS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX+$EXTRA_HITS;
+    }     
+    if($U_BS=='3') {
+        $TOTAL_HITS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX+$EXTRA_HITS;
+    }
+    if($U_BS=='2') {
+        $TOTAL_HITS=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX+$EXTRA_HITS;
+    }      
+
+    echo "<table class='table table-condensed'>
+        <tr>
+        <th colspan='7'>$SHOW_ROLL_HITS shots | $UNIT_WEAPON ($WEAPON_TYPE) | $U_BS+ to hit</th>
+        </tr>
+	<tr>
+	<th>1</th>
+	<th>2</th>
+	<th>3</th>
+	<th>4</th>
+	<th>5</th>
+	<th>6</th>
+        <th>Extra</th>
+        <th>Hits</th>
+	</tr>
+	<tr>
+	<th>$DIE_ONE</th>
+	<th>$DIE_TWO</th>
+	<th>$DIE_THREE</th>
+	<th>$DIE_FOUR</th>
+	<th>$DIE_FIVE</th>
+	<th>$DIE_SIX</th>
+        <th>$EXTRA_HITS</th>    
+        <th>$TOTAL_HITS</th>    
+	</tr>
+	</table>";
+    
+  $FLAG_ROLL_CHK=0;  
+  $RE_ROLLL_ONES=array("Rites of Battle");
+  $AUTO_WOUND=array("Singing Spear");
+ 
+ if (array_intersect($RE_ROLLL_ONES, $U_ABILITIES)) {
+    $FLAG_ROLL_CHK=1;
+    $PASS_HITS=$TOTAL_HITS-1;
+    $combat_cal = new combat_cal();
+    $combat_cal->reroll_ones(6,$PASS_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS,$U_ABILITIES,$RE_ROLLL_ONES,$DIE_ONE,$U_BS);     
+     
+ } elseif (in_array($UNIT_WEAPON, $AUTO_WOUND)) {
+        $FLAG_ROLL_CHK=1;
+    $PASS_HITS=$TOTAL_HITS-1;
+    $combat_cal = new combat_cal();
+    $combat_cal->auto_wound(6,$PASS_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS);        
+
+        
+    } elseif($FLAG_ROLL_CHK==0) {      
+    
+    $PASS_HITS=$TOTAL_HITS-1;
+    $combat_cal = new combat_cal();
+    $combat_cal->results(6,$PASS_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS);
+    
+ }
+}
+
     
     function one_d_three_roll($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE,$U_ABILITIES) {
         
