@@ -51,13 +51,14 @@
                         <option disabled>─────Wargear─────</option>
                         <option disabled>─────Melee─────</option>
                         <option value="Plaguereaper" <?php if($UNIT_WEAPON=='Plaguereaper') { echo "selected"; } ?> >Plaguereaper</option>
-                            <?php } if($UNIT=='Primaris Lieutenants') { ?>
+                            <?php } if($UNIT=='Malignant Plaguecaster') { ?>
                         <option disabled>─────Wargear─────</option>
                         <option value="Bolt Pistol" <?php if($UNIT_WEAPON=='Bolt Pistol') { echo "selected"; } ?> >Bolt Pistol</option>
-                        <option value='Master Crafted Auto Bolt Rifle' <?php if($UNIT_WEAPON=='Master Crafted Auto Bolt Rifle') { echo "selected"; } ?> >Master Crafted Auto Bolt Rifle</option>
-                        <option value='Master Crafted Stalker Bolt Rifle' <?php if($UNIT_WEAPON=='Master Crafted Stalker Bolt Rifle') { echo "selected"; } ?> >Master Crafted Stalker Bolt Rifle</option>
-                        <option value='Bolt Pistol' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
-                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option>                                
+                        <option disabled>─────Grenades─────</option>
+                        <option value='Blight Grenade' <?php if($UNIT_WEAPON=='Blight Grenade') { echo "selected"; } ?> >Blight Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option> 
+                        <option disabled>─────Melee─────</option>
+                        <option value="Corrupted Staff" <?php if($UNIT_WEAPON=='Corrupted Staff') { echo "selected"; } ?> >Corrupted Staff</option>
                         <?php    } if($UNIT=='Primaris Ancient') { ?>
                         <option disabled>─────Wargear─────</option>
                         <option value="Bolt Rifle" <?php if($UNIT_WEAPON=='Bolt Rifle') { echo "selected"; } ?> >Bolt Rifle</option>
@@ -174,15 +175,15 @@
                     </select>
                 </div>     
             </div>
-
+                        
         <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
         var val = $(this).val();  
         if (val === "Lord of Contagion") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option disabled>─────Melee─────</option><option value='Plaguereaper'>Plaguereaper</option>");
-        } else if (val === "Tactical Squad") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Boltgun'>Boltgun</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Heavy Weapons─────</option><option value='Grav-cannon and grav-amp'>Grav-cannon and grav-amp</option><option value='Heavy Bolter'>Heavy Bolter</option><option value='Lascannon'>Lascannon</option><option value='Frag Missile Launcher'>Frag Missile Launcher</option><option value='Krak Missile Launcher'>Krak Missile Launcher</option><option value='Multi-melta'>Multi-melta</option><option value='Plasma Cannon'>Plasma Cannon</option><option disabled>─────Special Weapons─────</option><option value='Flamer'>Flamer</option><option value='Grav-gun'>Grav-gun</option><option value='Meltagun'>Meltagun</option><option value='Plasma Gun'>Plasma Gun</option><option value='Supercharged Plasma Gun'>Supercharged Plasma Gun</option><option value='Supercharged Plasma Cannon'>Supercharged Plasma Cannon</option><option disabled>─────Sergeant Equipment─────</option><option value='Combi-flamer'>Combi-flamer</option><option value='Combi-melta'>Combi-melta</option><option value='Combi-plasma'>Combi-plasma</option><option value='Supercharged Combi-plasma'>Supercharged Combi-plasma</option><option value='Storm Bolter'>Storm Bolter</option>");
+        } else if (val === "Malignant Plaguecaster") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option disabled>─────Grenades─────</option><option value='Blight Grenade'>Blight Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Corrupted Staff'>Corrupted Staff</option>");
         } else if (val === "Scout Squad") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Boltgun'>Boltgun</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option value='Astartes Shotgun'>Astartes Shotgun</option><option value='Heavy Bolter'>Heavy Bolter</option><option value='Frag Missile Launcher'>Frag Missile Launcher</option><option value='Krak Missile Launcher'>Krak Missile Launcher</option><option value='Sniper Rifle'>Sniper Rifle</option><option disabled>─────Sergeant Equipment─────</option><option value='Combi-flamer'>Combi-flamer</option><option value='Combi-melta'>Combi-melta</option><option value='Combi-plasma'>Combi-plasma</option><option value='Supercharged Combi-plasma'>Supercharged Combi-plasma</option><option value='Storm Bolter'>Storm Bolter</option>");
         } else if ( val === "Crusader Squad") {
