@@ -662,14 +662,11 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
         $WOUNDS_ON=6;
     }
     
-    if($WEAPON_DAMAGE==2) {
-        $TOTAL_WOUNDS=$TOTAL_WOUNDS*2;
+    if($WEAPON_DAMAGE>1) {
+        $TOTAL_WOUNDS=$TOTAL_WOUNDS*$WEAPON_DAMAGE;
     }
     
 
-    
-    
-    
     echo "<table class='table table-condensed'>
         <tr>
         <th colspan='7'>$TOTAL_WOUNDS Wounds | T $T_TOUGHNESS | STR $WEAPON_STR | DMG $WEAPON_DAMAGE | $WOUNDS_ON+ to wound </th>
@@ -804,14 +801,11 @@ function auto_wound($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,
         $WOUNDS_ON=6;
     }
     
-    if($WEAPON_DAMAGE==2) {
-        $TOTAL_WOUNDS=$TOTAL_WOUNDS*2;
+    if($WEAPON_DAMAGE>1) {
+        $TOTAL_WOUNDS=$TOTAL_WOUNDS*$WEAPON_DAMAGE;
     }
-    
+ 
 
-    
-    
-    
     echo "<table class='table table-condensed'>
         <tr>
         <th colspan='7'>$TOTAL_WOUNDS Wounds | T $T_TOUGHNESS | STR $WEAPON_STR | DMG $WEAPON_DAMAGE | $WOUNDS_ON+ auto wound </th>
