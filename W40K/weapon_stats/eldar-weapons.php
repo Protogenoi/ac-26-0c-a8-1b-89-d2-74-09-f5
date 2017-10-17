@@ -57,7 +57,7 @@
     
         if($UNIT_WEAPON=='Shuriken Cannon') {
             $WEAPON_RANGE=24;
-            $WEAPON_TYPE='Assualt 3';
+            $WEAPON_TYPE='Assault 3';
             $WEAPON_STR=6;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";
@@ -68,7 +68,7 @@
     
         if($UNIT_WEAPON=='Shuriken Catapult') {
             $WEAPON_RANGE=12;
-            $WEAPON_TYPE='Assualt 2';
+            $WEAPON_TYPE='Assault 2';
             $WEAPON_STR=4;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";
@@ -99,7 +99,7 @@
 
         if($UNIT_WEAPON=='Avenger Shuriken Catapult') {
             $WEAPON_RANGE=18;
-            $WEAPON_TYPE='Assualt 2';
+            $WEAPON_TYPE='Assault 2';
             $WEAPON_STR=4;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";
