@@ -73,9 +73,9 @@
         
         if($UNIT=='Inceptor Squad' || $UNIT=='Inceptor Sergeant') {
             
-            if($UNIT_WEAPON=='Assualt Bolter') {
+            if($UNIT_WEAPON=='Assault Bolter') {
             $WEAPON_RANGE=18;
-            $WEAPON_TYPE='Assualt 3';
+            $WEAPON_TYPE='Assault 3';
             $WEAPON_STR=5;
             $WEAPON_AP=1;
             $WEAPON_DAMAGE="1";  
@@ -83,7 +83,7 @@
             }
             if($UNIT_WEAPON=='Plasma Exterminator') {
             $WEAPON_RANGE=18;
-            $WEAPON_TYPE='Assualt 1D3';
+            $WEAPON_TYPE='Assault 1D3';
             $WEAPON_STR=7;
             $WEAPON_AP=3;
             $WEAPON_DAMAGE="1"; 
@@ -92,7 +92,7 @@
             }
             if($UNIT_WEAPON=='Supercharged Plasma Exterminator') {
             $WEAPON_RANGE=18;
-            $WEAPON_TYPE='Assualt 1D3';
+            $WEAPON_TYPE='Assault 1D3';
             $WEAPON_STR=8;
             $WEAPON_AP=3;
             $WEAPON_DAMAGE="2";             
@@ -106,7 +106,7 @@
                 
     if($UNIT_WEAPON=='Master Crafted Auto Bolt Rifle') {
             $WEAPON_RANGE=24;
-            $WEAPON_TYPE='Assualt 2';
+            $WEAPON_TYPE='Assault 2';
             $WEAPON_STR=4;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="2";     
@@ -153,7 +153,7 @@
         $WEAPON_STR=4;
         $WEAPON_AP=0;
         $WEAPON_DAMAGE=1;
-        $WEAPON_TYPE='Assualt 2';
+        $WEAPON_TYPE='Assault 2';
         $WEAPON_RANGE=24;   
 
         
@@ -229,9 +229,9 @@
             $WEAPON_DAMAGE="1D3";          
         }        
 
-        if($UNIT_WEAPON=='Assualt Plasma Incinerator') {
+        if($UNIT_WEAPON=='Assault Plasma Incinerator') {
             $WEAPON_RANGE=24;
-            $WEAPON_TYPE='Assualt 2';
+            $WEAPON_TYPE='Assault 2';
             $WEAPON_STR=6;
             $WEAPON_AP=4;
             $WEAPON_DAMAGE="1";  
@@ -239,9 +239,9 @@
             
         }
         
-        if($UNIT_WEAPON=='Supercharged Assualt Plasma Incinerator') {
+        if($UNIT_WEAPON=='Supercharged Assault Plasma Incinerator') {
             $WEAPON_RANGE=24;
-            $WEAPON_TYPE='Assualt 2';
+            $WEAPON_TYPE='Assault 2';
             $WEAPON_STR=7;
             $WEAPON_AP=4;
             $WEAPON_DAMAGE="2";           
@@ -369,7 +369,7 @@
         
         if($UNIT_WEAPON=='Flamer') {
             $WEAPON_RANGE=8;
-            $WEAPON_TYPE='Assualt 1D6';
+            $WEAPON_TYPE='Assault 1D6';
             $WEAPON_STR=4;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";              
@@ -378,7 +378,7 @@
 
         if($UNIT_WEAPON=='Meltagun') {
             $WEAPON_RANGE=12;
-            $WEAPON_TYPE='Assualt 1';
+            $WEAPON_TYPE='Assault 1';
             $WEAPON_STR=8;
             $WEAPON_AP=4;
             $WEAPON_DAMAGE="1D6";          
@@ -441,7 +441,7 @@
 
         if($UNIT_WEAPON=='Flamer') {
             $WEAPON_RANGE=8;
-            $WEAPON_TYPE='Assualt 1D6';
+            $WEAPON_TYPE='Assault 1D6';
             $WEAPON_STR=4;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";              
@@ -458,7 +458,7 @@
         
         if($UNIT_WEAPON=='Meltagun') {
             $WEAPON_RANGE=12;
-            $WEAPON_TYPE='Assualt 1';
+            $WEAPON_TYPE='Assault 1';
             $WEAPON_STR=8;
             $WEAPON_AP=4;
             $WEAPON_DAMAGE="1D6";          
@@ -602,7 +602,7 @@ if(strpos($UNIT,"Crusader Squad") !== false) {
 
         if($UNIT_WEAPON=='Flamer') {
             $WEAPON_RANGE=8;
-            $WEAPON_TYPE='Assualt 1D6';
+            $WEAPON_TYPE='Assault 1D6';
             $WEAPON_STR=4;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";               
@@ -619,7 +619,7 @@ if(strpos($UNIT,"Crusader Squad") !== false) {
         
         if($UNIT_WEAPON=='Meltagun') {
             $WEAPON_RANGE=12;
-            $WEAPON_TYPE='Assualt 1';
+            $WEAPON_TYPE='Assault 1';
             $WEAPON_STR=8;
             $WEAPON_AP=4;
             $WEAPON_DAMAGE="1D6";          
