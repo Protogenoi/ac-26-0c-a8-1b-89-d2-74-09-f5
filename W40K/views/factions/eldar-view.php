@@ -94,8 +94,8 @@
                         <option disabled>─────Wargear─────</option>
                         <option value='Aeldari Sunburst Missile Launcher'<?php if($UNIT_WEAPON=='Aeldari Sunburst Missile Launcher') { echo "selected"; } ?> >Aeldari Sunburst Missile Launcher</option>
                         <option value='Aeldari Starshot Missile Launcher'<?php if($UNIT_WEAPON=='Aeldari Starshot Missile Launcher') { echo "selected"; } ?> >Aeldari Starshot Missile Launcher</option>
-                        <option value='Reaper Starshot Launcher'<?php if($UNIT_WEAPON=='Reaper Starshot Launcher') { echo "selected"; } ?> >Starswarm Starshot Launcher</option>
-                        <option value='Reaper Starswarm Launcher'<?php if($UNIT_WEAPON=='Reaper Starswarm Launcher') { echo "selected"; } ?> >Reaper Starswarm Launcher</option>
+                        <option value='Reaper Starshot Missile Launcher'<?php if($UNIT_WEAPON=='Reaper Starshot Missile Launcher') { echo "selected"; } ?> >Starswarm Starshot Launcher</option>
+                        <option value='Reaper Starswarm Misslie Launcher'<?php if($UNIT_WEAPON=='Reaper Starswarm Misslie Launcher') { echo "selected"; } ?> >Reaper Starswarm Misslie Launcher</option>
                         <option value='Shuriken Cannon'<?php if($UNIT_WEAPON=='Shuriken Cannon') { echo "selected"; } ?> >Shuriken Cannon</option>
                         <option value='Tempest Launcher'<?php if($UNIT_WEAPON=='Tempest Launcher') { echo "selected"; } ?> >Tempest Launcher</option>                     
                             <?php }                             
@@ -123,9 +123,9 @@ $(document).ready(function () {
         } else if (val === "Dire Avengers Exarch") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option> <option value='Avenger Shuriken Catapult'>Avenger Shuriken Catapult</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Grenades─────</option><option value='Sunburst Grenade'>Sunburst Grenade</option><option disabled>─────Melee─────</option><option value='Diresword'>Diresword</option><option value='Power Glaive'>Power Glaive</option>");
         } else if (val === "Dark Reapers") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Aeldari Sunburst Missile Launcher'>Aeldari Sunburst Missile Launcher</option><option value='Aeldari Starshot Missile Launcher'>Aeldari Starshot Missile Launcher</option><option value='Reaper Starshot Launcher'>Starswarm Starshot Launcher</option><option value='Reaper Starswarm Launcher'>Reaper Starswarm Launcher</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Tempest Launcher'>Tempest Launcher</option>");
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Aeldari Sunburst Missile Launcher'>Aeldari Sunburst Missile Launcher</option><option value='Aeldari Starshot Missile Launcher'>Aeldari Starshot Missile Launcher</option><option value='Reaper Starshot Missile Launcher'>Starswarm Starshot Launcher</option><option value='Reaper Starswarm Misslie Launcher'>Reaper Starswarm Misslie Launcher</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Tempest Launcher'>Tempest Launcher</option>");
         } else if (val === "Dark Reapers Exarch") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Aeldari Sunburst Missile Launcher'>Aeldari Sunburst Missile Launcher</option><option value='Aeldari Starshot Missile Launcher'>Aeldari Starshot Missile Launcher</option><option value='Reaper Starshot Launcher'>Starswarm Starshot Launcher</option><option value='Reaper Starswarm Launcher'>Reaper Starswarm Launcher</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Tempest Launcher'>Tempest Launcher</option>");
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Aeldari Sunburst Missile Launcher'>Aeldari Sunburst Missile Launcher</option><option value='Aeldari Starshot Missile Launcher'>Aeldari Starshot Missile Launcher</option><option value='Reaper Starshot Missile Launcher'>Starswarm Starshot Launcher</option><option value='Reaper Starswarm Misslie Launcher'>Reaper Starswarm Misslie Launcher</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Tempest Launcher'>Tempest Launcher</option>");
         }
     });
 });        
