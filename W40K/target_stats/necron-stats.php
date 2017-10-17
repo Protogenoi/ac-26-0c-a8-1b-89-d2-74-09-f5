@@ -17,3 +17,21 @@
         $T_KEYWORDS=array("Character","Infantry","Overlord","Imotekh the Stormlord");            
         
     } 
+    
+    if($TARGET_UNIT=='Cryptec') {
+        $T_MOVE=5;
+        $T_WS=3;
+        $T_BS=3;
+        $T_STR=4;
+        $T_TOUGHNESS=4;
+        $T_WOUNDS=4;
+        $T_ATTACKS=1;
+        $T_LD=10;
+        $T_SAVE=4; 
+        $T_INVUL =5;
+        
+        $T_ABILITIES=array("Living Metal","Technomancer","Chronometron");
+        $T_FACTION_KW=array("Necrons","DYNASTY");
+        $T_KEYWORDS=array("Character","Infantry","Cryptec");            
+        
+    }    
