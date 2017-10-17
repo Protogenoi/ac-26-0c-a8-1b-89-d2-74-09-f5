@@ -30,6 +30,13 @@ class combat_cal {
            require(__DIR__ . '/../unit_stats/csm.php');
            require(__DIR__ . '/../weapon_stats/csm-weapons.php');  
        
+       } 
+       
+       elseif($FACTION=='Necrons') {
+
+           require(__DIR__ . '/../unit_stats/necrons-stats.php');
+           require(__DIR__ . '/../weapon_stats/necrons-weapons.php');  
+       
        }        
         
  if(strpos($WEAPON_TYPE,"Assualt") !== false && $MOVEMENT=='Advanced') {
@@ -997,20 +1004,25 @@ function auto_wound($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,
 
     }
 
-    if($ENEMY_FACTION=='Eldar') {
+    elseif($ENEMY_FACTION=='Eldar') {
         require(__DIR__ . '/../target_stats/eldar-stats.php');  
 
     }    
 
-    if($ENEMY_FACTION=='Deathguard') {
+    elseif($ENEMY_FACTION=='Deathguard') {
         require(__DIR__ . '/../target_stats/deathguard-stats.php');  
 
     } 
     
-    if($ENEMY_FACTION=='Chaos Space Marines') {
+    elseif($ENEMY_FACTION=='Chaos Space Marines') {
         require(__DIR__ . '/../target_stats/csm-stats.php');  
 
-    }       
+    } 
+
+    elseif($ENEMY_FACTION=='Necrons') {
+        require(__DIR__ . '/../target_stats/necrons-stats.php');  
+
+    }     
       
     if(in_array($UNIT_WEAPON, $TWO_TO_WOUND)) {
     //DOUBLE 2+
