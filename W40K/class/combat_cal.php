@@ -336,7 +336,7 @@ $DIE_THREE_MOD=0;
     } 
     
     if($WEAPON_TYPE=='Assualt 3') {
-        $SHOW_ROLL_HITS=($number+1)*6;
+        $SHOW_ROLL_HITS=($number+1)*3;
         $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
 
     }  
@@ -830,7 +830,7 @@ function auto_wound($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,
 	</tr>
 	</table>";  
     
-    if(!is_numeric ($WEAPON_DAMAGE) || $UNIT_WEAPON=='Grav-cannon and grav-amp' || $UNIT_WEAPON=='Grav-gun' && $T_SAVE=='3'|| $UNIT_WEAPON=='Meltagun' && $RANGE_BONUS>=1 || $UNIT_WEAPON=='Multi-melta' && $RANGE_BONUS>=1 || $UNIT_WEAPON=='Supercharged Plasma Exterminator') {
+    if(!is_numeric ($WEAPON_DAMAGE) || $UNIT_WEAPON=='Grav-cannon and grav-amp' || $UNIT_WEAPON=='Grav-gun' && $T_SAVE=='3'|| $UNIT_WEAPON=='Meltagun' && $RANGE_BONUS>=1 || $UNIT_WEAPON=='Multi-melta' && $RANGE_BONUS>=1 || $UNIT_WEAPON=='Supercharged Plasma Exterminator' || $UNIT_WEAPON=='Aeldari Sunburst Missile Launcher') {
 
     $SAVE_ROLLS=$TOTAL_WOUNDS-1;
     $combat_cal = new combat_cal();
