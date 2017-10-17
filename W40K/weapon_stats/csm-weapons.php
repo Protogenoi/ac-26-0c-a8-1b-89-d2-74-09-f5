@@ -82,7 +82,7 @@
     
         if($UNIT_WEAPON=='Warp Bolter') {
             $WEAPON_RANGE='24';
-            $WEAPON_TYPE='Assualt 2';
+            $WEAPON_TYPE='Assault 2';
             $WEAPON_STR="4";
             $WEAPON_AP=1;
             $WEAPON_DAMAGE="2";           
@@ -169,7 +169,7 @@
     
         if($UNIT_WEAPON=='Flamer') {
             $WEAPON_RANGE=8;
-            $WEAPON_TYPE='Assualt 1D6';
+            $WEAPON_TYPE='Assault 1D6';
             $WEAPON_STR=4;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";              
@@ -186,7 +186,7 @@
 
         if($UNIT_WEAPON=='Meltagun') {
             $WEAPON_RANGE=12;
-            $WEAPON_TYPE='Assualt 1';
+            $WEAPON_TYPE='Assault 1';
             $WEAPON_STR=8;
             $WEAPON_AP=4;
             $WEAPON_DAMAGE="1D6";          
@@ -295,7 +295,7 @@
         
         if($UNIT_WEAPON=='Warpflamer') {
             $WEAPON_RANGE=8;
-            $WEAPON_TYPE='Assualt 1D6';
+            $WEAPON_TYPE='Assault 1D6';
             $WEAPON_STR=4;
             $WEAPON_AP=2;
             $WEAPON_DAMAGE="1";
@@ -312,7 +312,7 @@
         
         if($UNIT_WEAPON=='Blight Launcher') {
             $WEAPON_RANGE=24;
-            $WEAPON_TYPE='Assualt 2';
+            $WEAPON_TYPE='Assault 2';
             $WEAPON_STR=6;
             $WEAPON_AP=2;
             $WEAPON_DAMAGE="1D3";          
@@ -376,7 +376,7 @@
         
         if($UNIT_WEAPON=='Plague Belcher') {
             $WEAPON_RANGE=9;
-            $WEAPON_TYPE='Assualt 1D6';
+            $WEAPON_TYPE='Assault 1D6';
             $WEAPON_STR=4;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";    
@@ -594,7 +594,7 @@
         
         if($UNIT_WEAPON=='Shotgun') {
             $WEAPON_RANGE=12;
-            $WEAPON_TYPE='Assualt 2';
+            $WEAPON_TYPE='Assault 2';
             $WEAPON_STR=3;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";      
