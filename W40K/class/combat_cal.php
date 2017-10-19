@@ -717,7 +717,7 @@ $DIE_THREE_MOD=0;
     }        
     }
     
-    if($WEAPON_TYPE=='Grenade D6') {
+    if($WEAPON_TYPE=='Grenade 1D6') {
         $number=$DIE = (mt_rand(1, 6))-1;
     }
     
