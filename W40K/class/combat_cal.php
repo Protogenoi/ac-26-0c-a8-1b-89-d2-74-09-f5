@@ -984,7 +984,12 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
     if($ENEMY_FACTION=='Chaos Space Marines') {
         require(__DIR__ . '/../target_stats/csm-stats.php');  
 
-    }       
+    }
+    
+    if($ENEMY_FACTION=='Necrons') {
+        require(__DIR__ . '/../target_stats/necron-stats.php');  
+
+    }     
       
     if($WEAPON_STR + $T_TOUGHNESS >= $WEAPON_STR) {
     //DOUBLE 2+
