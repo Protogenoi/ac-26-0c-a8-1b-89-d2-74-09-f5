@@ -36,6 +36,42 @@
         
     }
     
+    if($TARGET=='Chaplain') {
+        $T_MOVE=6;
+        $T_WS=2;
+        $T_BS=3;
+        $T_STR=4;
+        $T_TOUGHNESS=4;
+        $T_WOUNDS=4;
+        $T_ATTACKS=3;
+        $T_LD=9;
+        $T_SAVE=3; 
+        $T_INVUL=4;        
+        
+        $T_ABILITIES=array("And They Shall Know No Fear","Rosarius","Litanies of Hate","Jump Pack Assault","Spiritual Leaders");
+        $T_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $T_KEYWORDS=array("Character","Infantry","Chaplain");         
+        
+    } 
+    
+    if($TARGET=='Techmarine') {
+        $T_MOVE=6;
+        $T_WS=3;
+        $T_BS=2;
+        $T_STR=4;
+        $T_TOUGHNESS=4;
+        $T_WOUNDS=4;
+        $T_ATTACKS=3;
+        $T_LD=8;
+        $T_SAVE=2; 
+        $T_INVUL=0;        
+        
+        $T_ABILITIES=array("And They Shall Know No Fear","Blessing of the Omnissiah");
+        $T_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $T_KEYWORDS=array("Character","Infantry","Techmarine");         
+        
+    }     
+    
     if($TARGET_UNIT=='Primaris Lieutenants') {
         $T_MOVE=6;
         $T_WS=2;
