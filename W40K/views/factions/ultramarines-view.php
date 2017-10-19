@@ -62,7 +62,7 @@
                         <option value="Bolt Pistol" <?php if($UNIT_WEAPON=='Bolt Pistol') { echo "selected"; } ?> >Bolt Pistol</option>
                         <option value='Master Crafted Auto Bolt Rifle' <?php if($UNIT_WEAPON=='Master Crafted Auto Bolt Rifle') { echo "selected"; } ?> >Master Crafted Auto Bolt Rifle</option>
                         <option value='Master Crafted Stalker Bolt Rifle' <?php if($UNIT_WEAPON=='Master Crafted Stalker Bolt Rifle') { echo "selected"; } ?> >Master Crafted Stalker Bolt Rifle</option>
-                        <option value='Bolt Pistol' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
                         <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option>                                
                         <?php    } if($UNIT=='Primaris Ancient') { ?>
                         <option disabled>─────Wargear─────</option>
@@ -159,7 +159,7 @@
                             <?php }
                         if($UNIT=="Inceptor Squad" || $UNIT=='Inceptor Sergeant') { ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Assualt Bolter'<?php if($UNIT_WEAPON=='Assualt Bolter') { echo "selected"; } ?> >Assualt Bolter</option>
+                        <option value='Assault Bolter'<?php if($UNIT_WEAPON=='Assault Bolter') { echo "selected"; } ?> >Assault Bolter</option>
                         <option value='Plasma Exterminator'<?php if($UNIT_WEAPON=='Plasma Exterminator') { echo "selected"; } ?> >Plasma Exterminator</option>
                         <option value='Supercharged Plasma Exterminator'<?php if($UNIT_WEAPON=='Supercharged Plasma Exterminator') { echo "selected"; } ?> >Supercharged Plasma Exterminator</option>
                         <?php } if($UNIT=='Hellblaster Squad' || $UNIT=='Hellblaster Sergeant') { ?>
@@ -169,8 +169,8 @@
                         <option value='Krak Grenade'<?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option> 
                         <option value='Plasma Incinerator'<?php if($UNIT_WEAPON=='Plasma Incinerator') { echo "selected"; } ?> >Plasma Incinerator</option>
                         <option value='Supercharged Plasma Incinerator'<?php if($UNIT_WEAPON=='Supercharged Plasma Incinerator') { echo "selected"; } ?> >Supercharged Plasma Incinerator</option>
-                        <option value='Assualt Plasma Incinerator'<?php if($UNIT_WEAPON=='Assualt Plasma Incinerator') { echo "selected"; } ?> >Assualt Plasma Incinerator</option>
-                        <option value='Supercharged Assualt Plasma Incinerator'<?php if($UNIT_WEAPON=='Supercharged Assualt Plasma Incinerator') { echo "selected"; } ?> >Supercharged Assualt Plasma Incinerator</option>
+                        <option value='Assault Plasma Incinerator'<?php if($UNIT_WEAPON=='Assault Plasma Incinerator') { echo "selected"; } ?> >Assault Plasma Incinerator</option>
+                        <option value='Supercharged Assault Plasma Incinerator'<?php if($UNIT_WEAPON=='Supercharged Assault Plasma Incinerator') { echo "selected"; } ?> >Supercharged Assault Plasma Incinerator</option>
                         <option value='Heavy Plasma Incinerator'<?php if($UNIT_WEAPON=='Heavy Plasma Incinerator') { echo "selected"; } ?> >Heavy Plasma Incinerator</option>
                         <option value='Supercharged Heavy Plasma Incinerator'<?php if($UNIT_WEAPON=='Supercharged Heavy Plasma Incinerator') { echo "selected"; } ?> >Supercharged Heavy Plasma Incinerator</option>                        
                             <?php }
@@ -206,13 +206,13 @@ $(document).ready(function () {
         } else if (val === "Primaris Ancient") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Rifle'>Bolt Rifle</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option>");
         } else if (val === "Inceptor Squad") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Assualt Bolter'>Assualt Bolter</option><option value='Plasma Exterminator'>Plasma Exterminator</option><option value='Supercharged Plasma Exterminator'>Supercharged Plasma Exterminator</option>");
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Assault Bolter'>Assault Bolter</option><option value='Plasma Exterminator'>Plasma Exterminator</option><option value='Supercharged Plasma Exterminator'>Supercharged Plasma Exterminator</option>");
         } else if (val === "Inceptor Sergeant") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Assualt Bolter'>Assualt Bolter</option><option value='Plasma Exterminator'>Plasma Exterminator</option><option value='Supercharged Plasma Exterminator'>Supercharged Plasma Exterminator</option>");
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Assault Bolter'>Assault Bolter</option><option value='Plasma Exterminator'>Plasma Exterminator</option><option value='Supercharged Plasma Exterminator'>Supercharged Plasma Exterminator</option>");
         } else if (val === "Hellblaster Squad") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option value='Plasma Incinerator'>Plasma Incinerator</option><option value='Supercharged Plasma Incinerator'>Supercharged Plasma Incinerator</option><option value='Assualt Plasma Incinerator'>Assualt Plasma Incinerator</option><option value='Supercharged Assualt Plasma Incinerator'>Supercharged Assualt Plasma Incinerator</option><option value='Heavy Plasma Incinerator'>Heavy Plasma Incinerator</option><option value='Supercharged Heavy Plasma Incinerator'>Supercharged Heavy Plasma Incinerator</option>");
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option value='Plasma Incinerator'>Plasma Incinerator</option><option value='Supercharged Plasma Incinerator'>Supercharged Plasma Incinerator</option><option value='Assault Plasma Incinerator'>Assault Plasma Incinerator</option><option value='Supercharged Assault Plasma Incinerator'>Supercharged Assault Plasma Incinerator</option><option value='Heavy Plasma Incinerator'>Heavy Plasma Incinerator</option><option value='Supercharged Heavy Plasma Incinerator'>Supercharged Heavy Plasma Incinerator</option>");
         } else if (val === "Hellblaster Sergeant") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option value='Plasma Incinerator'>Plasma Incinerator</option><option value='Supercharged Plasma Incinerator'>Supercharged Plasma Incinerator</option><option value='Assualt Plasma Incinerator'>Assualt Plasma Incinerator</option><option value='Supercharged Assualt Plasma Incinerator'>Supercharged Assualt Plasma Incinerator</option><option value='Heavy Plasma Incinerator'>Heavy Plasma Incinerator</option><option value='Supercharged Heavy Plasma Incinerator'>Supercharged Heavy Plasma Incinerator</option>");
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option value='Plasma Incinerator'>Plasma Incinerator</option><option value='Supercharged Plasma Incinerator'>Supercharged Plasma Incinerator</option><option value='Assault Plasma Incinerator'>Assault Plasma Incinerator</option><option value='Supercharged Assault Plasma Incinerator'>Supercharged Assault Plasma Incinerator</option><option value='Heavy Plasma Incinerator'>Heavy Plasma Incinerator</option><option value='Supercharged Heavy Plasma Incinerator'>Supercharged Heavy Plasma Incinerator</option>");
         }
     });
 });        
