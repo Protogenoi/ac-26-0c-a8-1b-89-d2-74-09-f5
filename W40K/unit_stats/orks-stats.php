@@ -36,3 +36,56 @@
         
     }     
 
+    if($UNIT=='Nob') {
+        $U_MOVE=5;
+        $U_WS=3;
+        $U_BS=5;
+        $U_STR=5;
+        $U_TOUGHNESS=4;
+        $U_WOUNDS=2;
+        $U_ATTACKS=3;
+        $U_LD=6;
+        $U_SAVE=4; 
+        $U_INVUL =0;
+        
+        $U_ABILITIES=array("Ere We Go, Mob Rule","Ammo Runt","Keepin’ Order","Cybork Body");
+        $U_FACTION_KW=array("Ork","CLAN");
+        $U_KEYWORDS=array("Infantry","Nobz");            
+        
+    }   
+    
+    if($UNIT=='Boss Nob') {
+        $U_MOVE=5;
+        $U_WS=3;
+        $U_BS=5;
+        $U_STR=5;
+        $U_TOUGHNESS=4;
+        $U_WOUNDS=2;
+        $U_ATTACKS=3;
+        $U_LD=7;
+        $U_SAVE=4; 
+        $U_INVUL =0;
+        
+        $U_ABILITIES=array("Ere We Go, Mob Rule","Ammo Runt","Keepin’ Order","Cybork Body");
+        $U_FACTION_KW=array("Ork","CLAN");
+        $U_KEYWORDS=array("Infantry","Nobz");            
+        
+    }   
+    
+    if($UNIT=='Ammo Runt') {
+        $U_MOVE=5;
+        $U_WS=5;
+        $U_BS=4;
+        $U_STR=2;
+        $U_TOUGHNESS=2;
+        $U_WOUNDS=1;
+        $U_ATTACKS=1;
+        $U_LD=4;
+        $U_SAVE=6; 
+        $U_INVUL =0;
+        
+        $U_ABILITIES=array("Ere We Go, Mob Rule","Ammo Runt","Keepin’ Order","Cybork Body");
+        $U_FACTION_KW=array("Ork","CLAN");
+        $U_KEYWORDS=array("Infantry","Gretchin","Ammo Runt");            
+        
+    }     
