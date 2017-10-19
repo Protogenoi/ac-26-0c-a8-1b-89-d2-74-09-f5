@@ -138,3 +138,50 @@ if($UNIT_WEAPON=='Kombi-weapon with Skorcha') {
             $WEAPON_DAMAGE="1"; 
                     
     }    
+    
+        if($UNIT_WEAPON=='Kopta Rokkits') {
+            $WEAPON_RANGE=24;
+            $WEAPON_TYPE='Assault 2';
+            $WEAPON_STR=8;
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="3"; 
+        
+    }   
+    
+        if($UNIT_WEAPON=='Kustom Mega-blasta') {
+            $WEAPON_RANGE=24;
+            $WEAPON_TYPE='Assault 1';
+            $WEAPON_STR=8;
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="1D3"; 
+            
+        $WEAPON_ABILITY="On a hit roll of 1, the bearer suffers a mortal wound.";    
+        
+    }   
+    
+        if($UNIT_WEAPON=='Spinnin’ Blades') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='+1';
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1"; 
+            
+        $WEAPON_ABILITY="Make D3 hit rolls for each attack made with this weapon, instead of 1."   ; 
+                    
+    }  
+
+        if($UNIT_WEAPON=='Bigbomm') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='+1';
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1"; 
+            
+        $WEAPON_ABILITY="Each bigbomm can only be used once per battle.";    
+        //Bigbomm: A Deffkopta equipped with a bigbomm can drop it as it flies over enemy units in its Movement phase. 
+        //After the Deffkopta has moved, pick one enemy unit that it flew over. 
+        //Then, roll a D6 for each model in the enemy unit (up to a maximum of 5 dice). 
+        //For each roll of 5+, the target unit suffers 1 mortal wound. 
+        //It can only do this once per battle.
+                    
+    }      
