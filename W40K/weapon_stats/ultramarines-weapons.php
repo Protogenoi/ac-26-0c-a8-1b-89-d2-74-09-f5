@@ -353,3 +353,34 @@
             $WEAPON_DAMAGE="2";             
             
         }
+        
+        if($UNIT_WEAPON=='Grav-Pistol') {
+            $WEAPON_RANGE=12;
+            $WEAPON_TYPE='Pistol 1';
+            $WEAPON_STR=5;
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="1";       
+            
+            $WEAPON_ABILITY="If the target has a 3+ save or better, this weapon does 1D3 damage.";
+            
+        }        
+        
+        if($UNIT_WEAPON=='Power Fist') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='x2';
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="1D3";       
+            
+            $WEAPON_ABILITY="When attacking subtract 1 from hit rolls.";  
+            
+        }  
+        
+        if($UNIT_WEAPON=='Crozius Arcanum') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='+1';
+            $WEAPON_AP=1;
+            $WEAPON_DAMAGE="2";        
+            
+        }         
