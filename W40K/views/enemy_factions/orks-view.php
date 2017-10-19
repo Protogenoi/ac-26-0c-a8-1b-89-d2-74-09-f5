@@ -9,13 +9,9 @@
                         <option value="">Select...</option>
                         <option disabled>─────HQ─────</option>
                         <option value="Ghazghkull Thraka" <?php if($TARGET_UNIT=='Ghazghkull Thraka') { echo "selected"; } ?> >Ghazghkull Thraka</option>
-                        <option value="Cryptec" <?php if($TARGET_UNIT=='Cryptec') { echo "selected"; } ?> >Cryptec</option>
                         <option disabled>─────ELITES─────</option>
                         <option disabled>─────TROOPS─────</option>
-                        <option value="Necron Warriors" <?php if($TARGET_UNIT=='Necron Warriors') { echo "selected"; } ?> >Necron Warriors</option>
-                        <option value="Immortals" <?php if($TARGET_UNIT=='Immortals') { echo "selected"; } ?> >Immortals</option>
-                        <option value="Dire Avengers" <?php if($TARGET_UNIT=='Dire Avengers') { echo "selected"; } ?> >Dire Avengers</option>
-                        <option value="Dire Avengers Exarch" <?php if($TARGET_UNIT=='Dire Avengers Exarch') { echo "selected"; } ?> >Dire Avengers Exarch</option>
+                        <option value="Boyz" <?php if($TARGET_UNIT=='Boyz') { echo "selected"; } ?> >Boyz</option>
                         <option disabled>─────FAST ATTACK─────</option>
                         <option disabled>─────HEAVY SUPPORT─────</option>
                         <option value="Dark Reapers" <?php if($TARGET_UNIT=='Dark Reapers') { echo "selected"; } ?> >Dark Reapers</option>
