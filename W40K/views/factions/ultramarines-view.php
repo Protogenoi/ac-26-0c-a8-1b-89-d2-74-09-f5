@@ -17,6 +17,7 @@
                         <option value="Primaris Lieutenants" <?php if(isset($UNIT) && $UNIT=='Primaris Lieutenants') { echo "selected"; } ?> >Primaris Lieutenants</option>
                         <option disabled>─────ELITES─────</option>
                         <option value="Primaris Ancient" <?php if(isset($UNIT) && $UNIT=='Primaris Ancient') { echo "selected"; } ?> >Primaris Ancient</option>
+                        <option value="Chapter Ancient" <?php if(isset($UNIT) && $UNIT=='Chapter Ancient') { echo "selected"; } ?> >Chapter Ancient</option>
                         <option disabled>─────TROOPS─────</option>
                         <option value="Intercessor Squad" <?php if(isset($UNIT) && $UNIT=='Intercessor Squad') { echo "selected"; } ?> >Intercessor Squad</option>
                         <option value="Intercessor Sergeant" <?php if(isset($UNIT) && $UNIT=='Intercessor Sergeant') { echo "selected"; } ?> >Intercessor Sergeant</option>
@@ -130,7 +131,27 @@
                         <option disabled>─────Grenades─────</option>
                         <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo 'selected'; } ?> >Frag Grenade</option>
                         <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option>                          
-                        <?php  }  if($UNIT=='Intercessor Squad' || $UNIT=='Intercessor Sergeant') {
+                        <?php  }  
+                             if($UNIT=='Chapter Ancient') { ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option disabled>─────Grenades─────</option>
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo 'selected'; } ?> >Frag Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option>                         
+                        <option disabled>─────Melee─────</option>
+                        <option value='Power Sword' <?php if($UNIT_WEAPON=='Power Sword') { echo 'selected'; } ?> >Power Sword</option>
+                        <option disabled>─────Combi-Weapons─────</option>
+                        <option value='Combi-flamer'<?php if($UNIT_WEAPON=='Combi-flamer') { echo 'selected'; } ?> >Combi-flamer</option>  
+                        <option value='Combi-grav'<?php if($UNIT_WEAPON=='Combi-grav') { echo 'selected'; } ?> >Combi-grav</option>                       
+                        <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo 'selected'; } ?> >Combi-melta</option>
+                        <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo 'selected'; } ?> >Combi-plasma</option>
+                        <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo 'selected'; } ?> >Supercharged Combi-plasma</option>                        
+                        <option value='Storm Bolter'<?php if($UNIT_WEAPON=='Storm Bolter') { echo 'selected'; } ?> >Storm Bolter</option>
+                        <option disabled>─────Pistol Weapon─────</option>
+                        <option value='Grav-Pistol'<?php if($UNIT_WEAPON=='Grav-Pistol') { echo 'selected'; } ?> >Grav-Pistol</option>  
+                        <option value='Plasma Pistol'<?php if($UNIT_WEAPON=='Plasma Pistol') { echo 'selected'; } ?> >Plasma Pistol</option>                       
+                        <option value='Supercharged Plasma Pistol'<?php if($UNIT_WEAPON=='Supercharged Plasma Pistol') { echo 'selected'; } ?> >Supercharged Plasma Pistol</option>                       
+                            <?php }                       
+                            if($UNIT=='Intercessor Squad' || $UNIT=='Intercessor Sergeant') {
                             ?>
                         <option disabled>─────Wargear─────</option>
                         <option value='Auto Bolt Rifle' <?php if($UNIT_WEAPON=='Auto Bolt Rifle') { echo 'selected'; } ?> >Auto Bolt Rifle</option>
@@ -245,7 +266,7 @@
                     </select>
                 </div>     
             </div>
-                                                 
+                                                                         
         <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
@@ -256,6 +277,10 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Boltgun'>Boltgun</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Power Fist'>Power Fist</option><option value='Crozius Arcanum'>Crozius Arcanum</option><option disabled>─────Combi-Weapons─────</option><option value='Combi-flamer'>Combi-flamer</option><option value='Combi-grav'>Combi-grav</option><option value='Combi-melta'>Combi-melta</option><option value='Combi-plasma'>Combi-plasma</option><option value='Supercharged Combi-plasma'>Supercharged Combi-plasma</option><option value='Storm Bolter'>Storm Bolter</option><option disabled>─────Pistol Weapon─────</option><option value='Grav-Pistol'>Grav-Pistol</option><option value='Plasma Pistol'>Plasma Pistol</option><option value='Supercharged Plasma Pistol'>Supercharged Plasma Pistol</option>");
         } else if (val === "Techmarine") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Plasma Cutter'>Plasma Cutter</option><option value='Supercharged Plasma Cutter'>Supercharged Plasma Cutter</option><option value='Boltgun'>Boltgun</option><option value='Flamer'>Flamer</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Power Axe'>Power Axe</option><option value='Servo Arm'>Servo Arm</option><option disabled>─────Combi-Weapons─────</option><option value='Combi-flamer'>Combi-flamer</option><option value='Combi-grav'>Combi-grav</option><option value='Combi-melta'>Combi-melta</option><option value='Combi-plasma'>Combi-plasma</option><option value='Supercharged Combi-plasma'>Supercharged Combi-plasma</option><option value='Storm Bolter'>Storm Bolter</option><option disabled>─────Pistol Weapon─────</option><option value='Grav-Pistol'>Grav-Pistol</option><option value='Plasma Pistol'>Plasma Pistol</option><option value='Supercharged Plasma Pistol'>Supercharged Plasma Pistol</option>");
+        } else if (val === "Primaris Ancient") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Rifle'>Bolt Rifle</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option>");
+        } else if (val === "Chapter Ancient") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Power Sword'>Power Sword</option>");
         } else if (val === "Intercessor Squad") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Auto Bolt Rifle'>Auto Bolt Rifle</option><option value='Stalker Bolt Rifle'>Stalker Bolt Rifle</option><option value='Bolt Rifle'>Bolt Rifle</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option>");
         } else if (val === "Intercessor Sergeant") {
@@ -274,9 +299,7 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Master Crafted Auto Bolt Rifle'>Master Crafted Auto Bolt Rifle</option><option value='Master Crafted Stalker Bolt Rifle'>Master Crafted Stalker Bolt Rifle</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option>");
         } else if (val === "Captain in Gravis armour") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Boltstorm Gauntlet'>Boltstorm Gauntlet</option>");
-        } else if (val === "Primaris Ancient") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Rifle'>Bolt Rifle</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option>");
-        } else if (val === "Inceptor Squad") {
+        }  else if (val === "Inceptor Squad") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Assault Bolter'>Assault Bolter</option><option value='Plasma Exterminator'>Plasma Exterminator</option><option value='Supercharged Plasma Exterminator'>Supercharged Plasma Exterminator</option>");
         } else if (val === "Inceptor Sergeant") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Assault Bolter'>Assault Bolter</option><option value='Plasma Exterminator'>Plasma Exterminator</option><option value='Supercharged Plasma Exterminator'>Supercharged Plasma Exterminator</option>");
