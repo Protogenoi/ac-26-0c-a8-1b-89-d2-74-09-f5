@@ -1,5 +1,23 @@
 <?php
     
+    if($UNIT=='Marneus Calgar') {
+        $U_MOVE=5;
+        $U_WS=2;
+        $U_BS=2;
+        $U_STR=4;
+        $U_TOUGHNESS=4;
+        $U_WOUNDS=7;
+        $U_ATTACKS=5;
+        $U_LD=9;
+        $U_SAVE=2; 
+        $U_INVUL=4;        
+        
+        $U_ABILITIES=array("And They Shall Know No Fear","Master Tactician","Armour of Antilochus","Teleport Strike","Chapter Master");
+        $U_FACTION_KW=array("Imperium","Adeptus Astartes","Ultramarines");
+        $U_KEYWORDS=array("Character","Infantry","Chapter Master","Terminator","Marneus Calgar");         
+        
+    }
+
     if($UNIT=='Captain in Gravis armour') {
         $U_MOVE=5;
         $U_WS=2;
