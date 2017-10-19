@@ -702,6 +702,12 @@ $DIE_THREE_MOD=0;
         $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
 
     }  
+    
+    if($WEAPON_TYPE=='Assault 6') {
+        $SHOW_ROLL_HITS=($number+1)*6;
+        $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
+
+    }    
 
     if($WEAPON_TYPE=='Assault 1D3') {
         if($UNIT_WEAPON=='Plasma Exterminator' || $UNIT_WEAPON=='Supercharged Plasma Exterminator') {
