@@ -108,6 +108,24 @@
         
     } 
     
+    if($TARGET_UNIT=='Chapter Ancient') {
+        $T_MOVE=6;
+        $T_WS=3;
+        $T_BS=3;
+        $T_STR=4;
+        $T_TOUGHNESS=4;
+        $T_WOUNDS=4;
+        $T_ATTACKS=3;
+        $T_LD=9;
+        $T_SAVE=2; 
+        $T_INVUL=0;        
+        
+        $T_ABILITIES=array("And They Shall Know No Fear","Astartes Banner");
+        $T_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $T_KEYWORDS=array("Character","Infantry","Ancient","Chapter Ancient");          
+        
+    }     
+    
     if($TARGET_UNIT=='Intercessor Squad') {
         $T_MOVE=6;
         $T_WS=3;
