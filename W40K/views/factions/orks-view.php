@@ -17,7 +17,9 @@
                         <option disabled value="Ammo Runt" <?php if($UNIT=='Ammo Runt') { echo "selected"; } ?> >Ammo Runt</option>                        
                         <option disabled>─────TROOPS─────</option>
                         <option value="Boyz" <?php if($UNIT=='Boyz') { echo "selected"; } ?> >Boyz</option>
+                        <option value="Boyz" <?php if($UNIT=='Boyz') { echo "selected"; } ?> >Boyz</option>
                         <option disabled>─────FAST ATTACK─────</option>
+                        <option value="Deffkoptas" <?php if($UNIT=='Deffkoptas') { echo "selected"; } ?> >Deffkoptas</option>
                         <option disabled>─────HEAVY SUPPORT─────</option>                   
                         </select>
                 </div>     
@@ -109,6 +111,17 @@
                         <option disabled>─────Choppy Weapons─────</option>
                         <option value='Big Choppa' <?php if($UNIT_WEAPON=='Big Choppa') { echo "selected"; } ?> >Big Choppa</option>
                         <option value='Power Klaw' <?php if($UNIT_WEAPON=='Power Klaw') { echo "selected"; } ?> >Power Klaw</option>                        
+                            <?php }   
+                            if($UNIT=="Deffkoptas") {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Kopta Rokkits'<?php if($UNIT_WEAPON=='Kopta Rokkits') { echo "selected"; } ?> >Kopta Rokkits</option>
+                        <option value='Kustom Mega-blasta'<?php if($UNIT_WEAPON=='Kustom Mega-blasta') { echo "selected"; } ?> >Kustom Mega-blasta</option>                        
+                        <option value='Twin Big Shoota'<?php if($UNIT_WEAPON=='Twin Big Shoota') { echo "selected"; } ?> >Twin Big Shoota</option>                        
+                        <option disabled>─────Melee─────</option>                        
+                        <option value='Killsaw'<?php if($UNIT_WEAPON=='Killsaw') { echo "selected"; } ?> >Killsaw</option>                        
+                        <option value='Spinnin’ Blades'<?php if($UNIT_WEAPON=='Spinnin’ Blades') { echo "selected"; } ?> >Spinnin’ Blades</option>                        
+                        <option value='Bigbomm'<?php if($UNIT_WEAPON=='Bigbomm') { echo "selected"; } ?> >Bigbomm</option>                                              
                             <?php }                             
                         } else { ?>
                         <option value=''>Select...</option>
@@ -116,7 +129,7 @@
                     </select>
                 </div>     
             </div>
-                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                                   
     <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
@@ -129,6 +142,8 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Sluga'>Sluga</option><option disabled>─────Grenade─────</option><option value='Stickbomb'>Stickbomb</option><option disabled>─────Melee─────</option><option value='Choppa'>Choppa</option><option value='Killsaw'>Killsaw</option><option value='Power Stabba'>Power Stabba</option><option disabled>─────Shooty Weapons─────</option><option value='Kustom Shoota'>Kustom Shoota</option><option value='Kombi-weapon with Rokkit Launcha'>Kombi-weapon with Rokkit Launcha</option><option value='Kombi-weapon with Skorcha'>Kombi-weapon with Skorcha</option><option disabled>─────Choppy Weapons─────</option><option value='Big Choppa'>Big Choppa</option><option value='Power Klaw'>Power Klaw</option>");
         } else if (val === "Boss Nob") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Sluga'>Sluga</option><option disabled>─────Grenade─────</option><option value='Stickbomb'>Stickbomb</option><option disabled>─────Melee─────</option><option value='Choppa'>Choppa</option><option value='Killsaw'>Killsaw</option><option value='Power Stabba'>Power Stabba</option><option disabled>─────Shooty Weapons─────</option><option value='Kustom Shoota'>Kustom Shoota</option><option value='Kombi-weapon with Rokkit Launcha'>Kombi-weapon with Rokkit Launcha</option><option value='Kombi-weapon with Skorcha'>Kombi-weapon with Skorcha</option><option disabled>─────Choppy Weapons─────</option><option value='Big Choppa'>Big Choppa</option><option value='Power Klaw'>Power Klaw</option>");
+        } else if (val === "Deffkoptas") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Kopta Rokkits'>Kopta Rokkits</option><option value='Kustom Mega-blasta'>Kustom Mega-blasta</option><option value='Twin Big Shoota'>Twin Big Shoota</option><option disabled>─────Melee─────</option><option value='Killsaw'>Killsaw</option><option value='Spinnin’ Blades'>Spinnin’ Blades</option><option value='Bigbomm'>Bigbomm</option>");
         }
     });
 });        
