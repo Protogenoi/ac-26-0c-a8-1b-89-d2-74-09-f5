@@ -12,6 +12,33 @@
        if($UNIT_WEAPON=='Supercharged Combi-plasma') {
            $UNIT_WEAPON='Supercharged Plasma Gun';
        }
+    
+       if($UNIT_WEAPON=='Gauntlets of Ultramar') {
+            $WEAPON_RANGE=24;
+            $WEAPON_TYPE='Rapid Fire 2';
+            $WEAPON_STR=4;
+            $WEAPON_AP=1;
+            $WEAPON_DAMAGE="1";  
+           
+       }  
+       
+       if($UNIT_WEAPON=='Gauntlets of Ultramar (Melee)') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='x2';
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="1D3";  
+           
+       }        
+       
+       if($UNIT_WEAPON=='Relic Blade') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='+2';
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="1D3";  
+           
+       }      
        
        if($UNIT_WEAPON=='Storm Bolter') {
             $WEAPON_RANGE=24;
