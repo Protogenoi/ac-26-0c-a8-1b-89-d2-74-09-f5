@@ -139,18 +139,7 @@
                         <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option>                         
                         <option disabled>─────Melee─────</option>
                         <option value='Power Sword' <?php if($UNIT_WEAPON=='Power Sword') { echo 'selected'; } ?> >Power Sword</option>
-                        <option disabled>─────Combi-Weapons─────</option>
-                        <option value='Combi-flamer'<?php if($UNIT_WEAPON=='Combi-flamer') { echo 'selected'; } ?> >Combi-flamer</option>  
-                        <option value='Combi-grav'<?php if($UNIT_WEAPON=='Combi-grav') { echo 'selected'; } ?> >Combi-grav</option>                       
-                        <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo 'selected'; } ?> >Combi-melta</option>
-                        <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo 'selected'; } ?> >Combi-plasma</option>
-                        <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo 'selected'; } ?> >Supercharged Combi-plasma</option>                        
-                        <option value='Storm Bolter'<?php if($UNIT_WEAPON=='Storm Bolter') { echo 'selected'; } ?> >Storm Bolter</option>
-                        <option disabled>─────Pistol Weapon─────</option>
-                        <option value='Grav-Pistol'<?php if($UNIT_WEAPON=='Grav-Pistol') { echo 'selected'; } ?> >Grav-Pistol</option>  
-                        <option value='Plasma Pistol'<?php if($UNIT_WEAPON=='Plasma Pistol') { echo 'selected'; } ?> >Plasma Pistol</option>                       
-                        <option value='Supercharged Plasma Pistol'<?php if($UNIT_WEAPON=='Supercharged Plasma Pistol') { echo 'selected'; } ?> >Supercharged Plasma Pistol</option>                       
-                            <?php }                       
+                       <?php }                       
                             if($UNIT=='Intercessor Squad' || $UNIT=='Intercessor Sergeant') {
                             ?>
                         <option disabled>─────Wargear─────</option>
