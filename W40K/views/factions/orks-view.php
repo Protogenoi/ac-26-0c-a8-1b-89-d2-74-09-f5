@@ -11,11 +11,9 @@
                         <option value="">Select...</option>
                         <option disabled>─────HQ─────</option>
                         <option value="Ghazghkull Thraka" <?php if($UNIT=='Ghazghkull Thraka') { echo "selected"; } ?> >Ghazghkull Thraka</option>
-                        <option value="Cryptec" <?php if($UNIT=='Cryptec') { echo "selected"; } ?> >Cryptec</option>
                         <option disabled>─────ELITES─────</option>
                         <option disabled>─────TROOPS─────</option>
-                        <option value="Necron Warriors" <?php if($UNIT=='Necron Warriors') { echo "selected"; } ?> >Necron Warriors</option>
-                        <option value="Immortals" <?php if($UNIT=='Immortals') { echo "selected"; } ?> >Immortals</option>
+                        <option value="Boyz" <?php if($UNIT=='Boyz') { echo "selected"; } ?> >Boyz</option>
                         <option disabled>─────FAST ATTACK─────</option>
                         <option disabled>─────HEAVY SUPPORT─────</option>                   
                         </select>
@@ -47,23 +45,21 @@
                             if($UNIT=='Ghazghkull Thraka') { ?>
                         <option disabled>─────Wargear─────</option>
                         <option value='Twin Big Shoota'<?php if($UNIT_WEAPON=='Twin Big Shoota') { echo "selected"; } ?> >Twin Big Shoota</option>
-                        <option disabled>─────Melee─────</option>
+                        <option disabled>─────Grenade─────</option>
                         <option value='Stickbomb'<?php if($UNIT_WEAPON=='Stickbomb') { echo "selected"; } ?> >Stickbomb</option>                        
                         <option disabled>─────Melee─────</option>
                         <option value='Kustom Klaw'<?php if($UNIT_WEAPON=='Kustom Klaw') { echo "selected"; } ?> >Kustom Klaw</option>
                             <?php } 
-                            if($UNIT=="Cryptec") {
+                            if($UNIT=="Boyz") {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Staff of Light'<?php if($UNIT_WEAPON=='Staff of Light') { echo "selected"; } ?> >Staff of Light</option>
+                        <option value='Shoota'<?php if($UNIT_WEAPON=='Shoota') { echo "selected"; } ?> >Shoota</option>
+                        <option value='Sluga'<?php if($UNIT_WEAPON=='Sluga') { echo "selected"; } ?> >Sluga</option>
+                        <option disabled>─────Grenade─────</option>
+                        <option value='Stickbomb'<?php if($UNIT_WEAPON=='Stickbomb') { echo "selected"; } ?> >Stickbomb</option>                        
                         <option disabled>─────Melee─────</option>
-                        <option value='Staff of Light (Melee)' <?php if($UNIT_WEAPON=='Staff of Light (Melee)') { echo "selected"; } ?> >Staff of Light (Melee)</option>
+                        <option value='Choppa' <?php if($UNIT_WEAPON=='Choppa') { echo "selected"; } ?> >Choppa</option>
                             <?php }   
-                            if($UNIT=="Necron Warriors") {
-                            ?>
-                        <option disabled>─────Wargear─────</option>
-                        <option value='Gauss Flayer'<?php if($UNIT_WEAPON=='Gauss Flayer') { echo "selected"; } ?> >Gauss Flayer</option>
-                            <?php }  
                             if($UNIT=="Immortals") {
                             ?>
                         <option disabled>─────Wargear─────</option>
@@ -76,17 +72,15 @@
                     </select>
                 </div>     
             </div>
-                                                                                                                                                
+                                                                                                                                                                
     <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
         var val = $(this).val();  
         if (val === "Ghazghkull Thraka") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Twin Big Shoota'>Twin Big Shoota</option><option disabled>─────Melee─────</option><option value='Stickbomb'>Stickbomb</option><option disabled>─────Melee─────</option><option value='Kustom Klaw'>Kustom Klaw</option>");
-        } else if (val === "Cryptec") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Staff of Light'>Staff of Light</option><option disabled>─────Melee─────</option><option value='Staff of Light (Melee)'>Staff of Light (Melee)</option>");
-        } else if (val === "Necron Warriors") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss Flayer'>Gauss Flayer</option>");
+        } else if (val === "Boyz") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shoota'>Shoota</option><option value='Sluga'>Sluga</option><option disabled>─────Grenade─────</option><option value='Stickbomb'>Stickbomb</option><option disabled>─────Melee─────</option><option value='Choppa'>Choppa</option>");
         } else if (val === "Immortals") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss Blaster'>Gauss Blaster</option><option value='Tesla Carbine'>Tesla Carbine</option>");
         } 
