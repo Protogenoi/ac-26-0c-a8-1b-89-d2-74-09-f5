@@ -118,3 +118,23 @@ if($WEAPON_TYPE=='Kombi-weapon with Skorcha') {
             $WEAPON_DAMAGE="1D3"; 
         
     }      
+
+        if($UNIT_WEAPON=='Killsaw') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='x2';
+            $WEAPON_AP=4;
+            $WEAPON_DAMAGE="2"; 
+            
+        $WEAPON_ABILITY='When attacking with this weapon, you must subtract 1 from the hit roll.';    
+        
+    }  
+    
+        if($UNIT_WEAPON=='Power Stabba') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='User';
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="1"; 
+                    
+    }    
