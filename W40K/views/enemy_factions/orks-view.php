@@ -9,6 +9,7 @@
                         <option value="">Select...</option>
                         <option disabled>─────HQ─────</option>
                         <option value="Ghazghkull Thraka" <?php if($TARGET_UNIT=='Ghazghkull Thraka') { echo "selected"; } ?> >Ghazghkull Thraka</option>
+                        <option value="Warboss" <?php if($TARGET_UNIT=='Warboss') { echo "selected"; } ?> >Warboss</option>
                         <option disabled>─────ELITES─────</option>
                         <option value="Nob" <?php if($TARGET_UNIT=='Nob') { echo "selected"; } ?> >Nob</option>
                         <option value="Boss Nob" <?php if($TARGET_UNIT=='Boss Nob') { echo "selected"; } ?> >Boss Nob</option>
