@@ -1077,7 +1077,7 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
 	</tr>
 	</table>";  
     
-    if(!is_numeric ($WEAPON_DAMAGE) || $UNIT_WEAPON=='Grav-cannon and grav-amp' || $UNIT_WEAPON=='Grav-gun' && $T_SAVE=='3'|| $UNIT_WEAPON=='Meltagun' && $RANGE_BONUS>=1 || $UNIT_WEAPON=='Multi-melta' && $RANGE_BONUS>=1 || $UNIT_WEAPON=='Supercharged Plasma Exterminator') {
+    if(!is_numeric ($WEAPON_DAMAGE) || $UNIT_WEAPON=='Grav-cannon and grav-amp' || $UNIT_WEAPON=='Grav-gun' && $T_SAVE=='3'|| $UNIT_WEAPON=='Grav-Pistol' && $T_SAVE=='3' || $UNIT_WEAPON=='Meltagun' && $RANGE_BONUS>=1 || $UNIT_WEAPON=='Multi-melta' && $RANGE_BONUS>=1 || $UNIT_WEAPON=='Supercharged Plasma Exterminator') {
 
     $SAVE_ROLLS=$TOTAL_WOUNDS-1;
     $combat_cal = new combat_cal();
@@ -1344,7 +1344,7 @@ $DIE_THREE_MOD=0;
                     
     }
     
-    elseif($UNIT_WEAPON=='Grav-cannon and grav-amp' && $T_SAVE<=3 || $UNIT_WEAPON=='Grav-gun' && $T_SAVE=='3') {
+    elseif($UNIT_WEAPON=='Grav-cannon and grav-amp' && $T_SAVE<=3 || $UNIT_WEAPON=='Grav-gun' && $T_SAVE==3 || $UNIT_WEAPON=='Grav-Pistol' && $T_SAVE==3) {
         
     
 $DIE_ONE_MOD=0;
