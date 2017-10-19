@@ -50,6 +50,7 @@ $ENEMY_FACTION = filter_input(INPUT_GET, 'ENEMY_FACTION', FILTER_SANITIZE_SPECIA
                         <option value="Deathguard" <?php if(isset($FACTION) && $FACTION=='Deathguard') { echo "selected"; } ?> >Deathguard</option>
                         <option value="Eldar" <?php if(isset($FACTION) && $FACTION=='Eldar') { echo "selected"; } ?> >Eldar</option>
                         <option value="Necrons" <?php if(isset($FACTION) && $FACTION=='Necrons') { echo "selected"; } ?> >Necrons</option>
+                        <option value="Orks" <?php if(isset($FACTION) && $FACTION=='Orks') { echo "selected"; } ?> >Orks</option>
 
                     </select>
                 </div>     
@@ -64,7 +65,7 @@ $ENEMY_FACTION = filter_input(INPUT_GET, 'ENEMY_FACTION', FILTER_SANITIZE_SPECIA
                         <option value="Eldar" <?php if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Eldar') { echo "selected"; } ?> >Eldar</option>
                         <option value="Ultramarines" <?php if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Ultramarines') { echo "selected"; } ?> >Ultramarines</option>
                         <option value="Necrons" <?php if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Necrons') { echo "selected"; } ?> >Necrons</option>
-
+                        <option value="Orks" <?php if(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Orks') { echo "selected"; } ?> >Orks</option>  
                     </select>
                 </div>     
             </div>
