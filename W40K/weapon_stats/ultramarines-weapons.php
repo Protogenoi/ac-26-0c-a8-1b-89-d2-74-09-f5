@@ -12,6 +12,10 @@
        if($UNIT_WEAPON=='Supercharged Combi-plasma') {
            $UNIT_WEAPON='Supercharged Plasma Gun';
        }
+       if($UNIT_WEAPON=='Combi-grav') {
+           $UNIT_WEAPON='Grav-gun';
+       }
+  
     
        if($UNIT_WEAPON=='Gauntlets of Ultramar') {
             $WEAPON_RANGE=24;
