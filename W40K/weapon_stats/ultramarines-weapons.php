@@ -55,7 +55,7 @@
     
         if($UNIT_WEAPON=='Frag Grenade') {
             $WEAPON_RANGE=6;
-            $WEAPON_TYPE='Grenade D6';
+            $WEAPON_TYPE='Grenade 1D6';
             $WEAPON_STR=3;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";          
@@ -131,7 +131,7 @@
     
         if($UNIT_WEAPON=='Frag Grenade') {
             $WEAPON_RANGE=6;
-            $WEAPON_TYPE='Grenade D6';
+            $WEAPON_TYPE='Grenade 1D6';
             $WEAPON_STR=3;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";          
@@ -187,7 +187,7 @@
     
         if($UNIT_WEAPON=='Frag Grenade') {
             $WEAPON_RANGE=6;
-            $WEAPON_TYPE='Grenade D6';
+            $WEAPON_TYPE='Grenade 1D6';
             $WEAPON_STR=3;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";          
@@ -215,7 +215,7 @@
     
         if($UNIT_WEAPON=='Frag Grenade') {
             $WEAPON_RANGE=6;
-            $WEAPON_TYPE='Grenade D6';
+            $WEAPON_TYPE='Grenade 1D6';
             $WEAPON_STR=3;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";          
@@ -353,7 +353,7 @@
         
         if($UNIT_WEAPON=='Frag Grenade') {
             $WEAPON_RANGE=6;
-            $WEAPON_TYPE='Grenade D6';
+            $WEAPON_TYPE='Grenade 1D6';
             $WEAPON_STR=3;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";          
@@ -425,7 +425,7 @@
         
         if($UNIT_WEAPON=='Frag Grenade') {
             $WEAPON_RANGE=6;
-            $WEAPON_TYPE='Grenade D6';
+            $WEAPON_TYPE='Grenade 1D6';
             $WEAPON_STR=3;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";          
@@ -586,7 +586,7 @@ if(strpos($UNIT,"Crusader Squad") !== false) {
         
         if($UNIT_WEAPON=='Frag Grenade') {
             $WEAPON_RANGE=6;
-            $WEAPON_TYPE='Grenade D6';
+            $WEAPON_TYPE='Grenade 1D6';
             $WEAPON_STR=3;
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1";          
