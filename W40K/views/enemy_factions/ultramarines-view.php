@@ -15,6 +15,7 @@
                         <option value="Primaris Lieutenants" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Primaris Lieutenants') { echo "selected"; } ?> >Primaris Lieutenants</option>
                         <option disabled>─────ELITES─────</option>
                         <option value="Primaris Ancient" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Primaris Ancient') { echo "selected"; } ?> >Primaris Ancient</option>
+                        <option value="Chapter Ancient" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Chapter Ancient') { echo "selected"; } ?> >Chapter Ancient</option>
                         <option disabled>─────TROOPS─────</option>
                         <option value="Intercessor Squad" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Intercessor Squad') { echo "selected"; } ?> >Intercessor Squad</option>
                         <option value="Intercessor Sergeant" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Intercessor Sergeant') { echo "selected"; } ?> >Intercessor Sergeant</option>
