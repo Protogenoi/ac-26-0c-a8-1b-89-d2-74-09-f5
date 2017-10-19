@@ -452,4 +452,15 @@
             $WEAPON_AP=3;
             $WEAPON_DAMAGE="1";  
                                 
+    }
+
+        if($UNIT_WEAPON=='Champions Blade') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR="User";
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="1";  
+            
+            $WEAPON_ABILITY="Each time the bearer fights it may make 1 additional attack with this weapon.";
+                                
     }    
