@@ -142,7 +142,25 @@
         $T_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
         $T_KEYWORDS=array("Character","Infantry","Chapter Champion");          
         
-    }     
+    }   
+    
+    if($TARGET_UNIT=='Honour Guard') {
+        $T_MOVE=6;
+        $T_WS=3;
+        $T_BS=3;
+        $T_STR=4;
+        $T_TOUGHNESS=4;
+        $T_WOUNDS=2;
+        $T_ATTACKS=2;
+        $T_LD=9;
+        $T_SAVE=2; 
+        $T_INVUL=0;        
+        
+        $T_ABILITIES=array("And They Shall Know No Fear","Honour Guard");
+        $T_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $T_KEYWORDS=array("Infantry","Honour Guard");          
+        
+    }      
     
     if($TARGET_UNIT=='Intercessor Squad') {
         $T_MOVE=6;
