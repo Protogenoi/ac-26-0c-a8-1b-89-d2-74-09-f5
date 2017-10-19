@@ -19,6 +19,7 @@
                         <option value="Primaris Ancient" <?php if(isset($UNIT) && $UNIT=='Primaris Ancient') { echo "selected"; } ?> >Primaris Ancient</option>
                         <option value="Chapter Ancient" <?php if(isset($UNIT) && $UNIT=='Chapter Ancient') { echo "selected"; } ?> >Chapter Ancient</option>
                         <option value="Chapter Champion" <?php if(isset($UNIT) && $UNIT=='Chapter Champion') { echo "selected"; } ?> >Chapter Champion</option>
+                        <option value="Honour Guard" <?php if(isset($UNIT) && $UNIT=='Honour Guard') { echo "selected"; } ?> >Honour Guard</option>
                         <option disabled>─────TROOPS─────</option>
                         <option value="Intercessor Squad" <?php if(isset($UNIT) && $UNIT=='Intercessor Squad') { echo "selected"; } ?> >Intercessor Squad</option>
                         <option value="Intercessor Sergeant" <?php if(isset($UNIT) && $UNIT=='Intercessor Sergeant') { echo "selected"; } ?> >Intercessor Sergeant</option>
@@ -149,7 +150,17 @@
                         <option disabled>─────Melee─────</option>
                         <option value='Champions Blade' <?php if($UNIT_WEAPON=='Champions Blade') { echo 'selected'; } ?> >Champions Blade</option>
                         <option value='Power Sword' <?php if($UNIT_WEAPON=='Power Sword') { echo 'selected'; } ?> >Power Sword</option>
-                       <?php }   
+                       <?php }  
+                             if($UNIT=='Honour Guard') { ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Bolt Pistol' <?php if($UNIT_WEAPON=='Bolt Pistol') { echo 'selected'; } ?> >Bolt Pistol</option>
+                        <option value='Boltgun' <?php if($UNIT_WEAPON=='Boltgun') { echo 'selected'; } ?> >Boltgun</option>                        
+                        <option disabled>─────Grenades─────</option>
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo 'selected'; } ?> >Frag Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option>                         
+                        <option disabled>─────Melee─────</option>
+                        <option value='Power Axe' <?php if($UNIT_WEAPON=='Power Axe') { echo 'selected'; } ?> >Power Axe</option>
+                       <?php }                         
                             if($UNIT=='Intercessor Squad' || $UNIT=='Intercessor Sergeant') {
                             ?>
                         <option disabled>─────Wargear─────</option>
@@ -265,7 +276,7 @@
                     </select>
                 </div>     
             </div>
-                                                                         
+                                                                                                 
         <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
@@ -282,6 +293,8 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Power Sword'>Power Sword</option>");
         } else if (val === "Chapter Champion") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Champions Blade'>Champions Blade</option><option value='Power Sword'>Power Sword</option>");
+        }  else if (val === "Honour Guard") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Boltgun'>Boltgun</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Power Axe'>Power Axe</option>");
         } else if (val === "Intercessor Squad") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Auto Bolt Rifle'>Auto Bolt Rifle</option><option value='Stalker Bolt Rifle'>Stalker Bolt Rifle</option><option value='Bolt Rifle'>Bolt Rifle</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option>");
         } else if (val === "Intercessor Sergeant") {
