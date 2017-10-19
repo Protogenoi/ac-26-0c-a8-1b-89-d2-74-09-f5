@@ -10,6 +10,7 @@
                         <option disabled>─────HQ─────</option>
                         <option value="Marneus Calgar" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Marneus Calgar') { echo "selected"; } ?> >Marneus Calgar</option>
                         <option value="Captain in Gravis armour" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Captain in Gravis armour') { echo "selected"; } ?> >Captain in Gravis armour</option>
+                        <option value="Chaplain" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Chaplain') { echo "selected"; } ?> >Chaplain</option>
                         <option value="Primaris Lieutenants" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Primaris Lieutenants') { echo "selected"; } ?> >Primaris Lieutenants</option>
                         <option disabled>─────ELITES─────</option>
                         <option value="Primaris Ancient" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Primaris Ancient') { echo "selected"; } ?> >Primaris Ancient</option>
