@@ -387,4 +387,22 @@
             $WEAPON_AP=1;
             $WEAPON_DAMAGE="2";        
             
-        }         
+        }     
+        
+        if($UNIT_WEAPON=='Plasma Pistol') {
+            $WEAPON_RANGE='12';
+            $WEAPON_TYPE='Pistol 1';
+            $WEAPON_STR="7";
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="1";           
+        
+    } 
+    
+        if($UNIT_WEAPON=='Supercharged Plasma Pistol') {
+            $WEAPON_RANGE='12';
+            $WEAPON_TYPE='Pistol 1';
+            $WEAPON_STR="8";
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="2";           
+        
+    }         
