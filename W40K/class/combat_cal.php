@@ -58,7 +58,7 @@ class combat_cal {
      
  }
        
-    $AUTO_HIT_WEAPONS=array("Flamer","Warp Flame Pistol","Warpflamer","Plague Belcher","Plague Spewer","Heavy Flamer","Gauntlet of Fire");
+    $AUTO_HIT_WEAPONS=array("Flamer","Warp Flame Pistol","Warpflamer","Plague Belcher","Plague Spewer","Heavy Flamer","Gauntlet of Fire","Skorcha");
     $TWO_D_SIX_WEAPONS=array("Tempest Launcher");
     $ONE_D_SIX_WEAPONS=array("Aeldari Sunburst Missile Launcher","Frag Missile Launcher","Havoc Launcher");
     $EXTRA_HIT_ROLLS=array("Tesla Carbine");
