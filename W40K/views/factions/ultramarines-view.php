@@ -10,6 +10,7 @@
                     <select class="form-control" name="UNIT" id="UNIT" style="width: 170px" required>
                         <option value="">Select...</option>
                         <option disabled>─────HQ─────</option>
+                        <option value="Marneus Calgar" <?php if(isset($UNIT) && $UNIT=='Marneus Calgar') { echo "selected"; } ?> >Marneus Calgar</option>
                         <option value="Captain in Gravis armour" <?php if(isset($UNIT) && $UNIT=='Captain in Gravis armour') { echo "selected"; } ?> >Captain in Gravis armour</option>
                         <option value="Primaris Lieutenants" <?php if(isset($UNIT) && $UNIT=='Primaris Lieutenants') { echo "selected"; } ?> >Primaris Lieutenants</option>
                         <option disabled>─────ELITES─────</option>
@@ -54,132 +55,139 @@
                 <div class="col-sm-6">
                     <select class="form-control" name="UNIT_WEAPON" id="UNIT_WEAPON" style="width: 170px" required>
                         <?php if(isset($UNIT_WEAPON)) {
+                            if($UNIT=='Marneus Calgar') { ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Gauntlets of Ultramar' <?php if($UNIT_WEAPON=='Gauntlets of Ultramar') { echo 'selected'; } ?> >Gauntlets of Ultramar</option>
+                        <option disabled>─────Melee─────</option>
+                        <option value='Relic Blade' <?php if($UNIT_WEAPON=='Relic Blade') { echo 'selected'; } ?> >Relic Blade</option>
+                        <option value='Gauntlets of Ultramar (Melee)' <?php if($UNIT_WEAPON=='Gauntlets of Ultramar (Melee)') { echo 'selected'; } ?> >Gauntlets of Ultramar (Melee)</option>                        
+                            <?php } 
                             if($UNIT=='Captain in Gravis armour') { ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value="Boltstorm Gauntlet" <?php if($UNIT_WEAPON=='Boltstorm Gauntlet') { echo "selected"; } ?> >Boltstorm Gauntlet</option>
+                        <option value='Boltstorm Gauntlet' <?php if($UNIT_WEAPON=='Boltstorm Gauntlet') { echo 'selected'; } ?> >Boltstorm Gauntlet</option>
                             <?php } if($UNIT=='Primaris Lieutenants') { ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value="Bolt Pistol" <?php if($UNIT_WEAPON=='Bolt Pistol') { echo "selected"; } ?> >Bolt Pistol</option>
-                        <option value='Master Crafted Auto Bolt Rifle' <?php if($UNIT_WEAPON=='Master Crafted Auto Bolt Rifle') { echo "selected"; } ?> >Master Crafted Auto Bolt Rifle</option>
-                        <option value='Master Crafted Stalker Bolt Rifle' <?php if($UNIT_WEAPON=='Master Crafted Stalker Bolt Rifle') { echo "selected"; } ?> >Master Crafted Stalker Bolt Rifle</option>
+                        <option value='Bolt Pistol' <?php if($UNIT_WEAPON=='Bolt Pistol') { echo 'selected'; } ?> >Bolt Pistol</option>
+                        <option value='Master Crafted Auto Bolt Rifle' <?php if($UNIT_WEAPON=='Master Crafted Auto Bolt Rifle') { echo 'selected'; } ?> >Master Crafted Auto Bolt Rifle</option>
+                        <option value='Master Crafted Stalker Bolt Rifle' <?php if($UNIT_WEAPON=='Master Crafted Stalker Bolt Rifle') { echo 'selected'; } ?> >Master Crafted Stalker Bolt Rifle</option>
                         <option disabled>─────Grenades─────</option>
-                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
-                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option>                                
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo 'selected'; } ?> >Frag Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option>                                
                         <?php    } if($UNIT=='Primaris Ancient') { ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value="Bolt Rifle" <?php if($UNIT_WEAPON=='Bolt Rifle') { echo "selected"; } ?> >Bolt Rifle</option>
-                        <option value="Bolt Pistol" <?php if($UNIT_WEAPON=='Bolt Pistol') { echo "selected"; } ?> >Bolt Pistol</option>
+                        <option value='Bolt Rifle' <?php if($UNIT_WEAPON=='Bolt Rifle') { echo 'selected'; } ?> >Bolt Rifle</option>
+                        <option value='Bolt Pistol' <?php if($UNIT_WEAPON=='Bolt Pistol') { echo 'selected'; } ?> >Bolt Pistol</option>
                         <option disabled>─────Grenades─────</option>
-                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
-                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option>                          
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo 'selected'; } ?> >Frag Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option>                          
                         <?php  }  if($UNIT=='Intercessor Squad' || $UNIT=='Intercessor Sergeant') {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value="Auto Bolt Rifle" <?php if($UNIT_WEAPON=='Auto Bolt Rifle') { echo "selected"; } ?> >Auto Bolt Rifle</option>
-                        <option value="Stalker Bolt Rifle" <?php if($UNIT_WEAPON=='Stalker Bolt Rifle') { echo "selected"; } ?> >Stalker Bolt Rifle</option>
-                        <option value="Bolt Rifle" <?php if($UNIT_WEAPON=='Bolt Rifle') { echo "selected"; } ?> >Bolt Rifle</option>
-                        <option value="Bolt Pistol" <?php if($UNIT_WEAPON=='Bolt Pistol') { echo "selected"; } ?> >Bolt Pistol</option>
+                        <option value='Auto Bolt Rifle' <?php if($UNIT_WEAPON=='Auto Bolt Rifle') { echo 'selected'; } ?> >Auto Bolt Rifle</option>
+                        <option value='Stalker Bolt Rifle' <?php if($UNIT_WEAPON=='Stalker Bolt Rifle') { echo 'selected'; } ?> >Stalker Bolt Rifle</option>
+                        <option value='Bolt Rifle' <?php if($UNIT_WEAPON=='Bolt Rifle') { echo 'selected'; } ?> >Bolt Rifle</option>
+                        <option value='Bolt Pistol' <?php if($UNIT_WEAPON=='Bolt Pistol') { echo 'selected'; } ?> >Bolt Pistol</option>
                         <option disabled>─────Grenades─────</option>
-                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
-                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option>                        
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo 'selected'; } ?> >Frag Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option>                        
                             <?php }
                             if($UNIT=='Scout Squad' || $UNIT=='Scout Sergeant') {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Boltgun' <?php if($UNIT_WEAPON=='Boltgun') { echo "selected"; } ?> >Boltgun</option>
-                        <option value='Bolt Pistol' <?php if($UNIT_WEAPON=='Bolt Pistol') { echo "selected"; } ?> >Bolt Pistol</option>
-                        <option value='Astartes Shotgun' <?php if($UNIT_WEAPON=='Astartes Shotgun') { echo "selected"; } ?> >Astartes Shotgun</option>
-                        <option value='Heavy Bolter' <?php if($UNIT_WEAPON=='Heavy Bolter') { echo "selected"; } ?> >Heavy Bolter</option>
-                        <option value='Frag Missile Launcher' <?php if($UNIT_WEAPON=='Frag Missile Launcher') { echo "selected"; } ?> >Frag Missile Launcher</option>
-                        <option value='Krak Missile Launcher' <?php if($UNIT_WEAPON=='Krak Missile Launcher') { echo "selected"; } ?> >Krak Missile Launcher</option>
-                        <option value='Sniper Rifle' <?php if($UNIT_WEAPON=='Sniper Rifle') { echo "selected"; } ?> >Sniper Rifle</option>
+                        <option value='Boltgun' <?php if($UNIT_WEAPON=='Boltgun') { echo 'selected'; } ?> >Boltgun</option>
+                        <option value='Bolt Pistol' <?php if($UNIT_WEAPON=='Bolt Pistol') { echo 'selected'; } ?> >Bolt Pistol</option>
+                        <option value='Astartes Shotgun' <?php if($UNIT_WEAPON=='Astartes Shotgun') { echo 'selected'; } ?> >Astartes Shotgun</option>
+                        <option value='Heavy Bolter' <?php if($UNIT_WEAPON=='Heavy Bolter') { echo 'selected'; } ?> >Heavy Bolter</option>
+                        <option value='Frag Missile Launcher' <?php if($UNIT_WEAPON=='Frag Missile Launcher') { echo 'selected'; } ?> >Frag Missile Launcher</option>
+                        <option value='Krak Missile Launcher' <?php if($UNIT_WEAPON=='Krak Missile Launcher') { echo 'selected'; } ?> >Krak Missile Launcher</option>
+                        <option value='Sniper Rifle' <?php if($UNIT_WEAPON=='Sniper Rifle') { echo 'selected'; } ?> >Sniper Rifle</option>
                         <option disabled>─────Sergeant Equipment─────</option>
-                        <option value='Combi-flamer'<?php if($UNIT_WEAPON=='Combi-flamer') { echo "selected"; } ?> >Combi-flamer</option>                       
-                        <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo "selected"; } ?> >Combi-melta</option>
-                        <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo "selected"; } ?> >Combi-plasma</option>
-                        <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo "selected"; } ?> >Supercharged Combi-plasma</option>                        
-                        <option value='Storm Bolter'<?php if($UNIT_WEAPON=='Storm Bolter') { echo "selected"; } ?> >Storm Bolter</option>      
+                        <option value='Combi-flamer'<?php if($UNIT_WEAPON=='Combi-flamer') { echo 'selected'; } ?> >Combi-flamer</option>                       
+                        <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo 'selected'; } ?> >Combi-melta</option>
+                        <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo 'selected'; } ?> >Combi-plasma</option>
+                        <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo 'selected'; } ?> >Supercharged Combi-plasma</option>                        
+                        <option value='Storm Bolter'<?php if($UNIT_WEAPON=='Storm Bolter') { echo 'selected'; } ?> >Storm Bolter</option>      
                         <option disabled>─────Grenades─────</option>
-                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
-                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option>                         
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo 'selected'; } ?> >Frag Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option>                         
                             <?php }                             
                             if($UNIT=='Tactical Squad' || $UNIT=='Tactical Marine Sergeant') {
                             ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Boltgun'<?php if($UNIT_WEAPON=='Boltgun') { echo "selected"; } ?> >Boltgun</option>
-                        <option value='Bolt Pistol'<?php if($UNIT_WEAPON=='Bolt Pistol') { echo "selected"; } ?> >Bolt Pistol</option>
+                        <option value='Boltgun'<?php if($UNIT_WEAPON=='Boltgun') { echo 'selected'; } ?> >Boltgun</option>
+                        <option value='Bolt Pistol'<?php if($UNIT_WEAPON=='Bolt Pistol') { echo 'selected'; } ?> >Bolt Pistol</option>
                         <option disabled>─────Grenades─────</option>
-                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
-                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option> 
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo 'selected'; } ?> >Frag Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option> 
                         <option disabled>─────Heavy Weapons─────</option>
-                        <option value='Grav-cannon and grav-amp'<?php if($UNIT_WEAPON=='Grav-cannon and grav-amp') { echo "selected"; } ?> >Grav-cannon and grav-amp</option>
-                        <option value='Heavy Bolter'<?php if($UNIT_WEAPON=='Heavy Bolter') { echo "selected"; } ?> >Heavy Bolter</option>
-                        <option value='Lascannon'<?php if($UNIT_WEAPON=='Lascannon') { echo "selected"; } ?> >Lascannon</option>
-                        <option value='Frag Missile Launcher'<?php if($UNIT_WEAPON=='Frag Missile Launcher') { echo "selected"; } ?> >Frag Missile Launcher</option>
-                        <option value='Krak Missile Launcher'<?php if($UNIT_WEAPON=='Krak Missile Launcher') { echo "selected"; } ?> >Krak Missile Launcher</option>
-                        <option value='Multi-melta'<?php if($UNIT_WEAPON=='Multi-melta') { echo "selected"; } ?> >Multi-melta</option>
-                        <option value='Plasma Cannon'<?php if($UNIT_WEAPON=='Plasma Cannon') { echo "selected"; } ?> >Plasma Cannon</option>
-                        <option value='Supercharged Plasma Cannon'<?php if($UNIT_WEAPON=='Supercharged Plasma Cannon') { echo "selected"; } ?> >Supercharged Plasma Cannon</option>
+                        <option value='Grav-cannon and grav-amp'<?php if($UNIT_WEAPON=='Grav-cannon and grav-amp') { echo 'selected'; } ?> >Grav-cannon and grav-amp</option>
+                        <option value='Heavy Bolter'<?php if($UNIT_WEAPON=='Heavy Bolter') { echo 'selected'; } ?> >Heavy Bolter</option>
+                        <option value='Lascannon'<?php if($UNIT_WEAPON=='Lascannon') { echo 'selected'; } ?> >Lascannon</option>
+                        <option value='Frag Missile Launcher'<?php if($UNIT_WEAPON=='Frag Missile Launcher') { echo 'selected'; } ?> >Frag Missile Launcher</option>
+                        <option value='Krak Missile Launcher'<?php if($UNIT_WEAPON=='Krak Missile Launcher') { echo 'selected'; } ?> >Krak Missile Launcher</option>
+                        <option value='Multi-melta'<?php if($UNIT_WEAPON=='Multi-melta') { echo 'selected'; } ?> >Multi-melta</option>
+                        <option value='Plasma Cannon'<?php if($UNIT_WEAPON=='Plasma Cannon') { echo 'selected'; } ?> >Plasma Cannon</option>
+                        <option value='Supercharged Plasma Cannon'<?php if($UNIT_WEAPON=='Supercharged Plasma Cannon') { echo 'selected'; } ?> >Supercharged Plasma Cannon</option>
                         <option disabled>─────Special Weapons─────</option>
-                        <option value='Flamer'<?php if($UNIT_WEAPON=='Flamer') { echo "selected"; } ?> >Flamer</option>
-                        <option value='Grav-gun'<?php if($UNIT_WEAPON=='Grav-gun') { echo "selected"; } ?> >Grav-gun</option>
-                        <option value='Meltagun'<?php if($UNIT_WEAPON=='Meltagun') { echo "selected"; } ?> >Meltagun</option>
-                        <option value='Plasma Gun'<?php if($UNIT_WEAPON=='Plasma Gun') { echo "selected"; } ?> >Plasma Gun</option>
-                        <option value='Supercharged Plasma Gun'<?php if($UNIT_WEAPON=='Supercharged Plasma Gun') { echo "selected"; } ?> >Supercharged Plasma Gun</option>
+                        <option value='Flamer'<?php if($UNIT_WEAPON=='Flamer') { echo 'selected'; } ?> >Flamer</option>
+                        <option value='Grav-gun'<?php if($UNIT_WEAPON=='Grav-gun') { echo 'selected'; } ?> >Grav-gun</option>
+                        <option value='Meltagun'<?php if($UNIT_WEAPON=='Meltagun') { echo 'selected'; } ?> >Meltagun</option>
+                        <option value='Plasma Gun'<?php if($UNIT_WEAPON=='Plasma Gun') { echo 'selected'; } ?> >Plasma Gun</option>
+                        <option value='Supercharged Plasma Gun'<?php if($UNIT_WEAPON=='Supercharged Plasma Gun') { echo 'selected'; } ?> >Supercharged Plasma Gun</option>
                         <option disabled>─────Sergeant Equipment─────</option>
-                        <option value='Combi-flamer'<?php if($UNIT_WEAPON=='Combi-flamer') { echo "selected"; } ?> >Combi-flamer</option>                       
-                        <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo "selected"; } ?> >Combi-melta</option>
-                        <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo "selected"; } ?> >Combi-plasma</option>
-                        <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo "selected"; } ?> >Supercharged Combi-plasma</option>
-                        <option value='Storm Bolter'<?php if($UNIT_WEAPON=='Storm Bolter') { echo "selected"; } ?> >Storm Bolter</option>                        
+                        <option value='Combi-flamer'<?php if($UNIT_WEAPON=='Combi-flamer') { echo 'selected'; } ?> >Combi-flamer</option>                       
+                        <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo 'selected'; } ?> >Combi-melta</option>
+                        <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo 'selected'; } ?> >Combi-plasma</option>
+                        <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo 'selected'; } ?> >Supercharged Combi-plasma</option>
+                        <option value='Storm Bolter'<?php if($UNIT_WEAPON=='Storm Bolter') { echo 'selected'; } ?> >Storm Bolter</option>                        
                             <?php }
-                            if(strpos($UNIT,"Crusader Squad") !== false) { ?>
+                            if(strpos($UNIT,'Crusader Squad') !== false) { ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Astartes Shotgun' <?php if($UNIT_WEAPON=='Astartes Shotgun') { echo "selected"; } ?> >Astartes Shotgun</option>
-                        <option value='Boltgun'<?php if($UNIT_WEAPON=='Boltgun') { echo "selected"; } ?> >Boltgun</option>
-                        <option value='Bolt Pistol'<?php if($UNIT_WEAPON=='Bolt Pistol') { echo "selected"; } ?> >Bolt Pistol</option>
+                        <option value='Astartes Shotgun' <?php if($UNIT_WEAPON=='Astartes Shotgun') { echo 'selected'; } ?> >Astartes Shotgun</option>
+                        <option value='Boltgun'<?php if($UNIT_WEAPON=='Boltgun') { echo 'selected'; } ?> >Boltgun</option>
+                        <option value='Bolt Pistol'<?php if($UNIT_WEAPON=='Bolt Pistol') { echo 'selected'; } ?> >Bolt Pistol</option>
                         <option disabled>─────Grenades─────</option>
-                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
-                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option> 
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo 'selected'; } ?> >Frag Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option> 
                         <option disabled>─────Heavy Weapons─────</option>
-                        <option value='Grav-cannon and grav-amp'<?php if($UNIT_WEAPON=='Grav-cannon and grav-amp') { echo "selected"; } ?> >Grav-cannon and grav-amp</option>
-                        <option value='Heavy Bolter'<?php if($UNIT_WEAPON=='Heavy Bolter') { echo "selected"; } ?> >Heavy Bolter</option>
-                        <option value='Lascannon'<?php if($UNIT_WEAPON=='Lascannon') { echo "selected"; } ?> >Lascannon</option>
-                        <option value='Frag Missile Launcher'<?php if($UNIT_WEAPON=='Frag Missile Launcher') { echo "selected"; } ?> >Frag Missile Launcher</option>
-                        <option value='Krak Missile Launcher'<?php if($UNIT_WEAPON=='Krak Missile Launcher') { echo "selected"; } ?> >Krak Missile Launcher</option>
-                        <option value='Multi-melta'<?php if($UNIT_WEAPON=='Multi-melta') { echo "selected"; } ?> >Multi-melta</option>
-                        <option value='Plasma Cannon'<?php if($UNIT_WEAPON=='Plasma Cannon') { echo "selected"; } ?> >Plasma Cannon</option>
-                        <option value='Supercharged Plasma Cannon'<?php if($UNIT_WEAPON=='Supercharged Plasma Cannon') { echo "selected"; } ?> >Supercharged Plasma Cannon</option>
+                        <option value='Grav-cannon and grav-amp'<?php if($UNIT_WEAPON=='Grav-cannon and grav-amp') { echo 'selected'; } ?> >Grav-cannon and grav-amp</option>
+                        <option value='Heavy Bolter'<?php if($UNIT_WEAPON=='Heavy Bolter') { echo 'selected'; } ?> >Heavy Bolter</option>
+                        <option value='Lascannon'<?php if($UNIT_WEAPON=='Lascannon') { echo 'selected'; } ?> >Lascannon</option>
+                        <option value='Frag Missile Launcher'<?php if($UNIT_WEAPON=='Frag Missile Launcher') { echo 'selected'; } ?> >Frag Missile Launcher</option>
+                        <option value='Krak Missile Launcher'<?php if($UNIT_WEAPON=='Krak Missile Launcher') { echo 'selected'; } ?> >Krak Missile Launcher</option>
+                        <option value='Multi-melta'<?php if($UNIT_WEAPON=='Multi-melta') { echo 'selected'; } ?> >Multi-melta</option>
+                        <option value='Plasma Cannon'<?php if($UNIT_WEAPON=='Plasma Cannon') { echo 'selected'; } ?> >Plasma Cannon</option>
+                        <option value='Supercharged Plasma Cannon'<?php if($UNIT_WEAPON=='Supercharged Plasma Cannon') { echo 'selected'; } ?> >Supercharged Plasma Cannon</option>
                         <option disabled>─────Special Weapons─────</option>
-                        <option value='Flamer'<?php if($UNIT_WEAPON=='Flamer') { echo "selected"; } ?> >Flamer</option>
-                        <option value='Grav-gun'<?php if($UNIT_WEAPON=='Grav-gun') { echo "selected"; } ?> >Grav-gun</option>
-                        <option value='Meltagun'<?php if($UNIT_WEAPON=='Meltagun') { echo "selected"; } ?> >Meltagun</option>
-                        <option value='Plasma Gun'<?php if($UNIT_WEAPON=='Plasma Gun') { echo "selected"; } ?> >Plasma Gun</option>
-                        <option value='Supercharged Plasma Gun'<?php if($UNIT_WEAPON=='Supercharged Plasma Gun') { echo "selected"; } ?> >Supercharged Plasma Gun</option>
+                        <option value='Flamer'<?php if($UNIT_WEAPON=='Flamer') { echo 'selected'; } ?> >Flamer</option>
+                        <option value='Grav-gun'<?php if($UNIT_WEAPON=='Grav-gun') { echo 'selected'; } ?> >Grav-gun</option>
+                        <option value='Meltagun'<?php if($UNIT_WEAPON=='Meltagun') { echo 'selected'; } ?> >Meltagun</option>
+                        <option value='Plasma Gun'<?php if($UNIT_WEAPON=='Plasma Gun') { echo 'selected'; } ?> >Plasma Gun</option>
+                        <option value='Supercharged Plasma Gun'<?php if($UNIT_WEAPON=='Supercharged Plasma Gun') { echo 'selected'; } ?> >Supercharged Plasma Gun</option>
                         <option disabled>─────Sergeant Equipment─────</option>
-                        <option value='Combi-flamer'<?php if($UNIT_WEAPON=='Combi-flamer') { echo "selected"; } ?> >Combi-flamer</option>                       
-                        <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo "selected"; } ?> >Combi-melta</option>
-                        <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo "selected"; } ?> >Combi-plasma</option>
-                        <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo "selected"; } ?> >Supercharged Combi-plasma</option>
-                        <option value='Storm Bolter'<?php if($UNIT_WEAPON=='Storm Bolter') { echo "selected"; } ?> >Storm Bolter</option>                         
+                        <option value='Combi-flamer'<?php if($UNIT_WEAPON=='Combi-flamer') { echo 'selected'; } ?> >Combi-flamer</option>                       
+                        <option value='Combi-melta'<?php if($UNIT_WEAPON=='Combi-melta') { echo 'selected'; } ?> >Combi-melta</option>
+                        <option value='Combi-plasma'<?php if($UNIT_WEAPON=='Combi-plasma') { echo 'selected'; } ?> >Combi-plasma</option>
+                        <option value='Supercharged Combi-plasma'<?php if($UNIT_WEAPON=='Supercharged Combi-plasma') { echo 'selected'; } ?> >Supercharged Combi-plasma</option>
+                        <option value='Storm Bolter'<?php if($UNIT_WEAPON=='Storm Bolter') { echo 'selected'; } ?> >Storm Bolter</option>                         
                             <?php }
-                        if($UNIT=="Inceptor Squad" || $UNIT=='Inceptor Sergeant') { ?>
+                        if($UNIT=='Inceptor Squad' || $UNIT=='Inceptor Sergeant') { ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Assault Bolter'<?php if($UNIT_WEAPON=='Assault Bolter') { echo "selected"; } ?> >Assault Bolter</option>
-                        <option value='Plasma Exterminator'<?php if($UNIT_WEAPON=='Plasma Exterminator') { echo "selected"; } ?> >Plasma Exterminator</option>
-                        <option value='Supercharged Plasma Exterminator'<?php if($UNIT_WEAPON=='Supercharged Plasma Exterminator') { echo "selected"; } ?> >Supercharged Plasma Exterminator</option>
+                        <option value='Assault Bolter'<?php if($UNIT_WEAPON=='Assault Bolter') { echo 'selected'; } ?> >Assault Bolter</option>
+                        <option value='Plasma Exterminator'<?php if($UNIT_WEAPON=='Plasma Exterminator') { echo 'selected'; } ?> >Plasma Exterminator</option>
+                        <option value='Supercharged Plasma Exterminator'<?php if($UNIT_WEAPON=='Supercharged Plasma Exterminator') { echo 'selected'; } ?> >Supercharged Plasma Exterminator</option>
                         <?php } if($UNIT=='Hellblaster Squad' || $UNIT=='Hellblaster Sergeant') { ?>
                         <option disabled>─────Wargear─────</option>
-                        <option value='Bolt Pistol'<?php if($UNIT_WEAPON=='Bolt Pistol') { echo "selected"; } ?> >Bolt Pistol</option>
-                        <option value='Plasma Incinerator'<?php if($UNIT_WEAPON=='Plasma Incinerator') { echo "selected"; } ?> >Plasma Incinerator</option>
-                        <option value='Supercharged Plasma Incinerator'<?php if($UNIT_WEAPON=='Supercharged Plasma Incinerator') { echo "selected"; } ?> >Supercharged Plasma Incinerator</option>
-                        <option value='Assault Plasma Incinerator'<?php if($UNIT_WEAPON=='Assault Plasma Incinerator') { echo "selected"; } ?> >Assault Plasma Incinerator</option>
-                        <option value='Supercharged Assault Plasma Incinerator'<?php if($UNIT_WEAPON=='Supercharged Assault Plasma Incinerator') { echo "selected"; } ?> >Supercharged Assault Plasma Incinerator</option>
-                        <option value='Heavy Plasma Incinerator'<?php if($UNIT_WEAPON=='Heavy Plasma Incinerator') { echo "selected"; } ?> >Heavy Plasma Incinerator</option>
-                        <option value='Supercharged Heavy Plasma Incinerator'<?php if($UNIT_WEAPON=='Supercharged Heavy Plasma Incinerator') { echo "selected"; } ?> >Supercharged Heavy Plasma Incinerator</option>                        
+                        <option value='Bolt Pistol'<?php if($UNIT_WEAPON=='Bolt Pistol') { echo 'selected'; } ?> >Bolt Pistol</option>
+                        <option value='Plasma Incinerator'<?php if($UNIT_WEAPON=='Plasma Incinerator') { echo 'selected'; } ?> >Plasma Incinerator</option>
+                        <option value='Supercharged Plasma Incinerator'<?php if($UNIT_WEAPON=='Supercharged Plasma Incinerator') { echo 'selected'; } ?> >Supercharged Plasma Incinerator</option>
+                        <option value='Assault Plasma Incinerator'<?php if($UNIT_WEAPON=='Assault Plasma Incinerator') { echo 'selected'; } ?> >Assault Plasma Incinerator</option>
+                        <option value='Supercharged Assault Plasma Incinerator'<?php if($UNIT_WEAPON=='Supercharged Assault Plasma Incinerator') { echo 'selected'; } ?> >Supercharged Assault Plasma Incinerator</option>
+                        <option value='Heavy Plasma Incinerator'<?php if($UNIT_WEAPON=='Heavy Plasma Incinerator') { echo 'selected'; } ?> >Heavy Plasma Incinerator</option>
+                        <option value='Supercharged Heavy Plasma Incinerator'<?php if($UNIT_WEAPON=='Supercharged Heavy Plasma Incinerator') { echo 'selected'; } ?> >Supercharged Heavy Plasma Incinerator</option>                        
                         <option disabled>─────Grenades─────</option>
-                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo "selected"; } ?> >Frag Grenade</option>
-                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo "selected"; } ?> >Krak Grenade</option>     
+                        <option value='Frag Grenade' <?php if($UNIT_WEAPON=='Frag Grenade') { echo 'selected'; } ?> >Frag Grenade</option>
+                        <option value='Krak Grenade' <?php if($UNIT_WEAPON=='Krak Grenade') { echo 'selected'; } ?> >Krak Grenade</option>     
                             <?php }
                         } else { ?>
                         <option value=''>Select...</option>
@@ -192,7 +200,9 @@
 $(document).ready(function () {
     $("#UNIT").change(function () {
         var val = $(this).val();  
-        if (val === "Intercessor Squad") {
+          if (val === "Marneus Calgar") {
+            $('#UNIT_WEAPON').html('<option disabled>─────Wargear─────</option><option value='Gauntlets of Ultramar'>Gauntlets of Ultramar</option><option disabled>─────Melee─────</option><option value='Relic Blade'>Relic Blade</option><option value='Gauntlets of Ultramar (Melee)'>Gauntlets of Ultramar (Melee)</option>');
+        } else if (val === "Intercessor Squad") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Auto Bolt Rifle'>Auto Bolt Rifle</option><option value='Stalker Bolt Rifle'>Stalker Bolt Rifle</option><option value='Bolt Rifle'>Bolt Rifle</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option>");
         } else if (val === "Intercessor Sergeant") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Auto Bolt Rifle'>Auto Bolt Rifle</option><option value='Stalker Bolt Rifle'>Stalker Bolt Rifle</option><option value='Bolt Rifle'>Bolt Rifle</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option>");
