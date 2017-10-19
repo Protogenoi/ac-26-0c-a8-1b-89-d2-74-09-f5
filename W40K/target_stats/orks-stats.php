@@ -18,6 +18,24 @@
         
     } 
     
+    if($TARGET_UNIT=='Warboss') {
+        $T_MOVE=5;
+        $T_WS=2;
+        $T_BS=5;
+        $T_STR=6;
+        $T_TOUGHNESS=5;
+        $T_WOUNDS=6;
+        $T_ATTACKS=4;
+        $T_LD=8;
+        $T_SAVE=4; 
+        $T_INVUL =0;
+        
+        $T_ABILITIES=array("Ere We Go, Mob Rule","Waaagh!","Breakin’ Heads");
+        $T_FACTION_KW=array("Ork","CLAN");
+        $T_KEYWORDS=array("Character","Infantry","Warboss");            
+        
+    }     
+    
     if($TARGET_UNIT=='Boyz') {
         $T_MOVE=5;
         $T_WS=3;
