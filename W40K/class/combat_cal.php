@@ -833,7 +833,7 @@ $DIE_THREE_MOD=0;
 	</table>";
     
   $FLAG_ROLL_CHK=0;  
-  $RE_ROLLL_ONES=array("Rites of Battle");
+  $RE_ROLLL_ONES=array("Rites of Battle","Chapter Master");
   $AUTO_WOUND=array("Singing Spear");
  
  if (array_intersect($RE_ROLLL_ONES, $U_ABILITIES)) {
