@@ -37,7 +37,14 @@ class combat_cal {
            require(__DIR__ . '/../unit_stats/necron-stats.php');
            require(__DIR__ . '/../weapon_stats/necron-weapons.php');  
        
-       }        
+       }
+       
+       elseif($FACTION=='Orks') {
+
+           require(__DIR__ . '/../unit_stats/orks-stats.php');
+           require(__DIR__ . '/../weapon_stats/orks-weapons.php');  
+       
+       }       
         
  if(strpos($WEAPON_TYPE,"Assault") !== false && $MOVEMENT=='Advanced') {
      
@@ -971,25 +978,30 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
 
     }
 
-    if($ENEMY_FACTION=='Eldar') {
+    elseif($ENEMY_FACTION=='Eldar') {
         require(__DIR__ . '/../target_stats/eldar-stats.php');  
 
     }    
 
-    if($ENEMY_FACTION=='Deathguard') {
+    elseif($ENEMY_FACTION=='Deathguard') {
         require(__DIR__ . '/../target_stats/deathguard-stats.php');  
 
     } 
     
-    if($ENEMY_FACTION=='Chaos Space Marines') {
+    elseif($ENEMY_FACTION=='Chaos Space Marines') {
         require(__DIR__ . '/../target_stats/csm-stats.php');  
 
     }
     
-    if($ENEMY_FACTION=='Necrons') {
+    elseif($ENEMY_FACTION=='Necrons') {
         require(__DIR__ . '/../target_stats/necron-stats.php');  
 
-    }     
+    }   
+    
+    elseif($ENEMY_FACTION=='Orks') {
+        require(__DIR__ . '/../target_stats/orks-stats.php');  
+
+    }       
       
     if($WEAPON_STR + $T_TOUGHNESS >= $WEAPON_STR) {
     //DOUBLE 2+
