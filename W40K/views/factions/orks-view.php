@@ -64,11 +64,9 @@
                         <option value='Attack Squig' <?php if($UNIT_WEAPON=='Attack Squig') { echo "selected"; } ?> >Attack Squig</option>
                         <option value='Big Choppa' <?php if($UNIT_WEAPON=='Big Choppa') { echo "selected"; } ?> >Big Choppa</option>
                        <option disabled>─────Shooty Weapons─────</option>
-                        <option value='Kustom Shoota'<?php if($UNIT_WEAPON=='Kustom Shoota') { echo "selected"; } ?> >Kustom Shoota</option>
                         <option value='Kombi-weapon with Rokkit Launcha'<?php if($UNIT_WEAPON=='Kombi-weapon with Rokkit Launcha') { echo "selected"; } ?> >Kombi-weapon with Rokkit Launcha</option>
                         <option value='Kombi-weapon with Skorcha'<?php if($UNIT_WEAPON=='Kombi-weapon with Skorcha') { echo "selected"; } ?> >Kombi-weapon with Skorcha</option>
                         <option disabled>─────Choppy Weapons─────</option>
-                        <option value='Big Choppa' <?php if($UNIT_WEAPON=='Big Choppa') { echo "selected"; } ?> >Big Choppa</option>
                         <option value='Power Klaw' <?php if($UNIT_WEAPON=='Power Klaw') { echo "selected"; } ?> >Power Klaw</option>                        
                             <?php } 
                             if($UNIT=="Boyz") {
