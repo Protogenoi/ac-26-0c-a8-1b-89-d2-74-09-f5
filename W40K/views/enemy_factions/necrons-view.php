@@ -37,7 +37,7 @@
 
         if($ENEMY_FACTION=='Necrons') {
            
-           require(__DIR__ . '/../../target_stats/necrons-stats.php');
+           require(__DIR__ . '/../../target_stats/necron-stats.php');
 
        }
        
