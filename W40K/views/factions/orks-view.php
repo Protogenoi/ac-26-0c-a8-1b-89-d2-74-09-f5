@@ -17,7 +17,6 @@
                         <option disabled value="Ammo Runt" <?php if($UNIT=='Ammo Runt') { echo "selected"; } ?> >Ammo Runt</option>                        
                         <option disabled>─────TROOPS─────</option>
                         <option value="Boyz" <?php if($UNIT=='Boyz') { echo "selected"; } ?> >Boyz</option>
-                        <option value="Boyz" <?php if($UNIT=='Boyz') { echo "selected"; } ?> >Boyz</option>
                         <option disabled>─────FAST ATTACK─────</option>
                         <option value="Deffkoptas" <?php if($UNIT=='Deffkoptas') { echo "selected"; } ?> >Deffkoptas</option>
                         <option disabled>─────HEAVY SUPPORT─────</option>                   
