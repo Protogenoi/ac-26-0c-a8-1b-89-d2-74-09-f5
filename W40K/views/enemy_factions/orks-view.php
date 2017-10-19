@@ -10,13 +10,13 @@
                         <option disabled>─────HQ─────</option>
                         <option value="Ghazghkull Thraka" <?php if($TARGET_UNIT=='Ghazghkull Thraka') { echo "selected"; } ?> >Ghazghkull Thraka</option>
                         <option disabled>─────ELITES─────</option>
+                        <option value="Nob" <?php if($TARGET_UNIT=='Nob') { echo "selected"; } ?> >Nob</option>
+                        <option value="Boss Nob" <?php if($TARGET_UNIT=='Boss Nob') { echo "selected"; } ?> >Boss Nob</option>
+                        <option disabled value="Ammo Runt" <?php if($TARGET_UNIT=='Ammo Runt') { echo "selected"; } ?> >Ammo Runt</option>                        
                         <option disabled>─────TROOPS─────</option>
                         <option value="Boyz" <?php if($TARGET_UNIT=='Boyz') { echo "selected"; } ?> >Boyz</option>
                         <option disabled>─────FAST ATTACK─────</option>
                         <option disabled>─────HEAVY SUPPORT─────</option>
-                        <option value="Dark Reapers" <?php if($TARGET_UNIT=='Dark Reapers') { echo "selected"; } ?> >Dark Reapers</option>
-                        <option value="Dark Reapers Exarch" <?php if($TARGET_UNIT=='Dark Reapers Exarch') { echo "selected"; } ?> >Dark Reapers Exarch</option>
-                        
                     </select>
                 </div>     
             </div> 
