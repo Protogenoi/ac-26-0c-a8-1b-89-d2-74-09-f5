@@ -124,6 +124,24 @@
         $U_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
         $U_KEYWORDS=array("Character","Infantry","Ancient","Chapter Ancient");          
         
+    }    
+    
+    if($UNIT=='Chapter Champion') {
+        $U_MOVE=6;
+        $U_WS=2;
+        $U_BS=3;
+        $U_STR=4;
+        $U_TOUGHNESS=4;
+        $U_WOUNDS=4;
+        $U_ATTACKS=4;
+        $U_LD=9;
+        $U_SAVE=2; 
+        $U_INVUL=0;        
+        
+        $U_ABILITIES=array("And They Shall Know No Fear","Honour or Death");
+        $U_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $U_KEYWORDS=array("Character","Infantry","Chapter Champion");          
+        
     }     
     
     if($UNIT=='Intercessor Squad') {
