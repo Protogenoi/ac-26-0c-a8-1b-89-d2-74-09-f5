@@ -171,11 +171,11 @@ if($UNIT_WEAPON=='Kombi-weapon with Skorcha') {
     }  
 
         if($UNIT_WEAPON=='Bigbomm') {
-            $WEAPON_RANGE='Melee';
-            $WEAPON_TYPE='Melee';
+            $WEAPON_RANGE=14;
+            $WEAPON_TYPE='Bomb';
             $WEAPON_STR='+1';
             $WEAPON_AP=0;
-            $WEAPON_DAMAGE="1"; 
+            $WEAPON_DAMAGE="1D6"; 
             
         $WEAPON_ABILITY="Each bigbomm can only be used once per battle.";    
         //Bigbomm: A Deffkopta equipped with a bigbomm can drop it as it flies over enemy units in its Movement phase. 
@@ -184,4 +184,15 @@ if($UNIT_WEAPON=='Kombi-weapon with Skorcha') {
         //For each roll of 5+, the target unit suffers 1 mortal wound. 
         //It can only do this once per battle.
                     
-    }      
+    }   
+    
+        if($UNIT_WEAPON=='Attack Squig') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='4';
+            $WEAPON_AP=1;
+            $WEAPON_DAMAGE="1"; 
+            
+        $WEAPON_ABILITY="Each time a model with an attack squig fights, it can make 2 additional attacks with this weapon."; 
+                    
+    }    
