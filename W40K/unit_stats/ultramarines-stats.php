@@ -36,6 +36,24 @@
         
     }
     
+    if($UNIT=='Chaplain') {
+        $U_MOVE=6;
+        $U_WS=2;
+        $U_BS=3;
+        $U_STR=4;
+        $U_TOUGHNESS=4;
+        $U_WOUNDS=4;
+        $U_ATTACKS=3;
+        $U_LD=9;
+        $U_SAVE=3; 
+        $U_INVUL=4;        
+        
+        $U_ABILITIES=array("And They Shall Know No Fear","Rosarius","Litanies of Hate","Jump Pack Assault","Spiritual Leaders");
+        $U_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $U_KEYWORDS=array("Character","Infantry","Chaplain");         
+        
+    }    
+    
     if($UNIT=='Primaris Lieutenants') {
         $U_MOVE=6;
         $U_WS=2;
