@@ -12,9 +12,27 @@
         $T_SAVE=2; 
         $T_INVUL =4;
         
-        $T_ABILITIES=array("Ere We Go, Mob Rule","Prophet of Gork and Mork","Great Waaagh!","The Boss is Watchin’");
+        $T_ABILITIES=array("Ere We Go, Mob Rule","Prophet of Gork and Mork","Great Waaagh!","The Boss is Watchin");
         $T_FACTION_KW=array("Ork","Goff");
         $T_KEYWORDS=array("Character","Infantry","Mega Armour","Warboss","Ghazghkull Thraka");            
         
     } 
+    
+    if($TARGET_UNIT=='Boyz') {
+        $T_MOVE=5;
+        $T_WS=3;
+        $T_BS=5;
+        $T_STR=4;
+        $T_TOUGHNESS=4;
+        $T_WOUNDS=1;
+        $T_ATTACKS=2;
+        $T_LD=6;
+        $T_SAVE=6; 
+        $T_INVUL =0;
+        
+        $T_ABILITIES=array("Ere We Go, Mob Rule","Green Tide");
+        $T_FACTION_KW=array("Ork","CLAN");
+        $T_KEYWORDS=array("Infantry","Boyz");            
+        
+    }     
 
