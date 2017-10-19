@@ -15,10 +15,7 @@
                         <option value="Necron Warriors" <?php if($TARGET_UNIT=='Necron Warriors') { echo "selected"; } ?> >Necron Warriors</option>
                         <option value="Immortals" <?php if($TARGET_UNIT=='Immortals') { echo "selected"; } ?> >Immortals</option>
                         <option disabled>─────FAST ATTACK─────</option>
-                        <option disabled>─────HEAVY SUPPORT─────</option>
-                        <option value="Dark Reapers" <?php if($TARGET_UNIT=='Dark Reapers') { echo "selected"; } ?> >Dark Reapers</option>
-                        <option value="Dark Reapers Exarch" <?php if($TARGET_UNIT=='Dark Reapers Exarch') { echo "selected"; } ?> >Dark Reapers Exarch</option>
-                        
+                        <option disabled>─────HEAVY SUPPORT─────</option>   
                     </select>
                 </div>     
             </div> 
