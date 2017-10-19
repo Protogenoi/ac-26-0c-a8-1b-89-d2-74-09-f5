@@ -444,3 +444,12 @@
             $WEAPON_ABILITY="Each servo arm can only be used to one attack each time the bearer fights. When attacking with this weapon subtract 1 from the hit roll.";
                     
     }     
+    
+        if($UNIT_WEAPON=='Power Sword') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR="User";
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="1";  
+                                
+    }    
