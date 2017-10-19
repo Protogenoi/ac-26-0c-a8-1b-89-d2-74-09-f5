@@ -12,6 +12,9 @@
                         <option disabled>─────HQ─────</option>
                         <option value="Ghazghkull Thraka" <?php if($UNIT=='Ghazghkull Thraka') { echo "selected"; } ?> >Ghazghkull Thraka</option>
                         <option disabled>─────ELITES─────</option>
+                        <option value="Nob" <?php if($UNIT=='Nob') { echo "selected"; } ?> >Nob</option>
+                        <option value="Boss Nob" <?php if($UNIT=='Boss Nob') { echo "selected"; } ?> >Boss Nob</option>
+                        <option value="Ammo Runt" <?php if($UNIT=='Ammo Runt') { echo "selected"; } ?> >Ammo Runt</option>                        
                         <option disabled>─────TROOPS─────</option>
                         <option value="Boyz" <?php if($UNIT=='Boyz') { echo "selected"; } ?> >Boyz</option>
                         <option disabled>─────FAST ATTACK─────</option>
@@ -59,6 +62,17 @@
                         <option value='Stickbomb'<?php if($UNIT_WEAPON=='Stickbomb') { echo "selected"; } ?> >Stickbomb</option>                        
                         <option disabled>─────Melee─────</option>
                         <option value='Choppa' <?php if($UNIT_WEAPON=='Choppa') { echo "selected"; } ?> >Choppa</option>
+                        <option disabled>─────Eavy Weapons─────</option>
+                        <option value='Big Shoota'<?php if($UNIT_WEAPON=='Big Shoota') { echo "selected"; } ?> >Big Shoota</option>
+                        <option value='Rokkit Launcha'<?php if($UNIT_WEAPON=='Rokkit Launcha') { echo "selected"; } ?> >Rokkit Launcha</option>
+                        <option disabled>─────Boss Nob─────</option>
+                        <option disabled>─────Shooty Weapons─────</option>
+                        <option value='Kustom Shoota'<?php if($UNIT_WEAPON=='Kustom Shoota') { echo "selected"; } ?> >Kustom Shoota</option>
+                        <option value='Kombi-weapon with Rokkit Launcha'<?php if($UNIT_WEAPON=='Kombi-weapon with Rokkit Launcha') { echo "selected"; } ?> >Kombi-weapon with Rokkit Launcha</option>
+                        <option value='Kombi-weapon with Skorcha'<?php if($UNIT_WEAPON=='Kombi-weapon with Skorcha') { echo "selected"; } ?> >Kombi-weapon with Skorcha</option>
+                        <option disabled>─────Choppy Weapons─────</option>
+                        <option value='Big Choppa' <?php if($UNIT_WEAPON=='Big Choppa') { echo "selected"; } ?> >Big Choppa</option>
+                        <option value='Power Klaw' <?php if($UNIT_WEAPON=='Power Klaw') { echo "selected"; } ?> >Power Klaw</option>                        
                             <?php }   
                             if($UNIT=="Immortals") {
                             ?>
@@ -72,7 +86,7 @@
                     </select>
                 </div>     
             </div>
-                                                                                                                                                                
+                                                                                                                                                                                                                 
     <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
@@ -80,7 +94,7 @@ $(document).ready(function () {
         if (val === "Ghazghkull Thraka") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Twin Big Shoota'>Twin Big Shoota</option><option disabled>─────Melee─────</option><option value='Stickbomb'>Stickbomb</option><option disabled>─────Melee─────</option><option value='Kustom Klaw'>Kustom Klaw</option>");
         } else if (val === "Boyz") {
-            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shoota'>Shoota</option><option value='Sluga'>Sluga</option><option disabled>─────Grenade─────</option><option value='Stickbomb'>Stickbomb</option><option disabled>─────Melee─────</option><option value='Choppa'>Choppa</option>");
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shoota'>Shoota</option><option value='Sluga'>Sluga</option><option disabled>─────Grenade─────</option><option value='Stickbomb'>Stickbomb</option><option disabled>─────Melee─────</option><option value='Choppa'>Choppa</option><option disabled>─────Eavy Weapons─────</option><option value='Big Shoota'>Big Shoota</option><option value='Rokkit Launcha'>Rokkit Launcha</option><option disabled>─────Boss Nob─────</option><option disabled>─────Nobz Wargear─────</option><option value='Kustom Shoota'>Kustom Shoota</option><option value='Kombi-weapon with Rokkit Launcha'>Kombi-weapon with Rokkit Launcha</option><option value='Kombi-weapon with Skorcha'>Kombi-weapon with Skorcha</option><option disabled>─────Melee─────</option><option value='Big Choppa'>Big Choppa</option><option value='Power Klaw'>Power Klaw</option>");
         } else if (val === "Immortals") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss Blaster'>Gauss Blaster</option><option value='Tesla Carbine'>Tesla Carbine</option>");
         } 
