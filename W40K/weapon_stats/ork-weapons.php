@@ -1,10 +1,10 @@
 <?php
 
-if($WEAPON_TYPE=='Kombi-weapon with Rokkit Launcha') {
-    $WEAPON_TYPE='Rokkit Launcha';
+if($UNIT_WEAPON=='Kombi-weapon with Rokkit Launcha') {
+    $UNIT_WEAPON='Rokkit Launcha';
 }
-if($WEAPON_TYPE=='Kombi-weapon with Skorcha') {
-    $WEAPON_TYPE='Skorcha';
+if($UNIT_WEAPON=='Kombi-weapon with Skorcha') {
+    $UNIT_WEAPON='Skorcha';
 }
 
         if($UNIT_WEAPON=='Twin Big Shoota') {
