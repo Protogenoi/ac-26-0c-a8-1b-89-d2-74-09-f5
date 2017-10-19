@@ -52,7 +52,25 @@
         $U_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
         $U_KEYWORDS=array("Character","Infantry","Chaplain");         
         
-    }    
+    } 
+    
+    if($UNIT=='Techmarine') {
+        $U_MOVE=6;
+        $U_WS=3;
+        $U_BS=2;
+        $U_STR=4;
+        $U_TOUGHNESS=4;
+        $U_WOUNDS=4;
+        $U_ATTACKS=3;
+        $U_LD=8;
+        $U_SAVE=2; 
+        $U_INVUL=0;        
+        
+        $U_ABILITIES=array("And They Shall Know No Fear","Blessing of the Omnissiah");
+        $U_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $U_KEYWORDS=array("Character","Infantry","Techmarine");         
+        
+    }      
     
     if($UNIT=='Primaris Lieutenants') {
         $U_MOVE=6;
