@@ -42,7 +42,7 @@ class combat_cal {
        elseif($FACTION=='Orks') {
 
            require(__DIR__ . '/../unit_stats/orks-stats.php');
-           require(__DIR__ . '/../weapon_stats/orks-weapons.php');  
+           require(__DIR__ . '/../weapon_stats/ork-weapons.php');  
        
        }       
         
