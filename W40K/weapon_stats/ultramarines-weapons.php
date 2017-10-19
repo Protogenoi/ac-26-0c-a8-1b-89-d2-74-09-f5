@@ -405,4 +405,42 @@
             $WEAPON_AP=3;
             $WEAPON_DAMAGE="2";           
         
-    }         
+    } 
+    
+        if($UNIT_WEAPON=='Plasma Cutter') {
+            $WEAPON_RANGE='12';
+            $WEAPON_TYPE='Assault 1';
+            $WEAPON_STR="7";
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="1";           
+        
+    }    
+    
+        if($UNIT_WEAPON=='Supercharged Plasma Cutter') {
+            $WEAPON_RANGE='12';
+            $WEAPON_TYPE='Assault 1';
+            $WEAPON_STR="8";
+            $WEAPON_AP=3;
+            $WEAPON_DAMAGE="2";           
+        
+    }    
+    
+        if($UNIT_WEAPON=='Power Axe') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR="+1";
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="1";  
+                    
+    }  
+    
+        if($UNIT_WEAPON=='Servo Arm') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR="x2";
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="3";  
+            
+            $WEAPON_ABILITY="Each servo arm can only be used to one attack each time the bearer fights. When attacking with this weapon subtract 1 from the hit roll.";
+                    
+    }     
