@@ -88,4 +88,22 @@
         $U_FACTION_KW=array("Ork","CLAN");
         $U_KEYWORDS=array("Infantry","Gretchin","Ammo Runt");            
         
-    }     
+    }  
+    
+    if($UNIT=='Deffkoptas') {
+        $U_MOVE=14;
+        $U_WS=3;
+        $U_BS=5;
+        $U_STR=4;
+        $U_TOUGHNESS=5;
+        $U_WOUNDS=4;
+        $U_ATTACKS=2;
+        $U_LD=6;
+        $U_SAVE=4; 
+        $U_INVUL =0;
+        
+        $U_ABILITIES=array("Ere We Go, Mob Rule","Turbo-boost","Scoutin’ Ahead","Bigbomm:");
+        $U_FACTION_KW=array("Ork","CLAN");
+        $U_KEYWORDS=array("Vehicle","Fly","Deffkoptas");            
+        
+    }    
