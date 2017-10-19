@@ -703,6 +703,18 @@ $DIE_THREE_MOD=0;
 
     }  
     
+    if($WEAPON_TYPE=='Assault 4') {
+        $SHOW_ROLL_HITS=($number+1)*3;
+        $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
+
+    }     
+    
+    if($WEAPON_TYPE=='Assault 5') {
+        $SHOW_ROLL_HITS=($number+1)*3;
+        $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
+
+    }     
+    
     if($WEAPON_TYPE=='Assault 6') {
         $SHOW_ROLL_HITS=($number+1)*6;
         $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
