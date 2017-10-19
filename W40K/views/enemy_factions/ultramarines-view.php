@@ -8,6 +8,7 @@
                     <select class="form-control" name="TARGET_UNIT" id="UNIT" style="width: 170px" required>
                         <option value="">Select...</option>
                         <option disabled>─────HQ─────</option>
+                        <option value="Marneus Calgar" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Marneus Calgar') { echo "selected"; } ?> >Marneus Calgar</option>
                         <option value="Captain in Gravis armour" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Captain in Gravis armour') { echo "selected"; } ?> >Captain in Gravis armour</option>
                         <option value="Primaris Lieutenants" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Primaris Lieutenants') { echo "selected"; } ?> >Primaris Lieutenants</option>
                         <option disabled>─────ELITES─────</option>
