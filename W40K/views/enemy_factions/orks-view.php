@@ -14,7 +14,7 @@
                         <option value="Boss Nob" <?php if($TARGET_UNIT=='Boss Nob') { echo "selected"; } ?> >Boss Nob</option>
                         <option value="Ammo Runt" <?php if($TARGET_UNIT=='Ammo Runt') { echo "selected"; } ?> >Ammo Runt</option>                        
                         <option disabled>─────TROOPS─────</option>
-                        <option value="Boyz" <?php if($TARGET_UNIT=='Boyz') { echo "selected"; } ?> >Boyz</option>
+                        <option value="Deffkoptas" <?php if($TARGET_UNIT=='Deffkoptas') { echo "selected"; } ?> >Deffkoptas</option>
                         <option disabled>─────FAST ATTACK─────</option>
                         <option disabled>─────HEAVY SUPPORT─────</option>
                     </select>
