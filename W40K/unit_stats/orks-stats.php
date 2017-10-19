@@ -18,6 +18,24 @@
         
     } 
     
+    if($UNIT=='Warboss') {
+        $U_MOVE=5;
+        $U_WS=2;
+        $U_BS=5;
+        $U_STR=6;
+        $U_TOUGHNESS=5;
+        $U_WOUNDS=6;
+        $U_ATTACKS=4;
+        $U_LD=8;
+        $U_SAVE=4; 
+        $U_INVUL =0;
+        
+        $U_ABILITIES=array("Ere We Go, Mob Rule","Waaagh!","Breakin’ Heads");
+        $U_FACTION_KW=array("Ork","CLAN");
+        $U_KEYWORDS=array("Character","Infantry","Warboss");            
+        
+    }      
+    
     if($UNIT=='Boyz') {
         $U_MOVE=5;
         $U_WS=3;
@@ -102,7 +120,7 @@
         $U_SAVE=4; 
         $U_INVUL =0;
         
-        $U_ABILITIES=array("Ere We Go, Mob Rule","Turbo-boost","Scoutin’ Ahead","Bigbomm:");
+        $U_ABILITIES=array("Ere We Go, Mob Rule","Turbo-boost","Scoutin’ Ahead","Bigbomm");
         $U_FACTION_KW=array("Ork","CLAN");
         $U_KEYWORDS=array("Vehicle","Fly","Deffkoptas");            
         
