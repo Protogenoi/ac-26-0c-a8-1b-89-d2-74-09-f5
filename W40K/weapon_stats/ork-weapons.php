@@ -25,4 +25,33 @@
             $WEAPON_AP=0;
             $WEAPON_DAMAGE="1"; 
         
+    }  
+    
+        if($UNIT_WEAPON=='Shoota') {
+            $WEAPON_RANGE=18;
+            $WEAPON_TYPE='Assault 2';
+            $WEAPON_STR=4;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1"; 
+        
+    }  
+    
+        if($UNIT_WEAPON=='Sluga') {
+            $WEAPON_RANGE=12;
+            $WEAPON_TYPE='Pistol 1';
+            $WEAPON_STR=4;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1"; 
+        
+    }   
+    
+        if($UNIT_WEAPON=='Choppa') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='User';
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1"; 
+        
+        $WEAPON_ABILITY="Each time the bearer fights, it can make 1 additional attack with this weapon.";    
+            
     }    
