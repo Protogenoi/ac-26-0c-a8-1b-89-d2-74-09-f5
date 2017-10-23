@@ -2016,7 +2016,7 @@ function ignore_wounds($TOTAL_SAVES,$TOTAL_INVUL,$TOTAL_FAILS,$TOTAL_INVUL_FAILS
     }
 
     $CHANCE_KILL=16.667*2;
-    $KILL_CHANCE=5/6*$SHOW_IGN_SAVE_ROLLS;
+    $KILL_CHANCE=2/6*$SHOW_IGN_SAVE_ROLLS;
     $SHOW_KILL_CHANCE =number_format($KILL_CHANCE,3);     
     
     echo "<table class='table table-condensed'>
