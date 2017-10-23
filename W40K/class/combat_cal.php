@@ -1918,8 +1918,8 @@ function ignore_wounds($TOTAL_SAVES,$TOTAL_INVUL,$TOTAL_FAILS,$TOTAL_INVUL_FAILS
     $IGNORE_WOUNDS=$DIE_FIVE+$DIE_SIX;
     $FAILS=$SHOW_IGN_SAVE_ROLLS-$IGNORE_WOUNDS;
 
-    if(empty($IGNORE_WOUNDS)) {
-        $IGNORE_WOUNDS=0;
+    if(empty($FAILS)) {
+     
         $FAILS="-";
     }
     
