@@ -795,27 +795,38 @@ $DIE_THREE_MOD=0;
     if($U_BS=='6') {
         $TOTAL_HITS=$DIE_SIX;
         $CHANCE_TO_HIT=16.667;
+        $CHANCE=1/6*$SHOW_ROLL_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
     }       
     if($U_BS=='5') {
         $TOTAL_HITS=$DIE_FIVE+$DIE_SIX;
         $CHANCE_TO_HIT=16.667*2;
+        $CHANCE=2/6*$SHOW_ROLL_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
     }      
     if($U_BS=='4') {
         $TOTAL_HITS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $CHANCE_TO_HIT=16.667*3;
+        $CHANCE=3/6*$SHOW_ROLL_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
     }     
     if($U_BS=='3') {
         $TOTAL_HITS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $CHANCE_TO_HIT=16.667*4;
+        $CHANCE=4/6*$SHOW_ROLL_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
     }
     if($U_BS=='2') {
         $TOTAL_HITS=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $CHANCE_TO_HIT=16.667*5;
-    }      
+        $CHANCE=5/6*$SHOW_ROLL_HITS;
+        
+        $SHOW_CHANCE =number_format($CHANCE,3);
+    }        
     
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='7'>$SHOW_ROLL_HITS shots ($CHANCE_TO_HIT%) | $UNIT_WEAPON ($WEAPON_TYPE) | $U_BS+ to hit</th>
+        <th colspan='7'>$SHOW_ROLL_HITS shots ($CHANCE_TO_HIT% [$SHOW_CHANCE]) | $UNIT_WEAPON ($WEAPON_TYPE) | $U_BS+ to hit</th>
         </tr>
 	<tr>
 	<th>1</th>
@@ -1027,11 +1038,18 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
 
     }       
       
+    
+    $PLUS_HITS=$TOTAL_HITS+1;
+    
     if($WEAPON_STR + $T_TOUGHNESS >= $WEAPON_STR) {
     //DOUBLE 2+
         $TOTAL_WOUNDS=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=2;
         $CHANCE_TO_WOUND=16.667*5;
+        
+        $CHANCE=5/6*$PLUS_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);        
+        
     }
 
     if($WEAPON_STR>$T_TOUGHNESS) {
@@ -1039,34 +1057,50 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
         $TOTAL_WOUNDS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=3;
         $CHANCE_TO_WOUND=16.667*4;
+      
+        $CHANCE=4/6*$PLUS_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);           
+        
     }
     if($WEAPON_STR==$T_TOUGHNESS) {
         //TO WOUND = 4+
         $TOTAL_WOUNDS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=4;
         $CHANCE_TO_WOUND=16.667*3;
+      
+        $CHANCE=3/6*$PLUS_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);           
+        
     }
     if($WEAPON_STR<$T_TOUGHNESS) {
         // 5+
         $TOTAL_WOUNDS=$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=5;
         $CHANCE_TO_WOUND=16.667*2;
+        
+        $CHANCE=2/6*$PLUS_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);  
+        
     }    
     if($WEAPON_STR + $T_TOUGHNESS <= $WEAPON_STR) {
     //STR HALF OR LESS THAN T
         $TOTAL_WOUNDS=$DIE_SIX;
         $WOUNDS_ON=6;
         $CHANCE_TO_WOUND=16.667;
+       
+        $CHANCE=1/6*$PLUS_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);           
+        
     }
     
     if($WEAPON_DAMAGE>1) {
         $TOTAL_WOUNDS=$TOTAL_WOUNDS*$WEAPON_DAMAGE;
     }
-    
+
 
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='7'>$TOTAL_WOUNDS Wounds ($CHANCE_TO_WOUND%) | T $T_TOUGHNESS | STR $WEAPON_STR | DMG $WEAPON_DAMAGE | $WOUNDS_ON+ to wound </th>
+        <th colspan='7'>$TOTAL_WOUNDS Wounds ($CHANCE_TO_WOUND% [$SHOW_CHANCE]) | T $T_TOUGHNESS | STR $WEAPON_STR | DMG $WEAPON_DAMAGE | $WOUNDS_ON+ to wound </th>
         </tr>
 	<tr>
 	<th>1</th>
@@ -1750,72 +1784,126 @@ function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABIL
         }
     }
     
+    $CAL_SAVE_ROLLS=$SAVE_ROLLS+1;
+    
     if($T_SAVE>6) {
         $TOTAL_SAVES=0;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $CHANCE_TO_KILL=16.667*6;
+        
+        $CHANCE=6/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);          
     }
     
     elseif($T_SAVE==6) {
         $TOTAL_SAVES=$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
-        $CHANCE_TO_KILL=16.667*5;
+        $CHANCE_TO_KILL=16.667*1;
+        
+        $CHANCE=1/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);        
     }      
     
     elseif($T_SAVE==5) {
         $TOTAL_SAVES=$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
-        $CHANCE_TO_KILL=16.667*4;
+        $CHANCE_TO_KILL=16.667*2;
+        
+        $CHANCE=2/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
+        
     }     
 
     elseif($T_SAVE==4) {
         $TOTAL_SAVES=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
         $CHANCE_TO_KILL=16.667*3;
+        
+        $CHANCE=3/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
+        
     } 
     
     elseif($T_SAVE==3) {
         $TOTAL_SAVES=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO;
-        $CHANCE_TO_KILL=16.667*2;
+        $CHANCE_TO_KILL=16.667*4;
+        
+        $CHANCE=4/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);        
+        
     }
     
     elseif($T_SAVE==2) {
         $TOTAL_SAVES=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE;
-        $CHANCE_TO_KILL=16.667;
+        $CHANCE_TO_KILL=16.667*5;
+        
+        $CHANCE=5/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
+        
     }    
     
     if(isset($T_INVUL)) {    
 
-    if($T_INVUL>6) {
+    if($T_INVUL>6 || $T_INVUL<=0) {
         $TOTAL_INVUL=0;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;    
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;   
+      
+        $CHANCE_INVUL_TO_KILL=16.667*6;
+        $INV_CHANCE=6/6*$CAL_SAVE_ROLLS;
+        $SHOW_INVUL_CHANCE =number_format($INV_CHANCE,3);          
+        
     }
     
     elseif($T_INVUL==6) {
         $TOTAL_INVUL=$DIE_SIX;
         $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
+        
+        $CHANCE_INVUL_TO_KILL=16.667*1;
+        $INV_CHANCE=1/6*$CAL_SAVE_ROLLS;
+        $SHOW_INVUL_CHANCE =number_format($INV_CHANCE,3);         
+        
     }      
     
     elseif($T_INVUL==5) {
         $TOTAL_INVUL=$DIE_FIVE+$DIE_SIX;
         $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
+        
+        $CHANCE_INVUL_TO_KILL=16.667*2;
+        $INV_CHANCE=2/6*$CAL_SAVE_ROLLS;
+        $SHOW_INVUL_CHANCE =number_format($INV_CHANCE,3); 
+        
     }     
 
     elseif($T_INVUL==4) {
         $TOTAL_INVUL=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
+        
+        $CHANCE_INVUL_TO_KILL=16.667*3;
+        $INV_CHANCE=3/6*$CAL_SAVE_ROLLS;
+        $SHOW_INVUL_CHANCE =number_format($INV_CHANCE,3);         
+        
     }    
     
     elseif($T_INVUL==3) {
         $TOTAL_INVUL=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO;
+        
+        $CHANCE_INVUL_TO_KILL=16.667*4;
+        $INV_CHANCE=4/6*$CAL_SAVE_ROLLS;
+        $SHOW_INVUL_CHANCE =number_format($INV_CHANCE,3);        
+        
     }
     
     elseif($T_INVUL==2) {
         $TOTAL_INVUL=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_INVUL_FAILS=$DIE_ONE;
+        
+        $CHANCE_INVUL_TO_KILL=16.667*5;
+        $INV_CHANCE=5/6*$CAL_SAVE_ROLLS;
+        $SHOW_INVUL_CHANCE =number_format($INV_CHANCE,3);        
+        
     }
     
     else {
@@ -1837,9 +1925,13 @@ function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABIL
 
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='9'>$SAVE_ROLL_DISPLAY Save(s) ($CHANCE_TO_KILL%) | AP $WEAPON_AP | $T_SAVE+ to Save | $T_INVUL+ Invul</th>
+        <th colspan='10'>$SAVE_ROLL_DISPLAY Save(s) ($CHANCE_TO_KILL% [$SHOW_CHANCE]) | AP $WEAPON_AP | $T_SAVE+ to Save</th>
         </tr>
 	<tr>
+        <th colspan='9'>$SAVE_ROLL_DISPLAY Save(s) ($CHANCE_INVUL_TO_KILL% [$SHOW_INVUL_CHANCE] | $T_INVUL+ Invul</th>
+        
+        </tr>
+        <tr>
 	<th>1</th>
 	<th>2</th>
 	<th>3</th>
