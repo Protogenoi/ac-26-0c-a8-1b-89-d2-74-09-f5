@@ -1633,38 +1633,38 @@ function ap_modifier($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABI
     if(isset($T_INVUL)) {    
 
     if($T_INVUL>6) {
-        $TOTAL_INVUL=0;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;    
+        $TOTAL_SAVES=0;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;    
     }
     
     elseif($T_INVUL==6) {
-        $TOTAL_INVUL=$DIE_SIX;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
+        $TOTAL_SAVES=$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
     }      
     
     elseif($T_INVUL==5) {
-        $TOTAL_INVUL=$DIE_FIVE+$DIE_SIX;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
+        $TOTAL_SAVES=$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
     }     
 
     elseif($T_INVUL==4) {
-        $TOTAL_INVUL=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
+        $TOTAL_SAVES=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
     }    
     
     elseif($T_INVUL==3) {
-        $TOTAL_INVUL=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO;
+        $TOTAL_SAVES=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO;
     }
     
     elseif($T_INVUL==2) {
-        $TOTAL_INVUL=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
-        $TOTAL_INVUL_FAILS=$DIE_ONE;
+        $TOTAL_SAVES=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE;
     }
     
     else {
-        $TOTAL_INVUL="-";
-        $TOTAL_INVUL_FAILS="-";
+        $TOTAL_SAVES="-";
+        $TOTAL_FAILS="-";
     }
     
     }
@@ -1698,7 +1698,7 @@ function ap_modifier($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABI
 	<th>$DIE_FIVE</th>
 	<th>$DIE_SIX</th>
         <th>$TOTAL_SAVES ($TOTAL_FAILS)</th>
-        <th>$TOTAL_INVUL ($TOTAL_INVUL_FAILS)</th>   
+        <th>$TOTAL_SAVES ($TOTAL_FAILS)</th>   
         <th>$MORTAL_WOUNDS</th>    
 	</tr>
 	</table>";      
@@ -1889,13 +1889,10 @@ function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABIL
     
     $IGN_WOUND=array("Disgustingly Resilient");
     
-    if (array_intersect($IGN_WOUND, $T_ABILITIES)) {
-        
-    $TOTAL_INVUL_FAILS=0;
-    $TOTAL_INVUL=0;     
+    if (array_intersect($IGN_WOUND, $T_ABILITIES)) {    
     
     $combat_cal = new combat_cal();
-    $combat_cal->ignore_wounds($TOTAL_SAVES,$TOTAL_INVUL,$TOTAL_FAILS,$TOTAL_INVUL_FAILS);
+    $combat_cal->ignore_wounds($TOTAL_FAILS);
     
     }
     
@@ -1941,8 +1938,8 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
     if(isset($T_INVUL)) {    
 
     if($T_INVUL>6 || $T_INVUL<=0) {
-        $TOTAL_INVUL=0;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;   
+        $TOTAL_SAVES=0;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;   
       
         $CHANCE_INVUL_TO_KILL=16.667*6;
         $INV_CHANCE=6/6*$CAL_SAVE_ROLLS;
@@ -1951,8 +1948,8 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
     }
     
     elseif($T_INVUL==6) {
-        $TOTAL_INVUL=$DIE_SIX;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
+        $TOTAL_SAVES=$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
         
         $CHANCE_INVUL_TO_KILL=16.667*1;
         $INV_CHANCE=1/6*$CAL_SAVE_ROLLS;
@@ -1961,8 +1958,8 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
     }      
     
     elseif($T_INVUL==5) {
-        $TOTAL_INVUL=$DIE_FIVE+$DIE_SIX;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
+        $TOTAL_SAVES=$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
         
         $CHANCE_INVUL_TO_KILL=16.667*2;
         $INV_CHANCE=2/6*$CAL_SAVE_ROLLS;
@@ -1971,8 +1968,8 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
     }     
 
     elseif($T_INVUL==4) {
-        $TOTAL_INVUL=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
+        $TOTAL_SAVES=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
         
         $CHANCE_INVUL_TO_KILL=16.667*3;
         $INV_CHANCE=3/6*$CAL_SAVE_ROLLS;
@@ -1981,8 +1978,8 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
     }    
     
     elseif($T_INVUL==3) {
-        $TOTAL_INVUL=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
-        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO;
+        $TOTAL_SAVES=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO;
         
         $CHANCE_INVUL_TO_KILL=16.667*4;
         $INV_CHANCE=4/6*$CAL_SAVE_ROLLS;
@@ -1991,8 +1988,8 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
     }
     
     elseif($T_INVUL==2) {
-        $TOTAL_INVUL=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
-        $TOTAL_INVUL_FAILS=$DIE_ONE;
+        $TOTAL_SAVES=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_FAILS=$DIE_ONE;
         
         $CHANCE_INVUL_TO_KILL=16.667*5;
         $INV_CHANCE=5/6*$CAL_SAVE_ROLLS;
@@ -2001,8 +1998,8 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
     }
     
     else {
-        $TOTAL_INVUL="-";
-        $TOTAL_INVUL_FAILS="-";
+        $TOTAL_SAVES="-";
+        $TOTAL_FAILS="-";
     }
     
     }
@@ -2038,7 +2035,7 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
 	<th>$DIE_FOUR</th>
 	<th>$DIE_FIVE</th>
 	<th>$DIE_SIX</th>
-        <th>$TOTAL_INVUL ($TOTAL_INVUL_FAILS)</th>   
+        <th>$TOTAL_SAVES ($TOTAL_FAILS)</th>   
         <th>$MORTAL_WOUNDS</th>    
 	</tr>
 	</table>";  
@@ -2046,19 +2043,16 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
     $IGN_WOUND=array("Disgustingly Resilient");
     
     if (array_intersect($IGN_WOUND, $T_ABILITIES)) {
-        
-        $TOTAL_SAVES=0;
-        $TOTAL_FAILS=0;
     
     $combat_cal = new combat_cal();
-    $combat_cal->ignore_wounds($TOTAL_SAVES,$TOTAL_INVUL,$TOTAL_FAILS,$TOTAL_INVUL_FAILS);
+    $combat_cal->ignore_wounds($TOTAL_FAILS);
     
     }
     
 }
 
 
-function ignore_wounds($TOTAL_SAVES,$TOTAL_INVUL,$TOTAL_FAILS,$TOTAL_INVUL_FAILS) {
+function ignore_wounds($TOTAL_FAILS) {
         
     $DIE_ONE = 0;
     $DIE_TWO = 0;
@@ -2067,15 +2061,9 @@ function ignore_wounds($TOTAL_SAVES,$TOTAL_INVUL,$TOTAL_FAILS,$TOTAL_INVUL_FAILS
     $DIE_FIVE = 0;
     $DIE_SIX = 0;       
     
-    if($TOTAL_SAVES>$TOTAL_INVUL) {
-        $IGN_SAVE_ROLLS=$TOTAL_INVUL_FAILS-1;
-        $SHOW_IGN_SAVE_ROLLS=$TOTAL_INVUL_FAILS;
-    }
-    elseif($TOTAL_SAVES<=$TOTAL_INVUL) {
         $IGN_SAVE_ROLLS=$TOTAL_FAILS-1;
         $SHOW_IGN_SAVE_ROLLS=$TOTAL_FAILS;
-    }
-        
+
     for ($x = 0; $x <= $IGN_SAVE_ROLLS; $x++) {
 
         $DIE = mt_rand(1, 6);
