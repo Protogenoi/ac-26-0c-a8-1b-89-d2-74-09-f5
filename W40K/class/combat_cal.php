@@ -794,23 +794,28 @@ $DIE_THREE_MOD=0;
  
     if($U_BS=='6') {
         $TOTAL_HITS=$DIE_SIX;
+        $CHANCE_TO_HIT=16.667;
     }       
     if($U_BS=='5') {
         $TOTAL_HITS=$DIE_FIVE+$DIE_SIX;
+        $CHANCE_TO_HIT=16.667*2;
     }      
     if($U_BS=='4') {
         $TOTAL_HITS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $CHANCE_TO_HIT=16.667*3;
     }     
     if($U_BS=='3') {
         $TOTAL_HITS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $CHANCE_TO_HIT=16.667*4;
     }
     if($U_BS=='2') {
         $TOTAL_HITS=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $CHANCE_TO_HIT=16.667*5;
     }      
     
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='7'>$SHOW_ROLL_HITS shots | $UNIT_WEAPON ($WEAPON_TYPE) | $U_BS+ to hit</th>
+        <th colspan='7'>$SHOW_ROLL_HITS shots ($CHANCE_TO_HIT%) | $UNIT_WEAPON ($WEAPON_TYPE) | $U_BS+ to hit</th>
         </tr>
 	<tr>
 	<th>1</th>
@@ -831,6 +836,7 @@ $DIE_THREE_MOD=0;
         <th>$TOTAL_HITS</th>    
 	</tr>
 	</table>";
+  
     
   $FLAG_ROLL_CHK=0;  
   $RE_ROLLL_ONES=array("Rites of Battle","Chapter Master");
@@ -1025,27 +1031,32 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
     //DOUBLE 2+
         $TOTAL_WOUNDS=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=2;
+        $CHANCE_TO_WOUND=16.667*5;
     }
 
     if($WEAPON_STR>$T_TOUGHNESS) {
         //3+
         $TOTAL_WOUNDS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=3;
+        $CHANCE_TO_WOUND=16.667*4;
     }
     if($WEAPON_STR==$T_TOUGHNESS) {
         //TO WOUND = 4+
         $TOTAL_WOUNDS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=4;
+        $CHANCE_TO_WOUND=16.667*3;
     }
     if($WEAPON_STR<$T_TOUGHNESS) {
         // 5+
         $TOTAL_WOUNDS=$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=5;
+        $CHANCE_TO_WOUND=16.667*2;
     }    
     if($WEAPON_STR + $T_TOUGHNESS <= $WEAPON_STR) {
     //STR HALF OR LESS THAN T
         $TOTAL_WOUNDS=$DIE_SIX;
         $WOUNDS_ON=6;
+        $CHANCE_TO_WOUND=16.667;
     }
     
     if($WEAPON_DAMAGE>1) {
@@ -1055,7 +1066,7 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
 
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='7'>$TOTAL_WOUNDS Wounds | T $T_TOUGHNESS | STR $WEAPON_STR | DMG $WEAPON_DAMAGE | $WOUNDS_ON+ to wound </th>
+        <th colspan='7'>$TOTAL_WOUNDS Wounds ($CHANCE_TO_WOUND%) | T $T_TOUGHNESS | STR $WEAPON_STR | DMG $WEAPON_DAMAGE | $WOUNDS_ON+ to wound </th>
         </tr>
 	<tr>
 	<th>1</th>
@@ -1741,32 +1752,38 @@ function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABIL
     
     if($T_SAVE>6) {
         $TOTAL_SAVES=0;
-        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;    
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $CHANCE_TO_KILL=16.667*6;
     }
     
     elseif($T_SAVE==6) {
         $TOTAL_SAVES=$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
+        $CHANCE_TO_KILL=16.667*5;
     }      
     
     elseif($T_SAVE==5) {
         $TOTAL_SAVES=$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
+        $CHANCE_TO_KILL=16.667*4;
     }     
 
     elseif($T_SAVE==4) {
         $TOTAL_SAVES=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
+        $CHANCE_TO_KILL=16.667*3;
     } 
     
     elseif($T_SAVE==3) {
         $TOTAL_SAVES=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO;
+        $CHANCE_TO_KILL=16.667*2;
     }
     
     elseif($T_SAVE==2) {
         $TOTAL_SAVES=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE;
+        $CHANCE_TO_KILL=16.667;
     }    
     
     if(isset($T_INVUL)) {    
@@ -1820,7 +1837,7 @@ function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABIL
 
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='9'>$SAVE_ROLL_DISPLAY Save(s) | AP $WEAPON_AP | $T_SAVE+ to Save | $T_INVUL+ Invul</th>
+        <th colspan='9'>$SAVE_ROLL_DISPLAY Save(s) ($CHANCE_TO_KILL%) | AP $WEAPON_AP | $T_SAVE+ to Save | $T_INVUL+ Invul</th>
         </tr>
 	<tr>
 	<th>1</th>
