@@ -116,7 +116,7 @@
         $U_TOUGHNESS=7;
         $U_WOUNDS=10;
         $U_ATTACKS=3;
-        $U_LD=49;
+        $U_LD=9;
         $U_SAVE=3; 
         $U_INVUL=5;
         
