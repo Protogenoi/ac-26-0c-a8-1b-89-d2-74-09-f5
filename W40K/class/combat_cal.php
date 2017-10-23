@@ -1753,12 +1753,12 @@ function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABIL
         
     }
 
-    if($T_INVUL<$T_SAVE)    {
+    if($T_INVUL<=$T_SAVE && $T_INVUL != 0)    {
     
-        $combat_cal = new combat_cal();
+    $combat_cal = new combat_cal();
     $combat_cal->invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABILITIES,$DIE_SIX_MOD); 
-    
-} elseif($T_INVUL>=$T_SAVE) {
+
+} elseif($T_INVUL>$T_SAVE || $T_INVUL == 0) {
     
     $DIE_ONE = 0;
     $DIE_TWO = 0;
@@ -2019,7 +2019,7 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
 
     echo "<table class='table table-condensed'>
 	<tr>
-        <th colspan='9'>$SAVE_ROLL_DISPLAY Invul(s) ($CHANCE_INVUL_TO_KILL% [$SHOW_INVUL_CHANCE] | $T_INVUL+ Invul</th>
+        <th colspan='9'>$SAVE_ROLL_DISPLAY Invul(s) ($CHANCE_INVUL_TO_KILL% [$SHOW_INVUL_CHANCE] | AP $WEAPON_AP |  $T_INVUL+ Invul</th>
         </tr>
         <tr>
 	<th>1</th>
