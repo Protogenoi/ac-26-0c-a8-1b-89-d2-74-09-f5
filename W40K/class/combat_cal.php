@@ -2014,12 +2014,14 @@ function ignore_wounds($TOTAL_SAVES,$TOTAL_INVUL,$TOTAL_FAILS,$TOTAL_INVUL_FAILS
      
         $FAILS="-";
     }
-    
-    $CHANCE_KILL=16.667*4;
+
+    $CHANCE_KILL=16.667*2;
+    $KILL_CHANCE=5/6*$SHOW_IGN_SAVE_ROLLS;
+    $SHOW_KILL_CHANCE =number_format($KILL_CHANCE,3);     
     
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='9'>$SHOW_IGN_SAVE_ROLLS roll(s) to Ignore wounds ($CHANCE_KILL%)</th>
+        <th colspan='9'>$SHOW_IGN_SAVE_ROLLS roll(s) to Ignore wounds ($CHANCE_KILL% [$SHOW_KILL_CHANCE])</th>
         </tr>
 	<tr>
 	<th>1</th>
