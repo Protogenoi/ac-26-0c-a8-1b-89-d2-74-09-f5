@@ -160,7 +160,43 @@
         $U_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
         $U_KEYWORDS=array("Infantry","Honour Guard");          
         
-    }     
+    }  
+    
+    if($UNIT=='Terminator Squad') {
+        $U_MOVE=5;
+        $U_WS=3;
+        $U_BS=3;
+        $U_STR=4;
+        $U_TOUGHNESS=4;
+        $U_WOUNDS=2;
+        $U_ATTACKS=2;
+        $U_LD=8;
+        $U_SAVE=2; 
+        $U_INVUL=0;        
+        
+        $U_ABILITIES=array("And They Shall Know No Fear","Teleport Homer","Combat Squads","Crux Terminatus","Teleport Strike");
+        $U_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $U_KEYWORDS=array("Infantry","Terminator","Terminator Squad");          
+        
+    } 
+
+    if($UNIT=='Terminator Sergeant') {
+        $U_MOVE=5;
+        $U_WS=3;
+        $U_BS=3;
+        $U_STR=4;
+        $U_TOUGHNESS=4;
+        $U_WOUNDS=2;
+        $U_ATTACKS=3;
+        $U_LD=9;
+        $U_SAVE=2; 
+        $U_INVUL=0;        
+        
+        $U_ABILITIES=array("And They Shall Know No Fear","Teleport Homer","Combat Squads","Crux Terminatus","Teleport Strike");
+        $U_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $U_KEYWORDS=array("Infantry","Terminator","Terminator Squad");          
+        
+    }      
     
     if($UNIT=='Intercessor Squad') {
         $U_MOVE=6;
