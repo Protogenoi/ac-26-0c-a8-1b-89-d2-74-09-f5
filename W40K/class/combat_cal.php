@@ -1321,7 +1321,7 @@ $DIE=0;
         }      
 		
 		    }  
-            
+
         $TOTAL_WOUNDS=$DIE." ($WEAPON_DAMAGE)";    
         
     echo "<table class='table table-condensed'>
@@ -1369,9 +1369,12 @@ $DIE_THREE_MOD=0;
             
         $TOTAL_WOUNDS=$DIE_ONE_MOD+$DIE_TWO_MOD+$DIE_THREE_MOD." ($WEAPON_DAMAGE)";    
         
+        $CHANCE=3/3+3/3*$WOUNDS_TO_ROLL;
+        $SHOW_CHANCE =number_format($CHANCE,3);            
+        
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='4'>1D3 Damage</th>
+        <th colspan='4'>1D3 Damage [$CHANCE]</th>
         </tr>
 	<tr>
 	<th>1</th>
@@ -1415,11 +1418,14 @@ $DIE_THREE_MOD=0;
 		
 		    }  
             
-        $TOTAL_WOUNDS=$DIE_ONE_MOD+$DIE_TWO_MOD+$DIE_THREE_MOD." (1D3)";    
+        $TOTAL_WOUNDS=$DIE_ONE_MOD+$DIE_TWO_MOD+$DIE_THREE_MOD." (1D3)";
+        
+        $CHANCE=3/3+3/3*$WOUNDS_TO_ROLL;
+        $SHOW_CHANCE =number_format($CHANCE,3);        
         
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='4'>1D3 Damage on 3+ save or better</th>
+        <th colspan='4'>1D3 Damage on 3+ save or better [$CHANCE]</th>
         </tr>
 	<tr>
 	<th>1</th>
