@@ -541,7 +541,7 @@
             
         } 
         
-        if($UNIT_WEAPON=='Dreadnought Combat Weapon') {
+        if($UNIT_WEAPON=='Dreadnought Close Combat Weapon') {
             $WEAPON_RANGE='Melee';
             $WEAPON_TYPE='Melee';
             $WEAPON_STR='x2';
