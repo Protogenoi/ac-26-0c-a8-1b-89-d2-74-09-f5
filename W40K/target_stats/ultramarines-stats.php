@@ -196,6 +196,24 @@
         $T_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
         $T_KEYWORDS=array("Infantry","Terminator","Terminator Squad");          
         
+    } 
+
+    if($TARGET_UNIT=='Dreadnought') {
+        $T_MOVE=6;
+        $T_WS=3;
+        $T_BS=3;
+        $T_STR=6;
+        $T_TOUGHNESS=7;
+        $T_WOUNDS=8;
+        $T_ATTACKS=4;
+        $T_LD=8;
+        $T_SAVE=3; 
+        $T_INVUL=0;        
+        
+        $T_ABILITIES=array("Smoke Launchers","Explodes");
+        $T_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $T_KEYWORDS=array("Vehicle","Dreadnought");          
+        
     }     
     
     if($TARGET_UNIT=='Intercessor Squad') {
