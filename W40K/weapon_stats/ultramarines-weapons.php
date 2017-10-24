@@ -548,4 +548,13 @@
             $WEAPON_AP=3;
             $WEAPON_DAMAGE="3";      
             
-        }         
+        }  
+        
+        if($UNIT_WEAPON=='Hunter Killer Missile') {
+            $WEAPON_RANGE=48;
+            $WEAPON_TYPE='Heavy 1';
+            $WEAPON_STR=8;
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="1D6";      
+            
+        }        
