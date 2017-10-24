@@ -1484,13 +1484,16 @@ $DIE_SIX_MOD=0;
             $DIE_SIX_MOD++;            
         }        
 		
-		    }  
+		    }               
             
-        $TOTAL_WOUNDS=$DIE_ONE_MOD+$DIE_TWO_MOD+$DIE_THREE_MOD+$DIE_FOUR_MOD+$DIE_FIVE_MOD+$DIE_SIX_MOD." ($WEAPON_DAMAGE)";    
+        $TOTAL_WOUNDS=$DIE_ONE_MOD+$DIE_TWO_MOD+$DIE_THREE_MOD+$DIE_FOUR_MOD+$DIE_FIVE_MOD+$DIE_SIX_MOD." ($WEAPON_DAMAGE)";   
+        
+        $CHANCE=6/6+6/6*$WOUNDS_TO_ROLL;
+        $SHOW_CHANCE =number_format($CHANCE,3);         
         
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='7'>1D6 Damage</th>
+        <th colspan='7'>1D6 Damage [$SHOW_CHANCE]</th>
         </tr>
 	<tr>
 	<th>1</th>
