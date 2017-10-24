@@ -1132,7 +1132,7 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
 
     } 
     
-    elseif(strpos($UNIT_WEAPON,"Shuriken") !== false) {
+    elseif(strpos($UNIT_WEAPON,"Shuriken") !== false && $DIE_SIX >0) {
 
     $SAVE_ROLLS=$TOTAL_WOUNDS-1;
     $combat_cal = new combat_cal();
@@ -1276,7 +1276,7 @@ function auto_wound($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,
 
     } 
     
-    elseif(strpos($UNIT_WEAPON,"Shuriken") !== false) {
+    elseif(strpos($UNIT_WEAPON,"Shuriken") !== false && $DIE_SIX >0) {
 
     $SAVE_ROLLS=$TOTAL_WOUNDS-1;
     $combat_cal = new combat_cal();
@@ -1642,38 +1642,38 @@ function ap_modifier($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABI
     if(isset($T_INVUL)) {    
 
     if($T_INVUL>6) {
-        $TOTAL_SAVES=0;
-        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;    
+        $TOTAL_INVUL_SAVES=0;
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;    
     }
     
     elseif($T_INVUL==6) {
-        $TOTAL_SAVES=$DIE_SIX;
-        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
+        $TOTAL_INVUL_SAVES=$DIE_SIX;
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
     }      
     
     elseif($T_INVUL==5) {
-        $TOTAL_SAVES=$DIE_FIVE+$DIE_SIX;
-        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
+        $TOTAL_INVUL_SAVES=$DIE_FIVE+$DIE_SIX;
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
     }     
 
     elseif($T_INVUL==4) {
-        $TOTAL_SAVES=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
-        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
+        $TOTAL_INVUL_SAVES=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
     }    
     
     elseif($T_INVUL==3) {
-        $TOTAL_SAVES=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
-        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO;
+        $TOTAL_INVUL_SAVES=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_INVUL_FAILS=$DIE_ONE+$DIE_TWO;
     }
     
     elseif($T_INVUL==2) {
-        $TOTAL_SAVES=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
-        $TOTAL_FAILS=$DIE_ONE;
+        $TOTAL_INVUL_SAVES=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $TOTAL_INVUL_FAILS=$DIE_ONE;
     }
     
     else {
-        $TOTAL_SAVES="-";
-        $TOTAL_FAILS="-";
+        $TOTAL_INVUL_SAVES="-";
+        $TOTAL_INVUL_FAILS="-";
     }
     
     }
@@ -1707,7 +1707,7 @@ function ap_modifier($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABI
 	<th>$DIE_FIVE</th>
 	<th>$DIE_SIX</th>
         <th>$TOTAL_SAVES ($TOTAL_FAILS)</th>
-        <th>$TOTAL_SAVES ($TOTAL_FAILS)</th>   
+        <th>$TOTAL_INVUL_SAVES ($TOTAL_INVUL_FAILS)</th>   
         <th>$MORTAL_WOUNDS</th>    
 	</tr>
 	</table>";      
