@@ -22,6 +22,7 @@
                         <option value="Honour Guard" <?php if(isset($UNIT) && $UNIT=='Honour Guard') { echo "selected"; } ?> >Honour Guard</option>
                         <option value="Terminator Squad" <?php if(isset($UNIT) && $UNIT=='Terminator Squad') { echo "selected"; } ?> >Terminator Squad</option>
                         <option value="Terminator Sergeant" <?php if(isset($UNIT) && $UNIT=='Terminator Sergeant') { echo "selected"; } ?> >Terminator Sergeant</option>
+                        <option value="Dreadnought" <?php if(isset($UNIT) && $UNIT=='Dreadnought') { echo "selected"; } ?> >Dreadnought</option>
                         <option disabled>─────TROOPS─────</option>
                         <option value="Intercessor Squad" <?php if(isset($UNIT) && $UNIT=='Intercessor Squad') { echo "selected"; } ?> >Intercessor Squad</option>
                         <option value="Intercessor Sergeant" <?php if(isset($UNIT) && $UNIT=='Intercessor Sergeant') { echo "selected"; } ?> >Intercessor Sergeant</option>
@@ -176,6 +177,22 @@
                         <option value='Krak Cyclone Missile Launcher' <?php if($UNIT_WEAPON=='Krak Cyclone Missile Launcher') { echo 'selected'; } ?> >Krak Cyclone Missile Launcher</option>
                         <option value='Heavy Flamer' <?php if($UNIT_WEAPON=='Heavy Flamer') { echo 'selected'; } ?> >Heavy Flamer</option>
                        <?php }
+                        if($UNIT=='Dreadnought') { ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Assault Cannon' <?php if($UNIT_WEAPON=='Assault Cannon') { echo 'selected'; } ?> >Assault Cannon</option>
+                        <option value='Storm Bolter' <?php if($UNIT_WEAPON=='Storm Bolter') { echo 'selected'; } ?> >Storm Bolter</option>
+                        <option value='Heavy Flamer' <?php if($UNIT_WEAPON=='Heavy Flamer') { echo 'selected'; } ?> >Heavy Flamer</option>
+                        <option value='Frag Missile Launcher' <?php if($UNIT_WEAPON=='Frag Missile Launcher') { echo 'selected'; } ?> >Frag Missile Launcher</option>
+                        <option value='Krak Missile Launcher' <?php if($UNIT_WEAPON=='Krak Missile Launcher') { echo 'selected'; } ?> >Krak Missile Launcher</option>                        
+                        <option disabled>─────Melee─────</option>
+                        <option value='Dreadnought Close Combat Weapon' <?php if($UNIT_WEAPON=='Dreadnought Close Combat Weapon') { echo 'selected'; } ?> >Dreadnought Close Combat Weapon</option>
+                        <option disabled>─────Dreadnought Heavy Weapons─────</option>
+                        <option value='Assault Cannon' <?php if($UNIT_WEAPON=='Assault Cannon') { echo 'selected'; } ?> >Assault Cannon</option>
+                        <option value='Heavy Plasma Cannon' <?php if($UNIT_WEAPON=='Heavy Plasma Cannon') { echo 'selected'; } ?> >Heavy Plasma Cannon</option>
+                        <option value='Supercharged Heavy Plasma Cannon' <?php if($UNIT_WEAPON=='Supercharged Heavy Plasma Cannon') { echo 'selected'; } ?> >Supercharged Heavy Plasma Cannon</option>
+                        <option value='Multi-melta' <?php if($UNIT_WEAPON=='Multi-melta') { echo 'selected'; } ?> >Multi-melta</option>
+                        <option value='Twin Lascannon' <?php if($UNIT_WEAPON=='Twin Lascannon') { echo 'selected'; } ?> >Twin Lascannon</option>
+                       <?php }
                             if($UNIT=='Intercessor Squad' || $UNIT=='Intercessor Sergeant') {
                             ?>
                         <option disabled>─────Wargear─────</option>
@@ -291,7 +308,7 @@
                     </select>
                 </div>     
             </div>
-                                                                                                                         
+                                                                                                                                                 
         <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
@@ -314,6 +331,8 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Storm Bolter'>Storm Bolter</option><option disabled>─────Melee─────</option><option value='Power Fist'>Power Fist</option><option value='Chainfist'>Chainfist</option><option value='Power Sword'>Power Sword</option><option disabled>─────Terminator Heavy Weapons─────</option><option value='Assault Cannon'>Assault Cannon</option><option value='Frag Cyclone Missile Launcher'>Frag Cyclone Missile Launcher</option><option value='Krak Cyclone Missile Launcher'>Krak Cyclone Missile Launcher</option><option value='Heavy Flamer'>Heavy Flamer</option>");
         }  else if (val === "Terminator Sergeant") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Storm Bolter'>Storm Bolter</option><option disabled>─────Melee─────</option><option value='Power Fist'>Power Fist</option><option value='Chainfist'>Chainfist</option><option value='Power Sword'>Power Sword</option><option disabled>─────Terminator Heavy Weapons─────</option><option value='Assault Cannon'>Assault Cannon</option><option value='Frag Cyclone Missile Launcher'>Frag Cyclone Missile Launcher</option><option value='Krak Cyclone Missile Launcher'>Krak Cyclone Missile Launcher</option><option value='Heavy Flamer'>Heavy Flamer</option>");
+        } else if (val === "Dreadnought") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Assault Cannon'>Assault Cannon</option><option value='Storm Bolter'>Storm Bolter</option><option value='Heavy Flamer'>Heavy Flamer</option><option value='Frag Missile Launcher'>Frag Missile Launcher</option><option value='Krak Missile Launcher'>Krak Missile Launcher</option><option disabled>─────Melee─────</option><option value='Dreadnought Close Combat Weapon'>Dreadnought Close Combat Weapon</option><option disabled>─────Dreadnought Heavy Weapons─────</option><option value='Assault Cannon'>Assault Cannon</option><option value='Heavy Plasma Cannon'>Heavy Plasma Cannon</option><option value='Supercharged Heavy Plasma Cannon'>Supercharged Heavy Plasma Cannon</option><option value='Multi-melta'>Multi-melta</option><option value='Twin Lascannon'>Twin Lascannon</option>");
         } else if (val === "Intercessor Squad") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Auto Bolt Rifle'>Auto Bolt Rifle</option><option value='Stalker Bolt Rifle'>Stalker Bolt Rifle</option><option value='Bolt Rifle'>Bolt Rifle</option><option value='Bolt Pistol'>Bolt Pistol</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option>");
         } else if (val === "Intercessor Sergeant") {
