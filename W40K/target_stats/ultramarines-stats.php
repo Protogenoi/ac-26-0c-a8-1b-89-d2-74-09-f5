@@ -395,3 +395,21 @@
         $T_KEYWORDS=array("Infantry","Primaris","Hellblaster Squad");          
         
     }  
+
+    if($TARGET_UNIT=='Land Raider') {
+        $T_MOVE=10;
+        $T_WS=6;
+        $T_BS=3;
+        $T_STR=8;
+        $T_TOUGHNESS=8;
+        $T_WOUNDS=16;
+        $T_ATTACKS=6;
+        $T_LD=9;
+        $T_SAVE=2; 
+        $T_INVUL=0;       
+        
+        $T_ABILITIES=array("Smoke Launchers","Explodes","Power of the Machine Spriit");
+        $T_FACTION_KW=array("Imperium","Adeptus Astartes","CHAPTER");
+        $T_KEYWORDS=array("Vehicle","Transport","Land Raider");          
+        
+    }      
