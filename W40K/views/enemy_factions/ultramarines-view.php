@@ -20,6 +20,7 @@
                         <option value="Honour Guard" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Honour Guard') { echo "selected"; } ?> >Honour Guard</option>
                         <option value="Terminator Squad" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Terminator Squad') { echo "selected"; } ?> >Terminator Squad</option>
                         <option value="Terminator Sergeant" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Terminator Sergeant') { echo "selected"; } ?> >Terminator Sergeant</option>
+                        <option value="Dreadnought" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Dreadnought') { echo "selected"; } ?> >Dreadnought</option>
                         <option disabled>─────TROOPS─────</option>
                         <option value="Intercessor Squad" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Intercessor Squad') { echo "selected"; } ?> >Intercessor Squad</option>
                         <option value="Intercessor Sergeant" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Intercessor Sergeant') { echo "selected"; } ?> >Intercessor Sergeant</option>
