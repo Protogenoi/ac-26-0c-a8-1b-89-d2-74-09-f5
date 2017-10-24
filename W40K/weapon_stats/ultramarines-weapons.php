@@ -464,3 +464,52 @@
             $WEAPON_ABILITY="Each time the bearer fights it may make 1 additional attack with this weapon.";
                                 
     }    
+    
+        if($UNIT_WEAPON=='Chainfist') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR="x2";
+            $WEAPON_AP=4;
+            $WEAPON_DAMAGE="2";  
+            
+       $WEAPON_ABILITY="When attacking with this weapon subtract 1 from the hit roll.";     
+                    
+    }
+    
+        if($UNIT_WEAPON=='Assault Cannon') {
+            $WEAPON_RANGE='24';
+            $WEAPON_TYPE='Heavy 6';
+            $WEAPON_STR="6";
+            $WEAPON_AP=1;
+            $WEAPON_DAMAGE="1";           
+        
+    }  
+    
+        if($UNIT_WEAPON=='Frag Cyclone Missile Launcher') {
+            $WEAPON_RANGE='36';
+            $WEAPON_TYPE='Heavy 2D3';
+            $WEAPON_STR="4";
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";           
+        
+    } 
+    
+        if($UNIT_WEAPON=='Krak Cyclone Missile Launcher') {
+            $WEAPON_RANGE='36';
+            $WEAPON_TYPE='Heavy 2';
+            $WEAPON_STR="8";
+            $WEAPON_AP=2;
+            $WEAPON_DAMAGE="1D6";           
+        
+    } 
+    
+        if($UNIT_WEAPON=='Heavy Flamer') {
+            $WEAPON_RANGE=8;
+            $WEAPON_TYPE='Heavy 1D6';
+            $WEAPON_STR=5;
+            $WEAPON_AP=1;
+            $WEAPON_DAMAGE="1";    
+            
+        $WEAPON_ABILITY="This weapon automaticaly hits its target.";     
+            
+        }     
