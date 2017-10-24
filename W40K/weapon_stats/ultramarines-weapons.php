@@ -557,4 +557,13 @@
             $WEAPON_AP=2;
             $WEAPON_DAMAGE="1D6";      
             
+        }       
+        
+        if($UNIT_WEAPON=='Twin Heavy Bolter') {
+            $WEAPON_RANGE=36;
+            $WEAPON_TYPE='Heavy 6';
+            $WEAPON_STR=5;
+            $WEAPON_AP=1;
+            $WEAPON_DAMAGE="1";      
+            
         }        
