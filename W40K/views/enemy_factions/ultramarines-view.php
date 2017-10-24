@@ -35,6 +35,7 @@
                         <option disabled>─────HEAVY SUPPORT─────</option>
                         <option value="Hellblaster Squad" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Hellblaster Squad') { echo "selected"; } ?> >Hellblaster Squad</option>
                         <option value="Hellblaster Sergeant" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Hellblaster Sergeant') { echo "selected"; } ?> >Hellblaster Sergeant</option>
+                        <option value="Land Raider" <?php if(isset($TARGET_UNIT) && $TARGET_UNIT=='Land Raider') { echo "selected"; } ?> >Land Raider</option>
                     </select>
                 </div>     
             </div>                   
