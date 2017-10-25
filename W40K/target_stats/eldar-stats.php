@@ -178,5 +178,23 @@
         $T_FACTION_KW=array("Aeldari","Asuryani","Warhost","CRAFTWORLD");
         $T_KEYWORDS=array("Vehicles","War Walkers");           
         
-    }    
+    } 
+    
+    if($TARGET_UNIT=='Wraithlord') {
+        $T_MOVE=8;
+        $T_WS=3;
+        $T_BS=3;
+        $T_STR=7;
+        $T_TOUGHNESS=7;
+        $T_WOUNDS=10;
+        $T_ATTACKS=3;
+        $T_LD=9;
+        $T_SAVE=3; 
+        $T_INVUL =0;
+        
+        $T_ABILITIES=array("Ancient Doom");
+        $T_FACTION_KW=array("Aeldari","Asuryani","Spirit Host","CRAFTWORLD");
+        $T_KEYWORDS=array("Monster","Wraithlord");           
+        
+    }     
 
