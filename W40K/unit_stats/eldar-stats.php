@@ -18,6 +18,24 @@
         
     } 
     
+    if($UNIT=='Farseer') {
+        $U_MOVE=7;
+        $U_WS=2;
+        $U_BS=2;
+        $U_STR=3;
+        $U_TOUGHNESS=3;
+        $U_WOUNDS=5;
+        $U_ATTACKS=2;
+        $U_LD=9;
+        $U_SAVE=6; 
+        $U_INVUL =4;
+      
+        $U_ABILITIES=array("Ancient Doom","Rune Armour","Ghosthelm","Runes of the Farseer");
+        $U_FACTION_KW=array("Aeldari","Asuryani","Warhost","CRAFTWORLD");
+        $U_KEYWORDS=array("Character","Infantry","Psyker","Farseer");         
+        
+    }     
+    
     if($UNIT=='Warlock') {
         $U_MOVE=7;
         $U_WS=3;
