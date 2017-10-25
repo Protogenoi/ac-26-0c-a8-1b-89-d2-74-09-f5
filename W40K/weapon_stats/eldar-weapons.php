@@ -202,5 +202,32 @@
             $WEAPON_AP=1;
             $WEAPON_DAMAGE="1D3";
                     
-    }      
+    }
+    
+        if($UNIT_WEAPON=='Bright Lance') {
+        $WEAPON_RANGE=36;
+        $WEAPON_TYPE='Heavy 1';
+        $WEAPON_STR='8';
+        $WEAPON_AP=4;
+        $WEAPON_DAMAGE="1D6";
+                    
+    }
+    
+        if($UNIT_WEAPON=='Starcannon') {
+        $WEAPON_RANGE=36;
+        $WEAPON_TYPE='Heavy 2';
+        $WEAPON_STR='6';
+        $WEAPON_AP=3;
+        $WEAPON_DAMAGE="3";
+                    
+    }    
+    
+        if($UNIT_WEAPON=='Scatter Laser') {
+        $WEAPON_RANGE=36;
+        $WEAPON_TYPE='Heavy 4';
+        $WEAPON_STR='6';
+        $WEAPON_AP=0;
+        $WEAPON_DAMAGE="1";
+                    
+    }    
     
