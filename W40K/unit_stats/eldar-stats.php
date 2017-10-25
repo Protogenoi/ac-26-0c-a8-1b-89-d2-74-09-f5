@@ -108,6 +108,24 @@
         
     }    
     
+    if($UNIT=='Wraithguard') {
+        $U_MOVE=5;
+        $U_WS=3;
+        $U_BS=3;
+        $U_STR=5;
+        $U_TOUGHNESS=5;
+        $U_WOUNDS=3;
+        $U_ATTACKS=1;
+        $U_LD=9;
+        $U_SAVE=3; 
+        $U_INVUL =0;
+        
+        $U_ABILITIES=array("Ancient Doom","Implaceable");
+        $U_FACTION_KW=array("Aeldari","Asuryani","Spirit Host","CRAFTWORLD");
+        $U_KEYWORDS=array("Infantry","Wraithguard");            
+        
+    }     
+    
     if($UNIT=='Dark Reapers') {
         $U_MOVE=6;
         $U_WS=3;
