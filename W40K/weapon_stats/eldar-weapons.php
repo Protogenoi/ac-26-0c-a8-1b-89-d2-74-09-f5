@@ -173,5 +173,34 @@
             
             $WEAPON_ABILITY="This weapon can target units that are not visible to the bearer.";
                     
-    }     
+    }   
+    
+        if($UNIT_WEAPON=='D-Scythe') {
+            $WEAPON_RANGE=8;
+            $WEAPON_TYPE='Assault 1D3';
+            $WEAPON_STR=10;
+            $WEAPON_AP=4;
+            $WEAPON_DAMAGE="1";
+            
+            $WEAPON_ABILITY="When a unit fires its D-scythes, roll once for the number of attacks and use this for all D-scythes fired by the unit in this phase. This weapon automatically hits its target.";
+                    
+    }  
+    
+        if($UNIT_WEAPON=='Wraithcannon') {
+            $WEAPON_RANGE=12;
+            $WEAPON_TYPE='Assault 1';
+            $WEAPON_STR=10;
+            $WEAPON_AP=4;
+            $WEAPON_DAMAGE="1D6";
+                    
+    } 
+
+        if($UNIT_WEAPON=='Wraith Fists') {
+            $WEAPON_RANGE='Melee';
+            $WEAPON_TYPE='Melee';
+            $WEAPON_STR='User';
+            $WEAPON_AP=1;
+            $WEAPON_DAMAGE="1D3";
+                    
+    }      
     
