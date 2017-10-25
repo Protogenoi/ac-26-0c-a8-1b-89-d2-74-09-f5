@@ -23,7 +23,8 @@
                         <option disabled>─────HEAVY SUPPORT─────</option>
                         <option value="Dark Reapers" <?php if($UNIT=='Dark Reapers') { echo "selected"; } ?> >Dark Reapers</option>
                         <option value="Dark Reapers Exarch" <?php if($UNIT=='Dark Reapers Exarch') { echo "selected"; } ?> >Dark Reapers Exarch</option>                    
-                        </select>
+                        <option value="War Walkers" <?php if($UNIT=='War Walkers') { echo "selected"; } ?> >War Walkers</option>                    
+                    </select>
                 </div>     
             </div>  
             
@@ -107,6 +108,18 @@
                         <option value='Reaper Starswarm Missile Launcher'<?php if($UNIT_WEAPON=='Reaper Starswarm Missile Launcher') { echo "selected"; } ?> >Reaper Starswarm Missile Launcher</option>
                         <option value='Shuriken Cannon'<?php if($UNIT_WEAPON=='Shuriken Cannon') { echo "selected"; } ?> >Shuriken Cannon</option>
                         <option value='Tempest Launcher'<?php if($UNIT_WEAPON=='Tempest Launcher') { echo "selected"; } ?> >Tempest Launcher</option>                     
+                            <?php } 
+                            if($UNIT=="War Walkers") {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Shuriken Cannon'<?php if($UNIT_WEAPON=='Shuriken Cannon') { echo "selected"; } ?> >Shuriken Cannon</option>
+                        <option disabled>─────Heavy Weapons─────</option>
+                        <option value='Aeldari Sunburst Missile Launcher'<?php if($UNIT_WEAPON=='Aeldari Sunburst Missile Launcher') { echo "selected"; } ?> >Aeldari Sunburst Missile Launcher</option>
+                        <option value='Aeldari Starshot Missile Launcher'<?php if($UNIT_WEAPON=='Aeldari Starshot Missile Launcher') { echo "selected"; } ?> >Aeldari Starshot Missile Launcher</option>
+                        <option value='Bright Lance'<?php if($UNIT_WEAPON=='Bright Lance') { echo "selected"; } ?> >Bright Lance</option>
+                        <option value='Scatter Laser'<?php if($UNIT_WEAPON=='Scatter Laser') { echo "selected"; } ?> >Scatter Laser</option>
+                        <option value='Shuriken Cannon'<?php if($UNIT_WEAPON=='Shuriken Cannon') { echo "selected"; } ?> >Shuriken Cannon</option>
+                        <option value='Starcannon'<?php if($UNIT_WEAPON=='Starcannon') { echo "selected"; } ?> >Starcannon</option>
                             <?php }                             
                         } else { ?>
                         <option value=''>Select...</option>
@@ -114,7 +127,7 @@
                     </select>
                 </div>     
             </div>
-                                                 
+                                                                         
     <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
@@ -137,6 +150,8 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Aeldari Sunburst Missile Launcher'>Aeldari Sunburst Missile Launcher</option><option value='Aeldari Starshot Missile Launcher'>Aeldari Starshot Missile Launcher</option><option value='Reaper Starshot Missile Launcher'>Reaper Starswarm Starshot Launcher</option><option value='Reaper Starswarm Missile Launcher'>Reaper Starswarm Missile Launcher</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Tempest Launcher'>Tempest Launcher</option>");
         } else if (val === "Dark Reapers Exarch") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Aeldari Sunburst Missile Launcher'>Aeldari Sunburst Missile Launcher</option><option value='Aeldari Starshot Missile Launcher'>Aeldari Starshot Missile Launcher</option><option value='Reaper Starshot Missile Launcher'>Reaper Starswarm Starshot Launcher</option><option value='Reaper Starswarm Missile Launcher'>Reaper Starswarm Missile Launcher</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Tempest Launcher'>Tempest Launcher</option>");
+        } else if (val === "War Walkers") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option disabled>─────Heavy Weapons─────</option><option value='Aeldari Sunburst Missile Launcher'>Aeldari Sunburst Missile Launcher</option><option value='Aeldari Starshot Missile Launcher'>Aeldari Starshot Missile Launcher</option><option value='Bright Lance'>Bright Lance</option><option value='Scatter Laser'>Scatter Laser</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Starcannon'>Starcannon</option>");
         }
     });
 });        
