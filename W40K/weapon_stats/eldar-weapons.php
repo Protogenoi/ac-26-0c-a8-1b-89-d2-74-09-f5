@@ -240,6 +240,15 @@
                     
     }      
     
+        if($UNIT_WEAPON=='Ghostglaive') {
+        $WEAPON_RANGE='Melee';
+        $WEAPON_TYPE='Melee';
+        $WEAPON_STR='+2';
+        $WEAPON_AP=4;
+        $WEAPON_DAMAGE="1D6";
+                    
+    } 
+    
         if($UNIT_WEAPON=='Flamer') {
             $WEAPON_RANGE=8;
             $WEAPON_TYPE='Assault 1D6';
