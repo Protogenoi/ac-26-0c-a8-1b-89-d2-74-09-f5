@@ -11,6 +11,7 @@
                         <option value="Eldrad Ulthran" <?php if($TARGET_UNIT=='Eldrad Ulthran') { echo "selected"; } ?> >Eldrad Ulthran</option>
                         <option value="Warlock" <?php if($TARGET_UNIT=='Warlock') { echo "selected"; } ?> >Warlock</option>
                         <option disabled>─────ELITES─────</option>
+                        <option value="Wraithguard" <?php if($TARGET_UNIT=='Wraithguard') { echo "selected"; } ?> >Wraithguard</option>
                         <option disabled>─────TROOPS─────</option>
                         <option value="Guardian Defenders" <?php if($TARGET_UNIT=='Guardian Defenders') { echo "selected"; } ?> >Guardian Defenders</option>
                         <option value="Rangers" <?php if($TARGET_UNIT=='Rangers') { echo "selected"; } ?> >Rangers</option>
