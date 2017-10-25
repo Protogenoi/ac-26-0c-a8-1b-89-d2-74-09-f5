@@ -106,7 +106,25 @@
         $T_FACTION_KW=array("Aeldari","Asuryani","Aspect Warrior","CRAFTWORLD");
         $T_KEYWORDS=array("Infantry","Dire Avengers");         
         
-    }    
+    }  
+    
+    if($TARGET_UNIT=='Wraithguard') {
+        $T_MOVE=5;
+        $T_WS=3;
+        $T_BS=3;
+        $T_STR=5;
+        $T_TOUGHNESS=5;
+        $T_WOUNDS=3;
+        $T_ATTACKS=1;
+        $T_LD=9;
+        $T_SAVE=3; 
+        $T_INVUL =0;
+        
+        $T_ABILITIES=array("Ancient Doom","Implaceable");
+        $T_FACTION_KW=array("Aeldari","Asuryani","Spirit Host","CRAFTWORLD");
+        $T_KEYWORDS=array("Infantry","Wraithguard");            
+        
+    }     
     
     if($TARGET_UNIT=='Dark Reapers') {
         $T_MOVE=6;
