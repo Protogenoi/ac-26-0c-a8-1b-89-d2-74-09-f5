@@ -231,3 +231,12 @@
                     
     }    
     
+        if($UNIT_WEAPON=='Wraithbone Fists') {
+        $WEAPON_RANGE='Melee';
+        $WEAPON_TYPE='Melee';
+        $WEAPON_STR='User';
+        $WEAPON_AP=3;
+        $WEAPON_DAMAGE="3";
+                    
+    }      
+    
