@@ -62,6 +62,7 @@ class combat_cal {
     $TWO_D_SIX_WEAPONS=array("Tempest Launcher");
     $ONE_D_SIX_WEAPONS=array("Aeldari Sunburst Missile Launcher","Frag Missile Launcher","Havoc Launcher");
     $EXTRA_HIT_ROLLS=array("Tesla Carbine");
+    $AUTO_HIT_SPC_WEAPONS=array("D-Scythe");
  
     if (in_array($UNIT_WEAPON,$AUTO_HIT_WEAPONS,true)) {
         
@@ -70,6 +71,14 @@ class combat_cal {
             
         
     }
+    
+    elseif (in_array($UNIT_WEAPON,$AUTO_HIT_SPC_WEAPONS,true)) {
+        
+    $combat_cal = new combat_cal();
+    $combat_cal->auto_hit_special_weapons($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE);        
+            
+        
+    }    
     
     elseif(in_array($UNIT_WEAPON,$EXTRA_HIT_ROLLS,true)) {
     
@@ -486,11 +495,45 @@ $DIE_THREE_MOD=0;
 
 }
     
-    
-    function auto_hit_weapons($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE) {
+    function auto_hit_special_weapons($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE) {
 
-        $SHOW_ROLL_HITS=$number+1;
         
+        if($UNIT_WEAPON=='D-Scythe') {
+            
+            $HITS=(mt_rand(1, 3));
+            $TOTAL_HITS=$HITS*$MODELS_TO_FIRE;
+            $SHOW_ROLL_HITS=$TOTAL_HITS;
+
+        } 
+        
+        if($WEAPON_TYPE=='Assault 1D6') {
+            $HIT_ROLL_TYPE="Auto 1D6 hits";
+        } elseif($WEAPON_TYPE=='Assault 1D3') {
+            $HIT_ROLL_TYPE="Auto 1D3 hits";
+        }
+        
+    echo "<table class='table table-condensed'>
+        <tr>
+        <th>$HITS $HIT_ROLL_TYPE | $UNIT_WEAPON ($WEAPON_TYPE)</th>
+        </tr>
+	<tr>
+	<th>$HIT_ROLL_TYPE</th>
+	</tr>
+	<tr>
+        <th>$TOTAL_HITS</th>    
+	</tr>
+	</table>";
+    
+    $PASS_HITS=$TOTAL_HITS-1;
+    $combat_cal = new combat_cal();
+    $combat_cal->results(6,$PASS_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS);
+}
+
+
+    function auto_hit_weapons($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE) {
+            
+        $SHOW_ROLL_HITS=$number+1;
+ 
         $ROLL_ONE=0;
         $ROLL_TWO=0;
         $ROLL_THREE=0;
@@ -627,9 +670,15 @@ $DIE_THREE_MOD=0;
         
         } 
         
+        if($WEAPON_TYPE=='Assault 1D6') {
+            $HIT_ROLL_TYPE="Auto 1D6 hits";
+        } elseif($WEAPON_TYPE=='Assault 1D3') {
+            $HIT_ROLL_TYPE="Auto 1D3 hits";
+        }
+        
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='11'>$SHOW_ROLL_HITS shots | $UNIT_WEAPON ($WEAPON_TYPE) | Auto 1D6 hits</th>
+        <th colspan='11'>$SHOW_ROLL_HITS shots | $UNIT_WEAPON ($WEAPON_TYPE) | $HIT_ROLL_TYPE</th>
         </tr>
 	<tr>
 	<th>1</th>
@@ -663,8 +712,7 @@ $DIE_THREE_MOD=0;
     $combat_cal = new combat_cal();
     $combat_cal->results(6,$PASS_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FACTION,$ENEMY_FACTION,$WEAPON_AP,$UNIT_WEAPON,$RANGE_BONUS);
 }
-    
-    
+
     function roll($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE,$U_ABILITIES) {
     
     $DIE_ONE = 0;
