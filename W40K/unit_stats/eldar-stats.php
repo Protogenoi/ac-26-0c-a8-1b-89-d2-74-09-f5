@@ -161,4 +161,22 @@
         $U_KEYWORDS=array("Infantry","Dark Reapers");           
         
     }    
+    
+    if($UNIT=='War Walkers') {
+        $U_MOVE=10;
+        $U_WS=3;
+        $U_BS=3;
+        $U_STR=5;
+        $U_TOUGHNESS=6;
+        $U_WOUNDS=6;
+        $U_ATTACKS=2;
+        $U_LD=8;
+        $U_SAVE=4; 
+        $U_INVUL =5;
+        
+        $U_ABILITIES=array("Ancient Doom","Power Field","Scout Vehicle","Explodes");
+        $U_FACTION_KW=array("Aeldari","Asuryani","Warhost","CRAFTWORLD");
+        $U_KEYWORDS=array("Vehicles","War Walkers");           
+        
+    }    
 
