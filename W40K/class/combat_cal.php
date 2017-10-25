@@ -1657,34 +1657,72 @@ function ap_modifier($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABI
         }
     }
     
+    $CAL_SAVE_ROLLS=$DIE_SIX_MOD+1;
+    
     if($T_SAVE_MOD>6) {
         $TOTAL_SAVES=0;
-        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;    
+        $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;   
+        
+        $CHANCE_TO_KILL=16.667*6;
+        
+        $CHANCE=6/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);        
+        
     }
     
     elseif($T_SAVE_MOD==6) {
         $TOTAL_SAVES=$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE;
+        
+        $CHANCE_TO_KILL=16.667*5;
+        
+        $CHANCE=5/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);         
+        
     }      
     
     elseif($T_SAVE_MOD==5) {
         $TOTAL_SAVES=$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE+$DIE_FOUR;
+        
+         $CHANCE_TO_KILL=16.667*4;
+        
+        $CHANCE=4/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);        
+        
     }     
 
     elseif($T_SAVE_MOD==4) {
         $TOTAL_SAVES=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO+$DIE_THREE;
+        
+         $CHANCE_TO_KILL=16.667*3;
+        
+        $CHANCE=3/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);        
+        
     } 
     
     elseif($T_SAVE_MOD==3) {
         $TOTAL_SAVES=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE+$DIE_TWO;
+        
+         $CHANCE_TO_KILL=16.667*2;
+        
+        $CHANCE=2/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);        
+        
     }
     
     elseif($T_SAVE_MOD==2) {
         $TOTAL_SAVES=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $TOTAL_FAILS=$DIE_ONE;
+        
+         $CHANCE_TO_KILL=16.667*1;
+        
+        $CHANCE=1/6*$CAL_SAVE_ROLLS;
+        $SHOW_CHANCE =number_format($CHANCE,3);        
+        
     }    
     
     if(isset($T_INVUL)) {    
@@ -1734,7 +1772,7 @@ function ap_modifier($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABI
 
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='9'>$SAVE_ROLL_DISPLAY_MOD Save(s) | AP $WEAPON_AP_MOD (modified -3) | $T_SAVE_MOD+ to Save | $T_INVUL+ Invul</th>
+        <th colspan='9'>$SAVE_ROLL_DISPLAY_MOD Save(s) ($CHANCE_TO_KILL% [$SHOW_CHANCE]) | AP $WEAPON_AP_MOD (modified -3) | $T_SAVE_MOD+ to Save | $T_INVUL+ Invul</th>
         </tr>
 	<tr>
 	<th>1</th>
