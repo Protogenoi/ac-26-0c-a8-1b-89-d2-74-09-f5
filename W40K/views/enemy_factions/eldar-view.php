@@ -22,6 +22,7 @@
                         <option value="Dark Reapers" <?php if($TARGET_UNIT=='Dark Reapers') { echo "selected"; } ?> >Dark Reapers</option>
                         <option value="Dark Reapers Exarch" <?php if($TARGET_UNIT=='Dark Reapers Exarch') { echo "selected"; } ?> >Dark Reapers Exarch</option>
                         <option value="War Walkers" <?php if($TARGET_UNIT=='War Walkers') { echo "selected"; } ?> >War Walkers</option>                        
+                        <option value="Wraithlord" <?php if($TARGET_UNIT=='Wraithlord') { echo "selected"; } ?> >Wraithlord</option>                        
                     </select>
                 </div>     
             </div> 
