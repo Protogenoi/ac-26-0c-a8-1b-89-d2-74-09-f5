@@ -240,3 +240,12 @@
                     
     }      
     
+        if($UNIT_WEAPON=='Flamer') {
+            $WEAPON_RANGE=8;
+            $WEAPON_TYPE='Assault 1D6';
+            $WEAPON_STR=4;
+            $WEAPON_AP=0;
+            $WEAPON_DAMAGE="1";              
+            
+        }     
+    
