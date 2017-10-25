@@ -21,7 +21,7 @@
             </div>  
             
             <div class="form-group">
-                <label class="col-sm-4 control-label" style="text-align:left;" for="MODELS_TO_FIRE">Models firing:</label>
+                <label class="col-sm-4 control-label" style="text-align:left;" for="MODELS_TO_FIRE">Weapons firing:</label>
                 <div class="col-sm-6">
                     <select class="form-control" name="MODELS_TO_FIRE" id="MODELS_TO_FIRE" style="width: 170px" required>
                         <option value="">Select...</option>
