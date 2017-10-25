@@ -11,6 +11,7 @@
                         <option value="">Select...</option>
                         <option disabled>─────HQ─────</option>
                         <option value="Eldrad Ulthran" <?php if($UNIT=='Eldrad Ulthran') { echo "selected"; } ?> >Eldrad Ulthran</option>
+                        <option value="Farseer" <?php if($UNIT=='Farseer') { echo "selected"; } ?> >Farseer</option>
                         <option value="Warlock" <?php if($UNIT=='Warlock') { echo "selected"; } ?> >Warlock</option>
                         <option disabled>─────ELITES─────</option>
                         <option value="Wraithguard" <?php if($UNIT=='Wraithguard') { echo "selected"; } ?> >Wraithguard</option>
@@ -58,6 +59,15 @@
                         <option value='Staff of Ulthamar'<?php if($UNIT_WEAPON=='Staff of Ulthamar') { echo "selected"; } ?> >Staff of Ulthamar</option>
                         <option value='Witchblade'<?php if($UNIT_WEAPON=='Witchblade') { echo "selected"; } ?> >Witchblade</option>
                             <?php } 
+                            if($UNIT=="Farseer") {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Shuriken Pistol' <?php if($UNIT_WEAPON=='Shuriken Pistol') { echo "selected"; } ?> >Shuriken Pistol</option>
+                        <option value='Singing Spear'<?php if($UNIT_WEAPON=='Singing Spear') { echo "selected"; } ?> >Singing Spear</option>
+                        <option disabled>─────Melee─────</option>
+                        <option value='Witchblade'<?php if($UNIT_WEAPON=='Witchblade') { echo "selected"; } ?> >Witchblade</option>                        
+                        <option value='Singing Spear (Melee)' <?php if($UNIT_WEAPON=='Singing Spear (Melee)') { echo "selected"; } ?> >Singing Spear (Melee)</option>
+                            <?php }      
                             if($UNIT=="Warlock") {
                             ?>
                         <option disabled>─────Wargear─────</option>
@@ -144,13 +154,15 @@
                     </select>
                 </div>     
             </div>
-                                                                                                 
+                                                                                                                         
     <script>
 $(document).ready(function () {
     $("#UNIT").change(function () {
         var val = $(this).val();  
         if (val === "Eldrad Ulthran") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Melee─────</option><option value='Staff of Ulthamar'>Staff of Ulthamar</option><option value='Witchblade'>Witchblade</option>");
+        } else if (val === "Farseer") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option value='Singing Spear'>Singing Spear</option><option disabled>─────Melee─────</option><option value='Witchblade'>Witchblade</option><option value='Singing Spear (Melee)'>Singing Spear (Melee)</option>");
         } else if (val === "Warlock") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Singing Spear'>Singing Spear</option><option value='Shuriken Pistol'>Shuriken Pistol</option><option disabled>─────Melee─────</option><option value='Singing Spear (Melee)'>Singing Spear (Melee)</option><option value='Witchblade'>Witchblade</option>");
         } else if (val === "Wraithguard") {
