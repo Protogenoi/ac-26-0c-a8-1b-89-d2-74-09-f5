@@ -1089,7 +1089,10 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
     
     $PLUS_HITS=$TOTAL_HITS+1;
     
-    if($WEAPON_STR + $T_TOUGHNESS >= $WEAPON_STR) {
+$HALF= $T_TOUGHNESS/$WEAPON_STR;
+$DOUBLE=$T_TOUGHNESS + $T_TOUGHNESS;    
+    
+    if($WEAPON_STR >= $DOUBLE) {
     //DOUBLE 2+
         $TOTAL_WOUNDS=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=2;
@@ -1100,7 +1103,7 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
         
     }
 
-    if($WEAPON_STR>$T_TOUGHNESS) {
+    elseif($WEAPON_STR>$T_TOUGHNESS) {
         //3+
         $TOTAL_WOUNDS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=3;
@@ -1110,7 +1113,8 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
         $SHOW_CHANCE =number_format($CHANCE,3);           
         
     }
-    if($WEAPON_STR==$T_TOUGHNESS) {
+    
+    elseif($WEAPON_STR==$T_TOUGHNESS) {
         //TO WOUND = 4+
         $TOTAL_WOUNDS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=4;
@@ -1119,8 +1123,20 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
         $CHANCE=3/6*$PLUS_HITS;
         $SHOW_CHANCE =number_format($CHANCE,3);           
         
+    }   
+    
+    elseif($WEAPON_STR == $HALF || $WEAPON_STR < $HALF) {
+    // 6+
+        $TOTAL_WOUNDS=$DIE_SIX;
+        $WOUNDS_ON=6;
+        $CHANCE_TO_WOUND=16.667;
+       
+        $CHANCE=1/6*$PLUS_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);           
+        
     }
-    if($WEAPON_STR<$T_TOUGHNESS) {
+    
+    elseif($WEAPON_STR<$T_TOUGHNESS) {
         // 5+
         $TOTAL_WOUNDS=$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=5;
@@ -1130,16 +1146,6 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
         $SHOW_CHANCE =number_format($CHANCE,3);  
         
     }    
-    if($WEAPON_STR + $T_TOUGHNESS <= $WEAPON_STR) {
-    //STR HALF OR LESS THAN T
-        $TOTAL_WOUNDS=$DIE_SIX;
-        $WOUNDS_ON=6;
-        $CHANCE_TO_WOUND=16.667;
-       
-        $CHANCE=1/6*$PLUS_HITS;
-        $SHOW_CHANCE =number_format($CHANCE,3);           
-        
-    }
     
     if($WEAPON_DAMAGE>1) {
         $TOTAL_WOUNDS=$TOTAL_WOUNDS*$WEAPON_DAMAGE;
