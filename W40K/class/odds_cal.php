@@ -165,7 +165,7 @@ function calculate_unsaved() {
         $SHOW_UNSAVE =number_format($CHANCE,3);          
     }
     
-    elseif($this->SAVE==6) {
+    if($this->SAVE==6) {
 
         $CHANGE_TO_UNSAVE=16.667*5;       
         $CHANCE=5/6*$this->SHOW_WOUNDS;
