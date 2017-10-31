@@ -1136,7 +1136,7 @@ $DOUBLE=$T_TOUGHNESS + $T_TOUGHNESS;
         
     }
     
-    elsei {
+    else {
         // 5+
         $TOTAL_WOUNDS=$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=5;
