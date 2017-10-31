@@ -1089,8 +1089,8 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
     
     $PLUS_HITS=$TOTAL_HITS+1;
     
-$HALF= $T_TOUGHNESS/$WEAPON_STR;
-$DOUBLE=$T_TOUGHNESS + $T_TOUGHNESS;    
+$HALF=$T_TOUGHNESS/2;
+$DOUBLE=$T_TOUGHNESS + $T_TOUGHNESS;  
     
     if($WEAPON_STR >= $DOUBLE) {
     //DOUBLE 2+
@@ -1125,7 +1125,7 @@ $DOUBLE=$T_TOUGHNESS + $T_TOUGHNESS;
         
     }   
     
-    elseif($WEAPON_STR == $HALF || $WEAPON_STR < $HALF) {
+    elseif($HALF >= $WEAPON_STR) {
     // 6+
         $TOTAL_WOUNDS=$DIE_SIX;
         $WOUNDS_ON=6;
@@ -1136,7 +1136,7 @@ $DOUBLE=$T_TOUGHNESS + $T_TOUGHNESS;
         
     }
     
-    elseif($WEAPON_STR<$T_TOUGHNESS) {
+    elsei {
         // 5+
         $TOTAL_WOUNDS=$DIE_FIVE+$DIE_SIX;
         $WOUNDS_ON=5;
