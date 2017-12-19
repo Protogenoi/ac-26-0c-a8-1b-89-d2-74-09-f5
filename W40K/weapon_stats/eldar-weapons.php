@@ -257,4 +257,14 @@
             $WEAPON_DAMAGE="1";              
             
         }     
-    
+
+        if($UNIT_WEAPON=='Heavy D-Scythe') {
+            $WEAPON_RANGE=16;
+            $WEAPON_TYPE='Assault 1D3';
+            $WEAPON_STR=12;
+            $WEAPON_AP=4;
+            $WEAPON_DAMAGE="2";
+            
+            $WEAPON_ABILITY="This weapon automatically hits its target.";
+                    
+    }          

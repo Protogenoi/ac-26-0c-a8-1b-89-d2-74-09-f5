@@ -62,7 +62,7 @@ class combat_cal {
     $TWO_D_SIX_WEAPONS=array("Tempest Launcher");
     $ONE_D_SIX_WEAPONS=array("Aeldari Sunburst Missile Launcher","Frag Missile Launcher","Havoc Launcher");
     $EXTRA_HIT_ROLLS=array("Tesla Carbine");
-    $AUTO_HIT_SPC_WEAPONS=array("D-Scythe");
+    $AUTO_HIT_SPC_WEAPONS=array("D-Scythe","Heavy D-Scythe");
  
     if (in_array($UNIT_WEAPON,$AUTO_HIT_WEAPONS,true)) {
         
@@ -497,7 +497,6 @@ $DIE_THREE_MOD=0;
     
     function auto_hit_special_weapons($sides, $number,$UNIT,$TARGET_UNIT,$UNIT_WEAPON,$RANGE_BONUS,$FACTION,$ENEMY_FACTION,$MODELS_TO_FIRE,$MOVEMENT,$WEAPON_STR,$WEAPON_DAMAGE,$WEAPON_AP,$U_BS,$WEAPON_TYPE,$WEAPON_RANGE) {
 
-        
         if($UNIT_WEAPON=='D-Scythe') {
             
             $HITS=(mt_rand(1, 3));
@@ -505,6 +504,14 @@ $DIE_THREE_MOD=0;
             $SHOW_ROLL_HITS=$TOTAL_HITS;
 
         } 
+        
+        if($UNIT_WEAPON=='Heavy D-Scythe') {
+            
+            $HITS=(mt_rand(1, 3));
+            $TOTAL_HITS=$HITS*$MODELS_TO_FIRE;
+            $SHOW_ROLL_HITS=$TOTAL_HITS;
+
+        }        
         
         if($WEAPON_TYPE=='Assault 1D6') {
             $HIT_ROLL_TYPE="Auto 1D6 hits";

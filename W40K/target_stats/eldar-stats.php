@@ -215,4 +215,21 @@
         $T_KEYWORDS=array("Monster","Wraithlord");           
         
     }     
-
+    
+    if($TARGET_UNIT=='Hemlock Wraithfighter') {
+        $T_MOVE="20-60";
+        $T_WS=6;
+        $T_BS=3;
+        $T_STR=6;
+        $T_TOUGHNESS=6;
+        $T_WOUNDS=12;
+        $T_ATTACKS=3;
+        $T_LD=8;
+        $T_SAVE=3; 
+        $T_INVUL =0;
+        
+        $T_ABILITIES=array("Wings of Khaine","Mindshock Pod","Spirit Stones","Crash and Burn","Hard to Hit","Airborne");
+        $T_FACTION_KW=array("Aeldari","Asuryani","Spirit Host","CRAFTWORLD");
+        $T_KEYWORDS=array("Vehicle","Fly","Psyker","Wraith Construct","Hemlock Wraithfighter");           
+        
+    }      

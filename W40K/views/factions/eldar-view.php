@@ -25,7 +25,9 @@
                         <option value="Dark Reapers" <?php if($UNIT=='Dark Reapers') { echo "selected"; } ?> >Dark Reapers</option>
                         <option value="Dark Reapers Exarch" <?php if($UNIT=='Dark Reapers Exarch') { echo "selected"; } ?> >Dark Reapers Exarch</option>                    
                         <option value="War Walkers" <?php if($UNIT=='War Walkers') { echo "selected"; } ?> >War Walkers</option>                    
-                        <option value="Wraithlord" <?php if($UNIT=='Wraithlord') { echo "selected"; } ?> >Wraithlord</option>                    
+                        <option value="Wraithlord" <?php if($UNIT=='Wraithlord') { echo "selected"; } ?> >Wraithlord</option>  
+                        <option disabled>─────FLYER─────</option>
+                        <option value="Hemlock Wraithfighter" <?php if($UNIT=='Hemlock Wraithfighter') { echo "selected"; } ?> >Hemlock Wraithfighter</option> 
                     </select>
                 </div>     
             </div>  
@@ -148,6 +150,11 @@
                         <option value='Shuriken Cannon'<?php if($UNIT_WEAPON=='Shuriken Cannon') { echo "selected"; } ?> >Shuriken Cannon</option>
                         <option value='Starcannon'<?php if($UNIT_WEAPON=='Starcannon') { echo "selected"; } ?> >Starcannon</option>
                             <?php } 
+                            if($UNIT=="Hemlock Wraithfighter") {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Heavy D-Scythe'<?php if($UNIT_WEAPON=='Heavy D-Scythe') { echo "selected"; } ?> >Heavy D-Scythe</option>
+                            <?php }                             
                         } else { ?>
                         <option value=''>Select...</option>
                             <?php } ?>
@@ -183,6 +190,8 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option disabled>─────Heavy Weapons─────</option><option value='Aeldari Sunburst Missile Launcher'>Aeldari Sunburst Missile Launcher</option><option value='Aeldari Starshot Missile Launcher'>Aeldari Starshot Missile Launcher</option><option value='Bright Lance'>Bright Lance</option><option value='Scatter Laser'>Scatter Laser</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Starcannon'>Starcannon</option>");
         } else if (val === "Wraithlord") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Flamer'>Flamer</option><option value='Shuriken Catapult'>Shuriken Catapult</option><option disabled>─────Melee─────</option><option value='Ghostglaive'>Ghostglaive</option><option value='Wraithbone Fists'>Wraithbone Fists</option><option disabled>─────Heavy Weapons─────</option><option value='Aeldari Sunburst Missile Launcher'>Aeldari Sunburst Missile Launcher</option><option value='Aeldari Starshot Missile Launcher'>Aeldari Starshot Missile Launcher</option><option value='Bright Lance'>Bright Lance</option><option value='Scatter Laser'>Scatter Laser</option><option value='Shuriken Cannon'>Shuriken Cannon</option><option value='Starcannon'>Starcannon</option>");
+        } else if (val === "Hemlock Wraithfighter") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Heavy D-Scythe'>Heavy D-Scythe</option>");
         }
     });
 });        
