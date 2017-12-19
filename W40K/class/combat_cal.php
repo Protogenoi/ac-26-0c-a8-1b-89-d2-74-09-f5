@@ -507,10 +507,41 @@ $DIE_THREE_MOD=0;
         
         if($UNIT_WEAPON=='Heavy D-Scythe') {
             
+            if($MODELS_TO_FIRE == 1) {
             $HITS=(mt_rand(1, 3));
-            $TOTAL_HITS=$HITS*$MODELS_TO_FIRE;
-            $SHOW_ROLL_HITS=$TOTAL_HITS;
+            }
+            
+            elseif($MODELS_TO_FIRE == 2) {
+            $HITS_ROLL_ONE=(mt_rand(1, 3));
+            $HITS_ROLL_TWO=(mt_rand(1, 3));
+            
+            $HITS=$HITS_ROLL_ONE+$HITS_ROLL_TWO;
+            }  
+            
+            elseif($MODELS_TO_FIRE == 3) {
+            $HITS_ROLL_ONE=(mt_rand(1, 3));
+            $HITS_ROLL_TWO=(mt_rand(1, 3));
+            $HITS_ROLL_THREE=(mt_rand(1, 3));
+            
+            $HITS=$HITS_ROLL_ONE+$HITS_ROLL_TWO+$HITS_ROLL_THREE;
+            } 
 
+            elseif($MODELS_TO_FIRE == 4) {
+            $HITS_ROLL_ONE=(mt_rand(1, 3));
+            $HITS_ROLL_TWO=(mt_rand(1, 3));
+            $HITS_ROLL_THREE=(mt_rand(1, 3));
+            $HITS_ROLL_FOUR=(mt_rand(1, 3));
+            
+            $HITS=$HITS_ROLL_ONE+$HITS_ROLL_TWO+$HITS_ROLL_THREE+$HITS_ROLL_FOUR;
+            }   
+            
+            else {
+                $HITS=(mt_rand(1, 3));
+            }
+            
+            $TOTAL_HITS=$HITS;
+            $SHOW_ROLL_HITS=$TOTAL_HITS;          
+            
         }        
         
         if($WEAPON_TYPE=='Assault 1D6') {
