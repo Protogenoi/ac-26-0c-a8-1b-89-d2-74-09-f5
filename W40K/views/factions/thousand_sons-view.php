@@ -70,7 +70,7 @@
                         <option value='Power Sword' <?php if($UNIT_WEAPON=='Power Sword') { echo "selected"; } ?> >Power Sword</option>                        
                         <option value='Force Stave' <?php if($UNIT_WEAPON=='Force Stave') { echo "selected"; } ?> >Force Stave</option>
                             <?php }
-                            if(strpos($UNIT,"Scarab Occult Terminator") !== false) {
+                            if($UNIT == "Scarab Occult Terminators") {
                             ?>
                         <option disabled>─────Wargear─────</option>
                         <option value='Inferno Combi-bolter'<?php if($UNIT_WEAPON=='Inferno Combi-bolter') { echo "selected"; } ?> >Inferno Combi-bolter</option>
@@ -119,7 +119,7 @@ $(document).ready(function () {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Inferno Bolt Pistol'>Inferno Bolt Pistol</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Black Staff of Ahriman'>Black Staff of Ahriman</option>");
         } else if (val === "Exhalted Sorcerer") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Inferno Bolt Pistol'>Inferno Bolt Pistol</option><option value='Plasma Pistol'>Plasma Pistol</option><option value='Supercharged Plasma Pistol'>Supercharged Plasma Pistol</option><option value='Warp Flame Pistol'>Warp Flame Pistol</option><option disabled>─────Grenades─────</option><option value='Frag Grenade'>Frag Grenade</option><option value='Krak Grenade'>Krak Grenade</option><option disabled>─────Melee─────</option><option value='Power Sword'>Power Sword</option><option value='Force Stave'>Force Stave</option>");
-        } else if (val === "Scarab Occult Terminator") {
+        } else if (val === "Scarab Occult Terminators") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Inferno Combi-bolter'>Inferno Combi-bolter</option><option value='Heavy Warpflamer'>Heavy Warpflamer</option><option value='Soulreaper Cannon'>Soulreaper Cannon</option><option value='Hellfyre Missile Rack'>Hellfyre Missile Rack</option><option disabled>─────Melee─────</option><option value='Power Sword'>Power Sword</option>");
         } else if (val === "Scarab Occult Sorcerer") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Inferno Combi-bolter'>Inferno Combi-bolter</option><option disabled>─────Melee─────</option><option value='Force Stave'>Force Stave</option>");
