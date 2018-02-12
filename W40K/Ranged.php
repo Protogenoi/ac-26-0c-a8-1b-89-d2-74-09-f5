@@ -96,6 +96,10 @@ elseif(isset($FACTION) && $FACTION=='Orks') {
     require_once(__DIR__ . '/views/factions/orks-view.php');
 }
 
+elseif(isset($FACTION) && $FACTION=='Thousand Sons') {
+    require_once(__DIR__ . '/views/factions/thousand_sons-view.php');
+}
+
 ?>
    <div class="col-xs-4">
 <?php 
@@ -136,6 +140,10 @@ elseif(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Deathguard') {
 elseif(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Orks') {
     require_once(__DIR__ . '/views/enemy_factions/orks-view.php');
 }
+
+elseif(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Thousand Sons') {
+    require_once(__DIR__ . '/views/enemy_factions/thousand_sons-view.php');
+}
 ?>          
         
            <?php if(isset($FACTION) && $ENEMY_FACTION) { ?>   
@@ -144,7 +152,6 @@ elseif(isset($ENEMY_FACTION) && $ENEMY_FACTION=='Orks') {
     </form>
         
     </div>
-
 
 </body>
 </html>

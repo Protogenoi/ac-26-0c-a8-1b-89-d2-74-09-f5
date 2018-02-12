@@ -44,7 +44,14 @@ class combat_cal {
            require(__DIR__ . '/../unit_stats/orks-stats.php');
            require(__DIR__ . '/../weapon_stats/ork-weapons.php');  
        
-       }       
+       }  
+       
+       elseif($FACTION=='Thousand Souns') {
+
+           require(__DIR__ . '/../unit_stats/thousand_sons-stats.php');
+           require(__DIR__ . '/../weapon_stats/thousand_sons-weapons.php');  
+       
+       }        
         
  if(strpos($WEAPON_TYPE,"Assault") !== false && $MOVEMENT=='Advanced') {
      
@@ -58,7 +65,7 @@ class combat_cal {
      
  }
        
-    $AUTO_HIT_WEAPONS=array("Flamer","Warp Flame Pistol","Warpflamer","Plague Belcher","Plague Spewer","Heavy Flamer","Gauntlet of Fire","Skorcha");
+    $AUTO_HIT_WEAPONS=array("Heavy Warpflamer","Flamer","Warp Flame Pistol","Warpflamer","Plague Belcher","Plague Spewer","Heavy Flamer","Gauntlet of Fire","Skorcha");
     $TWO_D_SIX_WEAPONS=array("Tempest Launcher");
     $ONE_D_SIX_WEAPONS=array("Aeldari Sunburst Missile Launcher","Frag Missile Launcher","Havoc Launcher");
     $EXTRA_HIT_ROLLS=array("Tesla Carbine");
@@ -1122,7 +1129,12 @@ function results($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,$FA
     elseif($ENEMY_FACTION=='Orks') {
         require(__DIR__ . '/../target_stats/orks-stats.php');  
 
-    }       
+    }  
+    
+    elseif($ENEMY_FACTION=='Thousand Sons') {
+        require(__DIR__ . '/../target_stats/thousand_sons-stats.php');  
+
+    }      
       
     
     $PLUS_HITS=$TOTAL_HITS+1;
@@ -1300,7 +1312,17 @@ function auto_wound($sides, $TOTAL_HITS,$TARGET_UNIT,$WEAPON_STR,$WEAPON_DAMAGE,
     elseif($ENEMY_FACTION=='Necrons') {
         require(__DIR__ . '/../target_stats/necron-stats.php');  
 
-    }     
+    }   
+    
+    elseif($ENEMY_FACTION=='Orks') {
+        require(__DIR__ . '/../target_stats/orks-stats.php');  
+
+    }    
+    
+    elseif($ENEMY_FACTION=='Thousand Sons') {
+        require(__DIR__ . '/../target_stats/thousand_sons-stats.php');  
+
+    }       
       
     if(in_array($UNIT_WEAPON, $TWO_TO_WOUND)) {
     //DOUBLE 2+
@@ -2266,4 +2288,3 @@ function ignore_wounds($TOTAL_FAILS) {
 }
 
 }
-
