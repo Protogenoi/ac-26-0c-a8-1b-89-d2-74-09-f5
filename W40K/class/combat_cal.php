@@ -46,7 +46,7 @@ class combat_cal {
        
        }  
        
-       elseif($FACTION=='Thousand Souns') {
+       elseif($FACTION=='Thousand Sons') {
 
            require(__DIR__ . '/../unit_stats/thousand_sons-stats.php');
            require(__DIR__ . '/../weapon_stats/thousand_sons-weapons.php');  
@@ -719,6 +719,8 @@ $DIE_THREE_MOD=0;
             $HIT_ROLL_TYPE="Auto 1D6 hits";
         } elseif($WEAPON_TYPE=='Assault 1D3') {
             $HIT_ROLL_TYPE="Auto 1D3 hits";
+        } elseif($WEAPON_TYPE=='Pistol 1D6') {
+            $HIT_ROLL_TYPE="Auto 1D6 hits";
         }
         
     echo "<table class='table table-condensed'>
