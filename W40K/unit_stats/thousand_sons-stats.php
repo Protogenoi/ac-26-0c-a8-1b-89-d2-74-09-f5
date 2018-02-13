@@ -1,6 +1,6 @@
 <?php
 
-    if($UNIT_UNIT=='Ahriman') {
+    if($UNIT=='Ahriman') {
         $U_MOVE=6;
         $U_WS=2;
         $U_BS=2;
@@ -18,7 +18,7 @@
         
     } 
     
-    if($UNIT_UNIT=='Exhalted Sorcerer') {
+    if($UNIT=='Exhalted Sorcerer') {
         $U_MOVE=6;
         $U_WS=2;
         $U_BS=2;
@@ -36,7 +36,7 @@
         
     }      
     
-    if($UNIT_UNIT=='Rubric Marines') {
+    if($UNIT=='Rubric Marines') {
         $U_MOVE=5;
         $U_WS=3;
         $U_BS=3;
@@ -54,7 +54,7 @@
         
     }  
     
-    if($UNIT_UNIT=='Aspiring Sorcerer') {
+    if($UNIT=='Aspiring Sorcerer') {
         $U_MOVE=6;
         $U_WS=3;
         $U_BS=3;
@@ -72,7 +72,7 @@
         
     }      
         
-    if($UNIT_UNIT=='Scarab Occult Terminators') {
+    if($UNIT=='Scarab Occult Terminators') {
         $U_MOVE=4;
         $U_WS=3;
         $U_BS=3;
@@ -90,7 +90,7 @@
         
     }   
     
-    if($UNIT_UNIT=='Scarab Occult Sorcerer') {
+    if($UNIT=='Scarab Occult Sorcerer') {
         $U_MOVE=5;
         $U_WS=3;
         $U_BS=3;
