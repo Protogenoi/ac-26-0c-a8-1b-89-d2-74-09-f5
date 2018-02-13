@@ -11,10 +11,7 @@
        }
        if($UNIT_WEAPON=='Combi-plasma') {
            $UNIT_WEAPON='Plasma Gun';
-       }
-       if($UNIT_WEAPON=='Inferno Combi-bolter') {
-           $UNIT_WEAPON='Inferno';
-       }       
+       }    
        if($UNIT_WEAPON=='Supercharged Combi-plasma') {
            $UNIT_WEAPON='Supercharged Plasma Gun';
        }
