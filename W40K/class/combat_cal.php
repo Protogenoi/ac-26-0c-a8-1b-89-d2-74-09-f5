@@ -178,27 +178,43 @@ class combat_cal {
             $EXTRA_HITS++;
 
         }
-    }       
- 
+    }           
+    
     if($U_BS=='6') {
-        $TOTAL_HITS=$DIE_SIX+$EXTRA_HITS;
+        $TOTAL_HITS=$DIE_SIX;
+        $CHANCE_TO_HIT=16.667;
+        $CHANCE=1/6*$SHOW_ROLL_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
     }       
     if($U_BS=='5') {
-        $TOTAL_HITS=$DIE_FIVE+$DIE_SIX+$EXTRA_HITS;
+        $TOTAL_HITS=$DIE_FIVE+$DIE_SIX;
+        $CHANCE_TO_HIT=16.667*2;
+        $CHANCE=2/6*$SHOW_ROLL_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
     }      
     if($U_BS=='4') {
-        $TOTAL_HITS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX+$EXTRA_HITS;
+        $TOTAL_HITS=$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $CHANCE_TO_HIT=16.667*3;
+        $CHANCE=3/6*$SHOW_ROLL_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
     }     
     if($U_BS=='3') {
-        $TOTAL_HITS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX+$EXTRA_HITS;
+        $TOTAL_HITS=$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $CHANCE_TO_HIT=16.667*4;
+        $CHANCE=4/6*$SHOW_ROLL_HITS;
+        $SHOW_CHANCE =number_format($CHANCE,3);
     }
     if($U_BS=='2') {
-        $TOTAL_HITS=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX+$EXTRA_HITS;
+        $TOTAL_HITS=$DIE_TWO+$DIE_THREE+$DIE_FOUR+$DIE_FIVE+$DIE_SIX;
+        $CHANCE_TO_HIT=16.667*5;
+        $CHANCE=5/6*$SHOW_ROLL_HITS;
+        
+        $SHOW_CHANCE =number_format($CHANCE,3);
     }      
 
     echo "<table class='table table-condensed'>
         <tr>
-        <th colspan='8'>$SHOW_ROLL_HITS shots | $UNIT_WEAPON ($WEAPON_TYPE) | $U_BS+ to hit</th>
+        <th colspan='8'>$SHOW_ROLL_HITS shots ($CHANCE_TO_HIT% [$SHOW_CHANCE]) | $UNIT_WEAPON ($WEAPON_TYPE) | $U_BS+ to hit</th>
         </tr>
 	<tr>
 	<th>1</th>
