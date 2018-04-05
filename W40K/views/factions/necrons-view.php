@@ -21,7 +21,7 @@
                         <option value="Immortals" <?php if($UNIT=='Immortals') { echo "selected"; } ?> >Immortals</option>
                         <option disabled>─────FAST ATTACK─────</option>
                         <option value="Canoptek Wraiths" <?php if($UNIT=='Canoptek Wraiths') { echo "selected"; } ?> >Canoptek Wraiths</option>
-                        <option value="Canoptek Scrabs" <?php if($UNIT=='Canoptek Scrabs') { echo "selected"; } ?> >Canoptek Scrabs</option>
+                        <option value="Canoptek Scarabs" <?php if($UNIT=='Canoptek Scarabs') { echo "selected"; } ?> >Canoptek Scarabs</option>
                         <option disabled>─────HEAVY SUPPORT─────</option>   
                         <option value="Annihilation Barge" <?php if($UNIT=='Annihilation Barge') { echo "selected"; } ?> >Annihilation Barge</option>
                         </select>
