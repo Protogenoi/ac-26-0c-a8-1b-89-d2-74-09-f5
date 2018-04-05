@@ -68,7 +68,7 @@ class combat_cal {
     $AUTO_HIT_WEAPONS=array("Heavy Warpflamer","Flamer","Warp Flame Pistol","Warpflamer","Plague Belcher","Plague Spewer","Heavy Flamer","Gauntlet of Fire","Skorcha");
     $TWO_D_SIX_WEAPONS=array("Tempest Launcher");
     $ONE_D_SIX_WEAPONS=array("Aeldari Sunburst Missile Launcher","Frag Missile Launcher","Havoc Launcher");
-    $EXTRA_HIT_ROLLS=array("Tesla Carbine");
+    $EXTRA_HIT_ROLLS=array("Tesla Carbine","Tesla Cannon","Twin Tesla Destructor");
     $AUTO_HIT_SPC_WEAPONS=array("D-Scythe","Heavy D-Scythe");
  
     if (in_array($UNIT_WEAPON,$AUTO_HIT_WEAPONS,true)) {
@@ -142,7 +142,11 @@ class combat_cal {
         $SHOW_ROLL_HITS=($number+1)*3;
         $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
 
-    }  
+    }  elseif($WEAPON_TYPE=='Assault 8') {
+        $SHOW_ROLL_HITS=($number+1)*8;
+        $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
+
+    }
       
     if(empty($SHOW_ROLL_HITS)) {
                $SHOW_ROLL_HITS=$number+1;
@@ -812,6 +816,18 @@ $DIE_THREE_MOD=0;
     
     if($WEAPON_TYPE=='Assault 6') {
         $SHOW_ROLL_HITS=($number+1)*6;
+        $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
+
+    }
+
+    if($WEAPON_TYPE=='Assault 7') {
+        $SHOW_ROLL_HITS=($number+1)*7;
+        $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
+
+    }
+
+    if($WEAPON_TYPE=='Assault 8') {
+        $SHOW_ROLL_HITS=($number+1)*8;
         $number=$number+$SHOW_ROLL_HITS-$MODELS_TO_FIRE;
 
     }    
@@ -2016,7 +2032,7 @@ function save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$T_ABIL
   
     $SAVE_ROLL_DISPLAY=$SAVE_ROLLS+1;
     
-    if($UNIT_WEAPON=='Sniper Rifle' || $UNIT_WEAPON=='Ranger Long Rifle') {
+    if($UNIT_WEAPON=='Sniper Rifle' || $UNIT_WEAPON=='Ranger Long Rifle' || $UNIT_WEAPON=='Transdimensional Beamer') {
     $MORTAL_WOUNDS=$DIE_SIX_MOD;
     }
     
@@ -2169,7 +2185,7 @@ function invul_save_rolls($T_SAVE,$SAVE_ROLLS,$WEAPON_AP,$UNIT_WEAPON,$T_INVUL,$
 
     $SAVE_ROLL_DISPLAY=$SAVE_ROLLS+1;
     
-    if($UNIT_WEAPON=='Sniper Rifle' || $UNIT_WEAPON=='Ranger Long Rifle') {
+    if($UNIT_WEAPON=='Sniper Rifle' || $UNIT_WEAPON=='Ranger Long Rifle' || $UNIT_WEAPON=='Transdimensional Beamer') {
     $MORTAL_WOUNDS=$DIE_SIX_MOD;
     }
     

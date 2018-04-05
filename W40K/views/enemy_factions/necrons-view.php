@@ -9,13 +9,19 @@
                         <option value="">Select...</option>
                         <option disabled>─────HQ─────</option>
                         <option value="Imotekh the Stormlord" <?php if($TARGET_UNIT=='Imotekh the Stormlord') { echo "selected"; } ?> >Imotekh the Stormlord</option>
+                        <option value="Overlord" <?php if($TARGET_UNIT=='Overlord') { echo "selected"; } ?> >Overlord</option>
+                        <option value="Lord" <?php if($TARGET_UNIT=='Lord') { echo "selected"; } ?> >Lord</option>
                         <option value="Cryptec" <?php if($TARGET_UNIT=='Cryptec') { echo "selected"; } ?> >Cryptec</option>
                         <option disabled>─────ELITES─────</option>
+                        <option value="Lychguard" <?php if($TARGET_UNIT=='Lychguard') { echo "selected"; } ?> >Lychguard</option>
                         <option disabled>─────TROOPS─────</option>
                         <option value="Necron Warriors" <?php if($TARGET_UNIT=='Necron Warriors') { echo "selected"; } ?> >Necron Warriors</option>
                         <option value="Immortals" <?php if($TARGET_UNIT=='Immortals') { echo "selected"; } ?> >Immortals</option>
                         <option disabled>─────FAST ATTACK─────</option>
-                        <option disabled>─────HEAVY SUPPORT─────</option>   
+                        <option value="Canoptek Wraiths" <?php if($TARGET_UNIT=='Canoptek Wraiths') { echo "selected"; } ?> >Canoptek Wraiths</option>
+                        <option value="Canoptek Scrabs" <?php if($TARGET_UNIT=='Canoptek Scrabs') { echo "selected"; } ?> >Canoptek Scrabs</option>
+                        <option disabled>─────HEAVY SUPPORT─────</option> 
+                        <option value="Annihilation Barge" <?php if($TARGET_UNIT=='Annihilation Barge') { echo "selected"; } ?> >Annihilation Barge</option>
                     </select>
                 </div>     
             </div> 

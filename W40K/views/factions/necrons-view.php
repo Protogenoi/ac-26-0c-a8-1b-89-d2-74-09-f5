@@ -11,13 +11,19 @@
                         <option value="">Select...</option>
                         <option disabled>─────HQ─────</option>
                         <option value="Imotekh the Stormlord" <?php if($UNIT=='Imotekh the Stormlord') { echo "selected"; } ?> >Imotekh the Stormlord</option>
+                        <option value="Overlord" <?php if($UNIT=='Overlord') { echo "selected"; } ?> >Overlord</option>
+                        <option value="Lord" <?php if($UNIT=='Lord') { echo "selected"; } ?> >Lord</option>
                         <option value="Cryptec" <?php if($UNIT=='Cryptec') { echo "selected"; } ?> >Cryptec</option>
                         <option disabled>─────ELITES─────</option>
+                        <option value="Lychguard" <?php if($UNIT=='Lychguard') { echo "selected"; } ?> >Lychguard</option>
                         <option disabled>─────TROOPS─────</option>
                         <option value="Necron Warriors" <?php if($UNIT=='Necron Warriors') { echo "selected"; } ?> >Necron Warriors</option>
                         <option value="Immortals" <?php if($UNIT=='Immortals') { echo "selected"; } ?> >Immortals</option>
                         <option disabled>─────FAST ATTACK─────</option>
-                        <option disabled>─────HEAVY SUPPORT─────</option>                   
+                        <option value="Canoptek Wraiths" <?php if($UNIT=='Canoptek Wraiths') { echo "selected"; } ?> >Canoptek Wraiths</option>
+                        <option value="Canoptek Scrabs" <?php if($UNIT=='Canoptek Scrabs') { echo "selected"; } ?> >Canoptek Scrabs</option>
+                        <option disabled>─────HEAVY SUPPORT─────</option>   
+                        <option value="Annihilation Barge" <?php if($UNIT=='Annihilation Barge') { echo "selected"; } ?> >Annihilation Barge</option>
                         </select>
                 </div>     
             </div>  
@@ -51,6 +57,25 @@
                         <option disabled>─────Melee─────</option>
                         <option value='Staff of the Destroyer (Melee)'<?php if($UNIT_WEAPON=='Staff of the Destroyer (Melee)') { echo "selected"; } ?> >Staff of the Destroyer (Melee)</option>
                             <?php } 
+                            if($UNIT=='Overlord') { ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Staff of Light'<?php if($UNIT_WEAPON=='Staff of Light') { echo "selected"; } ?> >Staff of Light</option>
+                        <option disabled>─────Melee─────</option>
+                        <option value='Staff of Light (Melee)'<?php if($UNIT_WEAPON=='Staff of Light') { echo "selected"; } ?> >Staff of Light</option>
+                        <option value='Voidscythe'<?php if($UNIT_WEAPON=='Voidscythe') { echo "selected"; } ?> >Voidscythe</option>
+                        <option value='Hyperphase Sword'<?php if($UNIT_WEAPON=='Hyperphase Sword') { echo "selected"; } ?> >Hyperphase Sword</option>
+                        <option value='Warscythe'<?php if($UNIT_WEAPON=='Warscythe') { echo "selected"; } ?> >Warscythe</option>
+                        <option value='Voidblade'<?php if($UNIT_WEAPON=='Voidblade') { echo "selected"; } ?> >Voidblade</option>
+                            <?php }  
+                            if($UNIT=='Lord') { ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Staff of Light'<?php if($UNIT_WEAPON=='Staff of Light') { echo "selected"; } ?> >Staff of Light</option>
+                        <option disabled>─────Melee─────</option>
+                        <option value='Staff of Light (Melee)'<?php if($UNIT_WEAPON=='Staff of Light') { echo "selected"; } ?> >Staff of Light</option>
+                        <option value='Hyperphase Sword'<?php if($UNIT_WEAPON=='Hyperphase Sword') { echo "selected"; } ?> >Hyperphase Sword</option>
+                        <option value='Warscythe'<?php if($UNIT_WEAPON=='Warscythe') { echo "selected"; } ?> >Warscythe</option>
+                        <option value='Voidblade'<?php if($UNIT_WEAPON=='Voidblade') { echo "selected"; } ?> >Voidblade</option>
+                            <?php }                              
                             if($UNIT=="Cryptec") {
                             ?>
                         <option disabled>─────Wargear─────</option>
@@ -68,7 +93,34 @@
                         <option disabled>─────Wargear─────</option>
                         <option value='Gauss Blaster'<?php if($UNIT_WEAPON=='Gauss Blaster') { echo "selected"; } ?> >Gauss Blaster</option>
                         <option value='Tesla Carbine'<?php if($UNIT_WEAPON=='Tesla Carbine') { echo "selected"; } ?> >Tesla Carbine</option>
-                            <?php }                            
+                            <?php } 
+                            if($UNIT=="Lychguard") {
+                            ?>
+                        <option disabled>─────Melee─────</option>
+                        <option value='Hyperphase Sword'<?php if($UNIT_WEAPON=='Hyperphase Sword') { echo "selected"; } ?> >Hyperphase Sword</option>
+                        <option value='Warscythe'<?php if($UNIT_WEAPON=='Warscythe') { echo "selected"; } ?> >Warscythe</option>
+                            <?php }  
+                            if($UNIT=="Canoptek Wraiths") {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Particle Caster'<?php if($UNIT_WEAPON=='Particle Caster') { echo "selected"; } ?> >Particle Caster</option>
+                        <option value='Transdimensional Beamer'<?php if($UNIT_WEAPON=='Transdimensional Beamer') { echo "selected"; } ?> >Transdimensional Beamer</option>
+                        <option disabled>─────Melee─────</option>
+                        <option value='Whip Coils'<?php if($UNIT_WEAPON=='Whip Coils') { echo "selected"; } ?> >Whip Coils</option>
+                        <option value='Vicious Claws'<?php if($UNIT_WEAPON=='Vicious Claws') { echo "selected"; } ?> >Vicious Claws</option>
+                            <?php }  
+                            if($UNIT=="Canoptek Scarabs") {
+                            ?>
+                        <option disabled>─────Melee─────</option>
+                        <option value='Feeder Mandibles'<?php if($UNIT_WEAPON=='Feeder Mandibles') { echo "selected"; } ?> >Feeder Mandibles</option>
+                            <?php }
+                            if($UNIT=="Annihilation Barge") {
+                            ?>
+                        <option disabled>─────Wargear─────</option>
+                        <option value='Gauss Cannon'<?php if($UNIT_WEAPON=='Gauss Cannon') { echo "selected"; } ?> >Gauss Cannon</option>
+                        <option value='Tesla Cannon'<?php if($UNIT_WEAPON=='Tesla Cannon') { echo "selected"; } ?> >Tesla Cannon</option>
+                        <option value='Twin Tesla Destructor'<?php if($UNIT_WEAPON=='Twin Tesla Destructor') { echo "selected"; } ?> >Twin Tesla Destructor</option>
+                            <?php }                             
                         } else { ?>
                         <option value=''>Select...</option>
                             <?php } ?>
@@ -82,13 +134,44 @@ $(document).ready(function () {
         var val = $(this).val();  
         if (val === "Imotekh the Stormlord") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauntlet of Fire'>Gauntlet of Fire</option><option value='Staff of the Destroyer'>Staff of the Destroyer</option><option disabled>─────Melee─────</option><option value='Staff of the Destroyer (Melee)'>Staff of the Destroyer (Melee)</option>");
-        } else if (val === "Cryptec") {
+        } 
+        
+        else if (val === "Overlord") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Staff of Light'>Staff of Light</option><option disabled>─────Melee─────</option><option value='Staff of Light (Melee)'>Staff of Light</option><option value='Hyperphase Sword'>Hyperphase Sword</option><option value='Warscythe'>Warscythe</option><option value='Voidblade'>Voidblade</option>");
+        }
+
+        else if (val === "Lord") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Staff of Light'>Staff of Light</option><option disabled>─────Melee─────</option><option value='Staff of Light (Melee)'>Staff of Light</option><option value='Voidscythe'>Voidscythe</option><option value='Hyperphase Sword'>Hyperphase Sword</option><option value='Warscythe'>Warscythe</option><option value='Voidblade'>Voidblade</option>");
+        }      
+        
+        else if (val === "Cryptec") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Staff of Light'>Staff of Light</option><option disabled>─────Melee─────</option><option value='Staff of Light (Melee)'>Staff of Light (Melee)</option>");
-        } else if (val === "Necron Warriors") {
+        } 
+        
+        else if (val === "Necron Warriors") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss Flayer'>Gauss Flayer</option>");
-        } else if (val === "Immortals") {
+        } 
+        
+        else if (val === "Immortals") {
             $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss Blaster'>Gauss Blaster</option><option value='Tesla Carbine'>Tesla Carbine</option>");
         } 
+        
+        else if (val === "Lychguard") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Melee─────</option><option value='Hyperphase Sword'>Hyperphase Sword</option><option value='Warscythe'>Warscythe</option>");
+        } 
+        
+        else if (val === "Canoptek Wraiths") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Particle Caster'>Particle Caster</option><option value='Transdimensional Beamer'>Transdimensional Beamer</option><option disabled>─────Melee─────</option><option value='Whip Coils'>Whip Coils</option><option value='Vicious Claws'>Vicious Claws</option>");
+        }  
+        
+        else if (val === "Canoptek Scarabs") {
+            $("#UNIT_WEAPON").html("<option value='Feeder Mandibles'>Feeder Mandibles</option>");
+        } 
+        
+        else if (val === "Annihilation Barge") {
+            $("#UNIT_WEAPON").html("<option disabled>─────Wargear─────</option><option value='Gauss Cannon'>Gauss Cannon</option><option value='Tesla Cannon'>Tesla Cannon</option><option value='Twin Tesla Destructor'>Twin Tesla Destructor</option>");
+        }         
+      
     });
 });        
 </script>
